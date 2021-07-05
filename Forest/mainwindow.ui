@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>854</width>
-    <height>600</height>
+    <width>1074</width>
+    <height>660</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,13 +17,36 @@
    <iconset>
     <normaloff>icon.ico</normaloff>icon.ico</iconset>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="place">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>820</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(63, 32, 0)</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>854</width>
+     <width>1074</width>
      <height>21</height>
     </rect>
    </property>
