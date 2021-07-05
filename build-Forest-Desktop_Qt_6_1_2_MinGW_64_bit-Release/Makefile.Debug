@@ -19,7 +19,7 @@ CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++1z -Wall -Wextra -Wextra
 INCPATH       = -I../Forest -I. -I../../Qt/6.1.2/mingw81_64/include -I../../Qt/6.1.2/mingw81_64/include/QtWidgets -I../../Qt/6.1.2/mingw81_64/include/QtGui -I../../Qt/6.1.2/mingw81_64/include/QtCore -Idebug -I. -IC:/VulkanSDK/1.0.51.0/Include -I../../Qt/6.1.2/mingw81_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
-LIBS        =        C:\Qt\6.1.2\mingw81_64\lib\libQt6Widgets.a C:\Qt\6.1.2\mingw81_64\lib\libQt6Gui.a C:\Qt\6.1.2\mingw81_64\lib\libQt6Core.a -lmingw32 C:\Qt\6.1.2\mingw81_64\lib\libQt6EntryPoint.a -lshell32  
+LIBS        =        C:\Qt\6.1.2\mingw81_64\lib\libQt6Widgets.a C:\Qt\6.1.2\mingw81_64\lib\libQt6Gui.a C:\Qt\6.1.2\mingw81_64\lib\libQt6Core.a debug\ico_res.o -lmingw32 C:\Qt\6.1.2\mingw81_64\lib\libQt6EntryPoint.a -lshell32  
 QMAKE         = C:\Qt\6.1.2\mingw81_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -40,7 +40,7 @@ IDC           = idc
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
-RES_FILE      = 
+RES_FILE      = debug\ico_res.o
 SED           = $(QMAKE) -install sed
 MOVE          = move
 
@@ -68,8 +68,11 @@ DESTDIR_TARGET = debug\Forest.exe
 first: all
 all: Makefile.Debug  debug/Forest.exe
 
-debug/Forest.exe: C:/Qt/6.1.2/mingw81_64/lib/libQt6Widgets.a C:/Qt/6.1.2/mingw81_64/lib/libQt6Gui.a C:/Qt/6.1.2/mingw81_64/lib/libQt6Core.a C:/Qt/6.1.2/mingw81_64/lib/libQt6EntryPoint.a ui_mainwindow.h $(OBJECTS) 
+debug/Forest.exe: C:/Qt/6.1.2/mingw81_64/lib/libQt6Widgets.a C:/Qt/6.1.2/mingw81_64/lib/libQt6Gui.a C:/Qt/6.1.2/mingw81_64/lib/libQt6Core.a C:/Qt/6.1.2/mingw81_64/lib/libQt6EntryPoint.a ui_mainwindow.h $(OBJECTS) debug/ico_res.o
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) $(OBJECTS)  $(LIBS)
+
+debug/ico_res.o: ../Forest/ico.rc
+	windres -i ..\Forest\ico.rc -o debug\ico_res.o --include-dir=./../Forest $(DEFINES)
 
 qmake: FORCE
 	@$(QMAKE) -o Makefile.Debug ..\Forest\Forest.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
@@ -81,6 +84,7 @@ dist:
 
 clean: compiler_clean 
 	-$(DEL_FILE) debug\main.o debug\mainwindow.o debug\moc_mainwindow.o
+	-$(DEL_FILE) debug\ico_res.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -534,7 +538,22 @@ debug/mainwindow.o: ../Forest/mainwindow.cpp ../Forest/mainwindow.h \
 		../../Qt/6.1.2/mingw81_64/include/QtGui/QTransform \
 		../../Qt/6.1.2/mingw81_64/include/QtWidgets/qtabwidget.h \
 		../../Qt/6.1.2/mingw81_64/include/QtGui/qicon.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../../Qt/6.1.2/mingw81_64/include/QtCore/QVariant \
+		../../Qt/6.1.2/mingw81_64/include/QtWidgets/QApplication \
+		../../Qt/6.1.2/mingw81_64/include/QtWidgets/qapplication.h \
+		../../Qt/6.1.2/mingw81_64/include/QtCore/qcoreapplication.h \
+		../../Qt/6.1.2/mingw81_64/include/QtCore/qeventloop.h \
+		../../Qt/6.1.2/mingw81_64/include/QtGui/qguiapplication.h \
+		../../Qt/6.1.2/mingw81_64/include/QtGui/qinputmethod.h \
+		../../Qt/6.1.2/mingw81_64/include/QtCore/qlocale.h \
+		../../Qt/6.1.2/mingw81_64/include/QtWidgets/QMenuBar \
+		../../Qt/6.1.2/mingw81_64/include/QtWidgets/qmenubar.h \
+		../../Qt/6.1.2/mingw81_64/include/QtWidgets/qmenu.h \
+		../../Qt/6.1.2/mingw81_64/include/QtGui/qaction.h \
+		../../Qt/6.1.2/mingw81_64/include/QtWidgets/QStatusBar \
+		../../Qt/6.1.2/mingw81_64/include/QtWidgets/qstatusbar.h \
+		../../Qt/6.1.2/mingw81_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\Forest\mainwindow.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 
