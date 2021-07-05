@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Растительное сообщество</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.ico</normaloff>icon.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

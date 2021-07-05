@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -30,6 +31,9 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(854, 600);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8("icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         MainWindow->setCentralWidget(centralwidget);
