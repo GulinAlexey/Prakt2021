@@ -34,7 +34,7 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(63, 32, 0)</string>
+     <string notr="true">background-color: rgb(47, 28, 11)</string>
     </property>
     <property name="title">
      <string/>

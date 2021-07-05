@@ -53,7 +53,7 @@ public:
         place->setGeometry(QRect(20, 20, 820, 620));
         place->setMouseTracking(true);
         place->setAutoFillBackground(false);
-        place->setStyleSheet(QString::fromUtf8("background-color: rgb(63, 32, 0)"));
+        place->setStyleSheet(QString::fromUtf8("background-color: rgb(47, 28, 11)"));
         vzaimode = new QGroupBox(centralwidget);
         vzaimode->setObjectName(QString::fromUtf8("vzaimode"));
         vzaimode->setGeometry(QRect(860, 20, 181, 131));
