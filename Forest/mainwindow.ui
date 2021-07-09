@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1074</width>
+    <width>1159</width>
     <height>660</height>
    </rect>
   </property>
@@ -49,7 +49,7 @@
    <widget class="QGroupBox" name="vzaimode">
     <property name="geometry">
      <rect>
-      <x>860</x>
+      <x>960</x>
       <y>20</y>
       <width>181</width>
       <height>131</height>
@@ -63,12 +63,12 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>82</width>
+       <width>111</width>
        <height>17</height>
       </rect>
      </property>
      <property name="text">
-      <string>RadioButton</string>
+      <string>Садить растение</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_2">
@@ -76,12 +76,12 @@
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>82</width>
+       <width>121</width>
        <height>17</height>
       </rect>
      </property>
      <property name="text">
-      <string>RadioButton</string>
+      <string>Удалить растение</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_3">
@@ -89,12 +89,12 @@
       <rect>
        <x>10</x>
        <y>60</y>
-       <width>82</width>
+       <width>111</width>
        <height>17</height>
       </rect>
      </property>
      <property name="text">
-      <string>RadioButton</string>
+      <string>Инфо о растении</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_4">
@@ -102,19 +102,19 @@
       <rect>
        <x>10</x>
        <y>80</y>
-       <width>82</width>
+       <width>101</width>
        <height>17</height>
       </rect>
      </property>
      <property name="text">
-      <string>RadioButton</string>
+      <string>Инфо о почве</string>
      </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="timemode">
     <property name="geometry">
      <rect>
-      <x>860</x>
+      <x>960</x>
       <y>170</y>
       <width>181</width>
       <height>101</height>
@@ -133,7 +133,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>RadioButton</string>
+      <string>Нормальный</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_6">
@@ -146,7 +146,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>RadioButton</string>
+      <string>Ускоренный</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_7">
@@ -159,7 +159,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>RadioButton</string>
+      <string>Пауза</string>
      </property>
     </widget>
    </widget>
@@ -169,7 +169,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1074</width>
+     <width>1159</width>
      <height>21</height>
     </rect>
    </property>
