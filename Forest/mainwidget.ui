@@ -12,7 +12,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1074</width>
+    <width>1159</width>
     <height>660</height>
    </size>
   </property>
@@ -54,6 +54,19 @@
    <property name="title">
     <string/>
    </property>
+   <widget class="QLabel" name="zeml">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>600</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="vzaimode">
    <property name="geometry">
@@ -189,6 +202,9 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

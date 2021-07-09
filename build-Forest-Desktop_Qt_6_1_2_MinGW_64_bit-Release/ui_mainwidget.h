@@ -41,7 +41,7 @@ public:
         if (MainWidget->objectName().isEmpty())
             MainWidget->setObjectName(QString::fromUtf8("MainWidget"));
         MainWidget->resize(1159, 660);
-        MainWidget->setMinimumSize(QSize(1074, 660));
+        MainWidget->setMinimumSize(QSize(1159, 660));
         QIcon icon;
         icon.addFile(QString::fromUtf8("icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
         MainWidget->setWindowIcon(icon);
@@ -60,6 +60,7 @@ public:
         plant_b = new QRadioButton(vzaimode);
         plant_b->setObjectName(QString::fromUtf8("plant_b"));
         plant_b->setGeometry(QRect(10, 20, 111, 17));
+        plant_b->setChecked(true);
         delete_b = new QRadioButton(vzaimode);
         delete_b->setObjectName(QString::fromUtf8("delete_b"));
         delete_b->setGeometry(QRect(10, 40, 121, 17));
@@ -75,6 +76,7 @@ public:
         normal_b = new QRadioButton(timemode);
         normal_b->setObjectName(QString::fromUtf8("normal_b"));
         normal_b->setGeometry(QRect(10, 20, 91, 17));
+        normal_b->setChecked(true);
         speed_b = new QRadioButton(timemode);
         speed_b->setObjectName(QString::fromUtf8("speed_b"));
         speed_b->setGeometry(QRect(10, 40, 91, 17));
@@ -84,6 +86,7 @@ public:
         pogoda = new QLabel(MainWidget);
         pogoda->setObjectName(QString::fromUtf8("pogoda"));
         pogoda->setGeometry(QRect(830, 20, 90, 90));
+        pogoda->setScaledContents(true);
 
         retranslateUi(MainWidget);
 
