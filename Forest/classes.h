@@ -8,4 +8,11 @@ public:
     Forest();
 };
 
+class Plant
+{
+private:
+public:
+    Plant();
+};
+
 #endif // CLASSES_H

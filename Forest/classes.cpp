@@ -4,3 +4,8 @@ Forest::Forest()
 {
 
 }
+
+Plant::Plant()
+{
+
+}
