@@ -11,19 +11,20 @@ CONFIG += c++11
 SOURCES += \
     classes.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwidget.cpp
 
 HEADERS += \
     classes.h \
-    mainwindow.h
+    mainwidget.h
 
 FORMS += \
-    mainwindow.ui
-
+    mainwidget.ui
+	
 win32 {
         RC_FILE += ico.rc
         OTHER_FILES += ico.rc
 }
+	
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
