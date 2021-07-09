@@ -6,6 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QPixmap sun = QPixmap("sun.png");
+    ui->->SetPixmap(sun);
 }
 
 MainWindow::~MainWindow()

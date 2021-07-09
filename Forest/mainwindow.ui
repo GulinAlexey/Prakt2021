@@ -49,7 +49,7 @@
    <widget class="QGroupBox" name="vzaimode">
     <property name="geometry">
      <rect>
-      <x>960</x>
+      <x>940</x>
       <y>20</y>
       <width>181</width>
       <height>131</height>
@@ -114,7 +114,7 @@
    <widget class="QGroupBox" name="timemode">
     <property name="geometry">
      <rect>
-      <x>960</x>
+      <x>940</x>
       <y>170</y>
       <width>181</width>
       <height>101</height>
@@ -162,6 +162,19 @@
       <string>Пауза</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="pogoda">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>20</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
