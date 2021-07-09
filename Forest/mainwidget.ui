@@ -67,7 +67,7 @@
    <property name="title">
     <string>Режим взаимодействия</string>
    </property>
-   <widget class="QRadioButton" name="sad_b">
+   <widget class="QRadioButton" name="plant_b">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -80,7 +80,7 @@
      <string>Садить растение</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="ud_b">
+   <widget class="QRadioButton" name="delete_b">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -93,7 +93,7 @@
      <string>Удалить растение</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_3">
+   <widget class="QRadioButton" name="infoplant_b">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -106,7 +106,7 @@
      <string>Инфо о растении</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_4">
+   <widget class="QRadioButton" name="infodirt_b">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -132,7 +132,7 @@
    <property name="title">
     <string>Режим времени</string>
    </property>
-   <widget class="QRadioButton" name="radioButton_5">
+   <widget class="QRadioButton" name="normal_b">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -145,7 +145,7 @@
      <string>Нормальный</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_6">
+   <widget class="QRadioButton" name="speed_b">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -158,7 +158,7 @@
      <string>Ускоренный</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_7">
+   <widget class="QRadioButton" name="pause_b">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -177,12 +177,12 @@
     <rect>
      <x>830</x>
      <y>20</y>
-     <width>47</width>
-     <height>13</height>
+     <width>90</width>
+     <height>90</height>
     </rect>
    </property>
    <property name="text">
-    <string>p</string>
+    <string/>
    </property>
   </widget>
  </widget>
