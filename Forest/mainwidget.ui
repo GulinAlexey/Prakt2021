@@ -79,6 +79,9 @@
     <property name="text">
      <string>Садить растение</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QRadioButton" name="delete_b">
     <property name="geometry">
@@ -143,6 +146,9 @@
     </property>
     <property name="text">
      <string>Нормальный</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QRadioButton" name="speed_b">
