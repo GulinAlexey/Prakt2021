@@ -16,6 +16,9 @@ private:
 public:
     Plant();
     //метод случайных начальных значений для каждого растения свой
+
+    //дружественные функции (эти функции имеют доступ к полям Plant)
+    // friend void Add_plant(int x, int y, int type);
 };
 
 class Forest // класс Лес
