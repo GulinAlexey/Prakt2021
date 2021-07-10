@@ -1,11 +1,11 @@
 #include "classes.h"
 
-Forest::Forest()
+Plant::Plant()
 {
 
 }
 
-Plant::Plant()
+Forest::Forest()
 {
 
 }
