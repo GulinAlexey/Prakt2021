@@ -1,6 +1,8 @@
 #ifndef CLASSES_H
 #define CLASSES_H
 
+#define KOLVO_DIRT 12 // кол-во ячеек почвы
+
 class Plant // класс Растение
 {
 private:
@@ -24,7 +26,11 @@ public:
 class Dirt_cell //класс ячейки почвы
 {
 private:
-
+    int ox_min, oy_min; //координаты верхнего левого угла ячейки
+    int ox_max, oy_max; //координаты нижнего правого угла ячейки
+    int fertility; // плодородность почвы
+    int effectiv; // эффективность плодородности (изначально 1, при истощении/насыщении изменяется)
+    int wet; //влажность
 public:
     Dirt_cell();
 };
@@ -32,7 +38,7 @@ public:
 class Forest // класс Лес
 {
 private:
-
+    Dirt_cell dirt[KOLVO_DIRT]; //массив с ячейками почвы
 public:
     Forest();
     void Add_plant(int x, int y, int type); //добавить растение
@@ -42,7 +48,8 @@ public:
 class Weather //класс Погода
 {
 private:
-
+    int sunshine; // уровень яркости солнца
+    int f_rain; //флаг дождя (=1, если идёт дождь, иначе =0)
 public:
     Weather();
 };

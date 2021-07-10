@@ -1,5 +1,6 @@
 #include "mainwidget.h"
 #include "ui_mainwidget.h"
+#include "classes.h" //классы растение, погода и т. д. для работы программы
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
