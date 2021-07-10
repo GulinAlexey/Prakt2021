@@ -21,12 +21,31 @@ public:
     // friend void Add_plant(int x, int y, int type);
 };
 
+class Dirt_cell //класс ячейки почвы
+{
+private:
+
+public:
+    Dirt_cell();
+};
+
 class Forest // класс Лес
 {
+private:
+
 public:
     Forest();
     void Add_plant(int x, int y, int type); //добавить растение
     void Delete_plant(int num, int type); //удалить растение
 };
+
+class Weather //класс Погода
+{
+private:
+
+public:
+    Weather();
+};
+
 
 #endif // CLASSES_H
