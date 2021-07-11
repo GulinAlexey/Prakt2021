@@ -5,7 +5,7 @@
 
 class Plant // класс Растение
 {
-private:
+protected:
     int ox, oy; //координаты
     int num_dirt; //номер ячейки почвы, на которой находится
     int height; //высота
@@ -21,6 +21,21 @@ public:
 
     //дружественные функции (эти функции имеют доступ к полям Plant)
     // friend void Add_plant(int x, int y, int type);
+};
+
+class Grass : public Plant //класс Трава
+{
+
+};
+
+class Bush : public Plant //класс Куст
+{
+
+};
+
+class Tree : public Plant //класс Дерево
+{
+
 };
 
 class Dirt_cell //класс ячейки почвы
