@@ -86,6 +86,14 @@ private:
     int time_status; // время текущего состояния (при достижении 10 тиков обнуляется. Затем дождь/солнечность/облачность заканчивается или начинается (с некоторой вероятностью начала определённой погоды))
 public:
     Weather();
+
+    /*методы получения и установления свойств объекта класса*/
+    void set_sunshine(int inp);
+    int get_sunshine();
+    void set_f_status(int inp);
+    int get_f_status();
+    void set_time_status(int inp);
+    int get_time_status();
 };
 
 

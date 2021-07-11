@@ -12,6 +12,8 @@ Bush::Bush()
 {}
 Tree::Tree()
 {}
+Weather::Weather()
+{}
 
 void Grass::Init_rand() //трава, инициализация случайными значениями
 {
@@ -147,7 +149,28 @@ void Forest::Delete_plant(int num, int type) //удалить растение �
     }
 }
 
-Weather::Weather()
+/*методы получения и установления свойств объекта класса Погода*/
+void set_sunshine(int inp)
 {
-
+    sunshine=inp;
+}
+int get_sunshine()
+{
+    return sunshine;
+}
+void set_f_status(int inp)
+{
+    f_status=inp;
+}
+int get_f_status()
+{
+    return f_status;
+}
+void set_time_status(int inp)
+{
+    time_status=inp;
+}
+int get_time_status()
+{
+    return time_status;
 }
