@@ -1,6 +1,8 @@
 #ifndef CLASSES_H
 #define CLASSES_H
 
+#include <qlabel.h>
+
 #define KOLVO_DIRT 12 // кол-во ячеек почвы
 
 class Plant // класс Растение
@@ -15,6 +17,7 @@ protected:
     int wetlove; //влаголюбивость
     int score_grow; //текущее кол-во очков роста (при достижении максимума увеличивается высота и радиус, а данный показатель вновь обнуляется)
     int viability; //жизнеспособность (при уменьшении до нулевого значения растение умирает)
+    QLabel *img; //указатель на label с изображением растения
 public:
     Plant();
     void Change_OXY(int ox_new, int oy_new); //установка новых координат
