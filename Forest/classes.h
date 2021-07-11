@@ -87,7 +87,7 @@ private:
 public:
     Weather();
 
-    /*методы получения и установления свойств объекта класса*/
+    /*методы получения и установления полей объекта класса*/
     void set_sunshine(int inp);
     int get_sunshine();
     void set_f_status(int inp);
