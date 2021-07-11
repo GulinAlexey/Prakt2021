@@ -54,6 +54,10 @@ class Forest // класс Лес
 {
 private:
     Dirt_cell dirt[KOLVO_DIRT]; //массив с ячейками почвы
+    Grass* grass; //указатель на массив объектов Трава
+    Bush* bush; //указатель на массив объектов Куст
+    Tree* tree; //указатель на массив объектов Дерево
+
 public:
     Forest();
     void Add_plant(int x, int y, int type); //добавить растение
