@@ -150,27 +150,27 @@ void Forest::Delete_plant(int num, int type) //удалить растение �
 }
 
 /*методы получения и установления полей объекта класса Погода*/
-void set_sunshine(int inp)
+void Weather::set_sunshine(int inp)
 {
     sunshine=inp;
 }
-int get_sunshine()
+int Weather::get_sunshine()
 {
     return sunshine;
 }
-void set_f_status(int inp)
+void Weather::set_f_status(int inp)
 {
     f_status=inp;
 }
-int get_f_status()
+int Weather::get_f_status()
 {
     return f_status;
 }
-void set_time_status(int inp)
+void Weather::set_time_status(int inp)
 {
     time_status=inp;
 }
-int get_time_status()
+int Weather::get_time_status()
 {
     return time_status;
 }
