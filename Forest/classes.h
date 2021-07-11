@@ -17,7 +17,7 @@ protected:
     int viability; //жизнеспособность (при уменьшении до нулевого значения растение умирает)
 public:
     Plant();
-    //метод случайных начальных значений для каждого растения свой
+    void Change_OXY(int ox_new, int oy_new); //установка новых координат
 
     //дружественные функции (эти функции имеют доступ к полям Plant)
     // friend void Add_plant(int x, int y, int type);
@@ -25,17 +25,23 @@ public:
 
 class Grass : public Plant //класс Трава
 {
-
+public:
+    Grass();
+    void Init_rand(); //инициализация случайными значениями
 };
 
 class Bush : public Plant //класс Куст
 {
-
+public:
+    Bush();
+    void Init_rand(); //инициализация случайными значениями
 };
 
 class Tree : public Plant //класс Дерево
 {
-
+public:
+    Tree();
+    void Init_rand(); //инициализация случайными значениями
 };
 
 class Dirt_cell //класс ячейки почвы
@@ -65,8 +71,8 @@ private:
 
 public:
     Forest();
-    void Add_plant(int x, int y, int type); //добавить растение
-    void Delete_plant(int num, int type); //удалить растение
+    void Add_plant(int x, int y, int type); //добавить растение (тип: 1 - трава, 2 - куст, 3 - дерево)
+    void Delete_plant(int num, int type); //удалить растение (тип: 1 - трава, 2 - куст, 3 - дерево)
 };
 
 class Weather //класс Погода
