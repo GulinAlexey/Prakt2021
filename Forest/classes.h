@@ -58,6 +58,11 @@ private:
     Bush* bush; //указатель на массив объектов Куст
     Tree* tree; //указатель на массив объектов Дерево
 
+    int kolvo_dirt = KOLVO_DIRT; //кол-во ячеек почвы
+    int kolvo_grass; //кол-во объектов травы
+    int kolvo_bush; //кол-во кустов
+    int kolvo_tree;  //кол-во деревьев
+
 public:
     Forest();
     void Add_plant(int x, int y, int type); //добавить растение
