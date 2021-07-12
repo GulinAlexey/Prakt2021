@@ -14,6 +14,7 @@ class MainWidget : public QWidget
 public:
     MainWidget(QWidget *parent = nullptr);
     ~MainWidget();
+    virtual void mousePressEvent(QMouseEvent*e); //событие нажатия кнопки мыши внутри окна
 
 private:
     Ui::MainWidget *ui;
