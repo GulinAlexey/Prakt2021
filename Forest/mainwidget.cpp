@@ -21,6 +21,7 @@ MainWidget::MainWidget(QWidget *parent)
 
     QTimer *timer = new QTimer(); // таймер для работы модели
     timer->start(TIME_TICK); //запустить таймер с интервалом в одну секунду
+    QObject::connect(timer, SIGNAL(timeout()), SLOT(Timer_tick())); //по истечении интервала работает слот
 }
 
 MainWidget::~MainWidget()
@@ -32,5 +33,10 @@ void MainWidget::Clicked_place() //слот при нажатии внутри �
 {
     int x = cursor().pos().x();
     int y = cursor().pos().y();
+
+}
+
+void MainWidget::Timer_tick() //слот интервала таймера
+{
 
 }
