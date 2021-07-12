@@ -19,7 +19,6 @@ private:
     Ui::MainWidget *ui;
 
 public slots: //публичные слоты
-    void Clicked_place(); //слот при нажатии внутри площадки леса
     void Timer_tick(); //слот интервала таймера
 };
 #endif // MAINWIDGET_H
