@@ -51,7 +51,14 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
         {
             if(ui->plant_b->isChecked()==true) //если был выбран режим посадки растения
             {
-                //forest.Add_plant()
+                int planttype; //тип высаживаемого растения (1 - трава, 2 - куст, 3 - дерево)
+                if(ui->grass_type->isChecked()==true)
+                    planttype=1;
+                if(ui->bush_type->isChecked()==true)
+                    planttype=2;
+                if(ui->tree_type->isChecked()==true)
+                    planttype=3;
+                forest.Add_plant(x,y,planttype); //добавить растение выбранного типа с выбранными координатами
 
             }
             if(ui->delete_b->isChecked()==true) //если был выбран режим удаления растения
