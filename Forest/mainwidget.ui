@@ -42,6 +42,9 @@
      <height>131</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(255, 227, 187);</string>
+   </property>
    <property name="title">
     <string>Режим взаимодействия</string>
    </property>
@@ -105,10 +108,13 @@
    <property name="geometry">
     <rect>
      <x>940</x>
-     <y>170</y>
+     <y>280</y>
      <width>181</width>
      <height>101</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(205, 208, 255);</string>
    </property>
    <property name="title">
     <string>Режим времени</string>
@@ -450,6 +456,64 @@
     </property>
     <property name="text">
      <string>TextLabel</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="type_plant">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>163</y>
+     <width>181</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(204, 255, 188);</string>
+   </property>
+   <property name="title">
+    <string>Вид растения для посадки</string>
+   </property>
+   <widget class="QRadioButton" name="grass_type">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Новая трава</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="bush_type">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Новый куст</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="tree_type">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Новое дерево</string>
     </property>
    </widget>
   </widget>

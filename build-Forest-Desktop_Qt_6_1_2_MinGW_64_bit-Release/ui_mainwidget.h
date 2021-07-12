@@ -38,6 +38,10 @@ public:
     QFrame *place;
     QLabel *label;
     QLabel *label_2;
+    QGroupBox *type_plant;
+    QRadioButton *grass_type;
+    QRadioButton *bush_type;
+    QRadioButton *tree_type;
 
     void setupUi(QWidget *MainWidget)
     {
@@ -54,6 +58,7 @@ public:
         vzaimode = new QGroupBox(MainWidget);
         vzaimode->setObjectName(QString::fromUtf8("vzaimode"));
         vzaimode->setGeometry(QRect(940, 20, 181, 131));
+        vzaimode->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 227, 187);"));
         plant_b = new QRadioButton(vzaimode);
         plant_b->setObjectName(QString::fromUtf8("plant_b"));
         plant_b->setGeometry(QRect(10, 20, 111, 17));
@@ -69,7 +74,8 @@ public:
         infodirt_b->setGeometry(QRect(10, 80, 101, 17));
         timemode = new QGroupBox(MainWidget);
         timemode->setObjectName(QString::fromUtf8("timemode"));
-        timemode->setGeometry(QRect(940, 170, 181, 101));
+        timemode->setGeometry(QRect(940, 280, 181, 101));
+        timemode->setStyleSheet(QString::fromUtf8("background-color: rgb(205, 208, 255);"));
         normal_b = new QRadioButton(timemode);
         normal_b->setObjectName(QString::fromUtf8("normal_b"));
         normal_b->setGeometry(QRect(10, 20, 91, 17));
@@ -130,6 +136,20 @@ public:
         palette1.setBrush(QPalette::Disabled, QPalette::Base, brush1);
         palette1.setBrush(QPalette::Disabled, QPalette::Window, brush1);
         label_2->setPalette(palette1);
+        type_plant = new QGroupBox(MainWidget);
+        type_plant->setObjectName(QString::fromUtf8("type_plant"));
+        type_plant->setGeometry(QRect(940, 163, 181, 101));
+        type_plant->setStyleSheet(QString::fromUtf8("background-color: rgb(204, 255, 188);"));
+        grass_type = new QRadioButton(type_plant);
+        grass_type->setObjectName(QString::fromUtf8("grass_type"));
+        grass_type->setGeometry(QRect(10, 20, 111, 17));
+        grass_type->setChecked(true);
+        bush_type = new QRadioButton(type_plant);
+        bush_type->setObjectName(QString::fromUtf8("bush_type"));
+        bush_type->setGeometry(QRect(10, 40, 121, 17));
+        tree_type = new QRadioButton(type_plant);
+        tree_type->setObjectName(QString::fromUtf8("tree_type"));
+        tree_type->setGeometry(QRect(10, 60, 121, 17));
 
         retranslateUi(MainWidget);
 
@@ -151,6 +171,10 @@ public:
         pogoda->setText(QString());
         label->setText(QCoreApplication::translate("MainWidget", "TextLabel", nullptr));
         label_2->setText(QCoreApplication::translate("MainWidget", "TextLabel", nullptr));
+        type_plant->setTitle(QCoreApplication::translate("MainWidget", "\320\222\320\270\320\264 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\321\217 \320\264\320\273\321\217 \320\277\320\276\321\201\320\260\320\264\320\272\320\270", nullptr));
+        grass_type->setText(QCoreApplication::translate("MainWidget", "\320\235\320\276\320\262\320\260\321\217 \321\202\321\200\320\260\320\262\320\260", nullptr));
+        bush_type->setText(QCoreApplication::translate("MainWidget", "\320\235\320\276\320\262\321\213\320\271 \320\272\321\203\321\201\321\202", nullptr));
+        tree_type->setText(QCoreApplication::translate("MainWidget", "\320\235\320\276\320\262\320\276\320\265 \320\264\320\265\321\200\320\265\320\262\320\276", nullptr));
     } // retranslateUi
 
 };
