@@ -5,10 +5,14 @@
 #include <QMouseEvent>
 
 #define TIME_TICK 1000 //время интервала таймера в миллисекундах
+#define SPEED_TICK 333 //время ускоренного интервала таймера в миллисекундах
+
 #define PLACE_X_MIN 20 //координата оx верхнего левого угла площадки леса
 #define PLACE_Y_MIN 20 //координата оy верхнего левого угла площадки леса
 #define PLACE_SIZE_X 800 //размер площадки леса по горизонтали
 #define PLACE_SIZE_Y 600 //размер площадки леса по вертикали
+
+QTimer *timer; // таймер для работы модели
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
@@ -22,9 +26,13 @@ MainWidget::MainWidget(QWidget *parent)
     ui->pogoda->setPixmap(sun); // вывести картинку в лейбл
     ui->place->setStyleSheet("background-image:url(\"dirt_grid.png\"); background-position: center;" ); // вывести земляной фон в frame
 
-    QTimer *timer = new QTimer(); // таймер для работы модели
+    timer = new QTimer(); // таймер для работы модели
     timer->start(TIME_TICK); //запустить таймер с интервалом в одну секунду
     QObject::connect(timer, SIGNAL(timeout()), SLOT(Timer_tick())); //по истечении интервала работает слот
+    QObject::connect(ui->normal_b, SIGNAL(toggled(bool)), SLOT(Normalmode(bool))); //привязать переключение радиокнопки к слоту
+    QObject::connect(ui->speed_b, SIGNAL(toggled(bool)), SLOT(Speedmode(bool))); //привязать переключение радиокнопки к слоту
+    QObject::connect(ui->pause_b, SIGNAL(toggled(bool)), SLOT(Pausemode(bool))); //привязать переключение радиокнопки к слоту
+
 }
 
 MainWidget::~MainWidget()
@@ -63,4 +71,28 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
 
 void MainWidget::Timer_tick() //слот интервала таймера
 {
+}
+
+void Normalmode(bool value) //слот при переключении в нормальный режим времени
+{
+    if(value==true)
+    {
+        timer->start(TIME_TICK); //запустить таймер с интервалом в одну секунду
+    }
+}
+
+void Speedmode(bool value) //слот при переключении в ускоренный режим времени
+{
+    if(value==true)
+    {
+        timer->start(SPEED_TICK); //запустить таймер с интервалом в треть секунды
+    }
+}
+
+void Pausemode(bool value) //слот при переключении в режим времени - паузу
+{
+    if(value==true)
+    {
+        timer->stop(); //остановить таймер
+    }
 }

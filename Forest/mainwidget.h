@@ -21,5 +21,8 @@ private:
 
 public slots: //публичные слоты
     void Timer_tick(); //слот интервала таймера
+    void Normalmode(bool value); //слот при переключении в нормальный режим времени
+    void Speedmode(bool value); //слот при переключении в ускоренный режим времени
+    void Pausemode(bool value); //слот при переключении в режим времени - паузу
 };
 #endif // MAINWIDGET_H
