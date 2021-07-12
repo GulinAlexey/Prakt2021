@@ -5,6 +5,10 @@
 #include <QMouseEvent>
 
 #define TIME_TICK 1000 //время интервала таймера в миллисекундах
+#define PLACE_X_MIN 20 //координата оx верхнего левого угла площадки леса
+#define PLACE_Y_MIN 20 //координата оy верхнего левого угла площадки леса
+#define PLACE_SIZE_X 800 //размер площадки леса по горизонтали
+#define PLACE_SIZE_Y 600 //размер площадки леса по вертикали
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
@@ -32,10 +36,13 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
 {
     if(e->button()==Qt::LeftButton) //если нажата левая кнопка мыши
     {
-        int x = cursor().pos().x();
-        int y = cursor().pos().y();
-        ui->label->setText(QString::number(x));
-        ui->label_2->setText(QString::number(y));
+        int x = (cursor().pos().x())- (this->geometry().x())- PLACE_X_MIN; //координата х мыши относительно place (площадка леса)
+        int y = cursor().pos().y()- (this->geometry().y())- PLACE_Y_MIN; //координата у мыши относительно place (площадка леса)
+        if(x>0 && y>0 && x<PLACE_SIZE_X && y<PLACE_SIZE_Y) //если клик произошёл внутри площадки леса (place)
+        {
+            ui->label->setText(QString::number(x)); //вывести координату х (временная строка)
+            ui->label_2->setText(QString::number(y)); //вывести координату y (временная строка)
+        }
     }
 }
 
