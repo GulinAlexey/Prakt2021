@@ -67,8 +67,8 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     forest.get_img(new_img, forest.get_kolvo_bush()-1, planttype); //получить адрес для объекта - label с изображением растения
                 if(ui->tree_type->isChecked()==true)
                     forest.get_img(new_img, forest.get_kolvo_tree()-1, planttype); //получить адрес для объекта - label с изображением растения
-                *new_img = new QLabel(); //создать новый label для картинки данного растения
-
+                *new_img = new QLabel(""); //создать новый label для картинки данного растения
+                //(*new_img)->setGeometry(x,y,w,h);
             }
             if(ui->delete_b->isChecked()==true) //если был выбран режим удаления растения
             {
