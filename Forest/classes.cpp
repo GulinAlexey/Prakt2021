@@ -34,6 +34,20 @@ void Plant::Change_OXY(int ox_new, int oy_new) //установка новых �
 }
 
 
+/*методы получения и установления полей объекта класса Лес*/
+int Forest::get_kolvo_grass()
+{
+    return kolvo_grass;
+}
+int Forest::get_kolvo_bush()
+{
+    return kolvo_bush;
+}
+int Forest::get_kolvo_tree()
+{
+    return kolvo_tree;
+}
+
 void Forest::Add_plant(int x, int y, int type)//добавить растение
 {
     if(type==1) //трава
@@ -147,6 +161,16 @@ void Forest::Delete_plant(int num, int type) //удалить растение �
         tree = plants_change; //теперь указатель указывает на новый массив
         kolvo_tree--; //уменьшить значение кол-ва объектов в массиве на 1
     }
+}
+
+void Forest::get_img(QLabel** png, int num, int type) //получить указатель на изображение выбранного растения
+{
+    if(type==1)
+       png=&grass[num].img;
+    if(type==2)
+       png=&bush[num].img;
+    if(type==3)
+       png=&tree[num].img;
 }
 
 /*методы получения и установления полей объекта класса Погода*/

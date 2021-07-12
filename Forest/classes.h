@@ -5,6 +5,8 @@
 
 #define KOLVO_DIRT 12 // кол-во ячеек почвы
 
+class Forest; //объявление класса
+
 class Plant // класс Растение
 {
 protected:
@@ -22,8 +24,7 @@ public:
     Plant();
     void Change_OXY(int ox_new, int oy_new); //установка новых координат
 
-    //дружественные функции (эти функции имеют доступ к полям Plant)
-    // friend void Add_plant(int x, int y, int type);
+    friend class Forest; //дружественный класс, имеет доступ ко всем полям данного
 };
 
 class Grass : public Plant //класс Трава
@@ -76,6 +77,12 @@ public:
     Forest();
     void Add_plant(int x, int y, int type); //добавить растение (тип: 1 - трава, 2 - куст, 3 - дерево)
     void Delete_plant(int num, int type); //удалить растение (тип: 1 - трава, 2 - куст, 3 - дерево)
+    void get_img(QLabel** png, int num, int type); //вернуть указатель на изображение выбранного растения
+
+    /*методы получения и установления полей объекта класса*/
+    int get_kolvo_grass();
+    int get_kolvo_bush();
+    int get_kolvo_tree();
 };
 
 class Weather //класс Погода

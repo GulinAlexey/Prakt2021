@@ -52,6 +52,7 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
             if(ui->plant_b->isChecked()==true) //если был выбран режим посадки растения
             {
                 int planttype; //тип высаживаемого растения (1 - трава, 2 - куст, 3 - дерево)
+                QLabel **new_img=nullptr; //указатель на новый label с картинкой растения
                 if(ui->grass_type->isChecked()==true)
                     planttype=1;
                 if(ui->bush_type->isChecked()==true)
@@ -59,6 +60,14 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                 if(ui->tree_type->isChecked()==true)
                     planttype=3;
                 forest.Add_plant(x,y,planttype); //добавить растение выбранного типа с выбранными координатами
+
+                if(ui->grass_type->isChecked()==true)
+                    forest.get_img(new_img, forest.get_kolvo_grass()-1, planttype); //получить адрес для объекта - label с изображением растения
+                if(ui->bush_type->isChecked()==true)
+                    forest.get_img(new_img, forest.get_kolvo_bush()-1, planttype); //получить адрес для объекта - label с изображением растения
+                if(ui->tree_type->isChecked()==true)
+                    forest.get_img(new_img, forest.get_kolvo_tree()-1, planttype); //получить адрес для объекта - label с изображением растения
+                *new_img = new QLabel(); //создать новый label для картинки данного растения
 
             }
             if(ui->delete_b->isChecked()==true) //если был выбран режим удаления растения
