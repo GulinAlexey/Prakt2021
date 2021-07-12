@@ -40,8 +40,23 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
         int y = cursor().pos().y()- (this->geometry().y())- PLACE_Y_MIN; //координата у мыши относительно place (площадка леса)
         if(x>0 && y>0 && x<PLACE_SIZE_X && y<PLACE_SIZE_Y) //если клик произошёл внутри площадки леса (place)
         {
-            ui->label->setText(QString::number(x)); //вывести координату х (временная строка)
-            ui->label_2->setText(QString::number(y)); //вывести координату y (временная строка)
+            if(ui->plant_b->isChecked()==true) //если был выбран режим посадки растения
+            {
+                ui->label->setText(QString::number(x)); //вывести координату х (временная строка)
+                ui->label_2->setText(QString::number(y)); //вывести координату y (временная строка)
+            }
+            if(ui->delete_b->isChecked()==true) //если был выбран режим удаления растения
+            {
+
+            }
+            if(ui->infoplant_b->isChecked()==true) //если был выбран режим инфо о растении
+            {
+
+            }
+            if(ui->infodirt_b->isChecked()==true) //если был выбран режим инфо о почве
+            {
+
+            }
         }
     }
 }
