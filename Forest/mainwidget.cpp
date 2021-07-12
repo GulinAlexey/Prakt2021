@@ -3,6 +3,8 @@
 #include "classes.h" //классы растение, погода и т. д. для работы программы
 #include <qtimer.h>
 
+#define TIME_TICK 1000 //время интервала таймера в миллисекундах
+
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MainWidget)
@@ -17,7 +19,8 @@ MainWidget::MainWidget(QWidget *parent)
 
     QObject::connect(ui->place, SIGNAL(click()), SLOT(Clicked_place())); // при клике в области place (площадка леса) работает слот
 
-    timer = new QTimer();
+    QTimer *timer = new QTimer(); // таймер для работы модели
+    timer->start(TIME_TICK); //запустить таймер с интервалом в одну секунду
 }
 
 MainWidget::~MainWidget()
