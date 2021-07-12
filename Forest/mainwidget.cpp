@@ -13,6 +13,8 @@ MainWidget::MainWidget(QWidget *parent)
     QPixmap rain = QPixmap("rain.png"); //объект с картинкой дождя
     ui->pogoda->setPixmap(sun); // вывести картинку в лейбл
     ui->place->setStyleSheet("background-image:url(\"dirt_grid.png\"); background-position: center;" ); // вывести земляной фон в group box
+
+    QObject::connect(ui->place, SIGNAL(click()), SLOT(Clicked_place())); // при клике в области place (площадка леса) работает слот
 }
 
 MainWidget::~MainWidget()
@@ -20,3 +22,9 @@ MainWidget::~MainWidget()
     delete ui;
 }
 
+void MainWidget::Clicked_place() //слот при нажатии внутри площадки леса
+{
+    int x = cursor().pos().x();
+    int y = cursor().pos().y();
+
+}

@@ -17,5 +17,8 @@ public:
 
 private:
     Ui::MainWidget *ui;
+
+public slots: //публичные слоты
+    void Clicked_place(); //слот при нажатии внутри площадки леса
 };
 #endif // MAINWIDGET_H
