@@ -1,6 +1,7 @@
 #include "mainwidget.h"
 #include "ui_mainwidget.h"
 #include "classes.h" //классы растение, погода и т. д. для работы программы
+#include <qtimer.h>
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
@@ -15,6 +16,8 @@ MainWidget::MainWidget(QWidget *parent)
     ui->place->setStyleSheet("background-image:url(\"dirt_grid.png\"); background-position: center;" ); // вывести земляной фон в group box
 
     QObject::connect(ui->place, SIGNAL(click()), SLOT(Clicked_place())); // при клике в области place (площадка леса) работает слот
+
+    timer = new QTimer();
 }
 
 MainWidget::~MainWidget()
