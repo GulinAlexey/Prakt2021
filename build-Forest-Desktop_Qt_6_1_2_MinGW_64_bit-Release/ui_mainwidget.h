@@ -25,6 +25,8 @@ class Ui_MainWidget
 public:
     QStatusBar *statusbar;
     QGroupBox *place;
+    QLabel *label;
+    QLabel *label_2;
     QGroupBox *vzaimode;
     QRadioButton *plant_b;
     QRadioButton *delete_b;
@@ -54,6 +56,138 @@ public:
         place->setMouseTracking(true);
         place->setAutoFillBackground(false);
         place->setStyleSheet(QString::fromUtf8("background-color: rgb(47, 28, 11)"));
+        label = new QLabel(place);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(20, 20, 47, 13));
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush);
+        palette.setBrush(QPalette::Active, QPalette::Light, brush);
+        palette.setBrush(QPalette::Active, QPalette::Midlight, brush);
+        QBrush brush1(QColor(127, 127, 127, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Dark, brush1);
+        QBrush brush2(QColor(170, 170, 170, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Mid, brush2);
+        QBrush brush3(QColor(0, 0, 0, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush3);
+        palette.setBrush(QPalette::Active, QPalette::BrightText, brush);
+        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush3);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush);
+        palette.setBrush(QPalette::Active, QPalette::Shadow, brush3);
+        palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush);
+        QBrush brush4(QColor(255, 255, 220, 255));
+        brush4.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipBase, brush4);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush3);
+        QBrush brush5(QColor(0, 0, 0, 128));
+        brush5.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush5);
+#endif
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Light, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Midlight, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Dark, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Mid, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush4);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush5);
+#endif
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Light, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Midlight, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Dark, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Mid, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush3);
+        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush5);
+#endif
+        label->setPalette(palette);
+        label_2 = new QLabel(place);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(20, 40, 47, 13));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        QBrush brush6(QColor(47, 28, 11, 255));
+        brush6.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::Button, brush6);
+        palette1.setBrush(QPalette::Active, QPalette::Light, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Midlight, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Dark, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Mid, brush2);
+        palette1.setBrush(QPalette::Active, QPalette::Text, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::BrightText, brush);
+        palette1.setBrush(QPalette::Active, QPalette::ButtonText, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::Base, brush6);
+        palette1.setBrush(QPalette::Active, QPalette::Window, brush6);
+        palette1.setBrush(QPalette::Active, QPalette::Shadow, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::AlternateBase, brush);
+        palette1.setBrush(QPalette::Active, QPalette::ToolTipBase, brush4);
+        palette1.setBrush(QPalette::Active, QPalette::ToolTipText, brush3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette1.setBrush(QPalette::Active, QPalette::PlaceholderText, brush5);
+#endif
+        palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Button, brush6);
+        palette1.setBrush(QPalette::Inactive, QPalette::Light, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Midlight, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Dark, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Mid, brush2);
+        palette1.setBrush(QPalette::Inactive, QPalette::Text, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::ButtonText, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::Base, brush6);
+        palette1.setBrush(QPalette::Inactive, QPalette::Window, brush6);
+        palette1.setBrush(QPalette::Inactive, QPalette::Shadow, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush4);
+        palette1.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette1.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush5);
+#endif
+        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Button, brush6);
+        palette1.setBrush(QPalette::Disabled, QPalette::Light, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Midlight, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Dark, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Mid, brush2);
+        palette1.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::BrightText, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Base, brush6);
+        palette1.setBrush(QPalette::Disabled, QPalette::Window, brush6);
+        palette1.setBrush(QPalette::Disabled, QPalette::Shadow, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush4);
+        palette1.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette1.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush5);
+#endif
+        label_2->setPalette(palette1);
         vzaimode = new QGroupBox(MainWidget);
         vzaimode->setObjectName(QString::fromUtf8("vzaimode"));
         vzaimode->setGeometry(QRect(940, 20, 181, 131));
@@ -97,6 +231,8 @@ public:
     {
         MainWidget->setWindowTitle(QCoreApplication::translate("MainWidget", "\320\240\320\260\321\201\321\202\320\270\321\202\320\265\320\273\321\214\320\275\320\276\320\265 \321\201\320\276\320\276\320\261\321\211\320\265\321\201\321\202\320\262\320\276", nullptr));
         place->setTitle(QString());
+        label->setText(QCoreApplication::translate("MainWidget", "TextLabel", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWidget", "TextLabel", nullptr));
         vzaimode->setTitle(QCoreApplication::translate("MainWidget", "\320\240\320\265\320\266\320\270\320\274 \320\262\320\267\320\260\320\270\320\274\320\276\320\264\320\265\320\271\321\201\321\202\320\262\320\270\321\217", nullptr));
         plant_b->setText(QCoreApplication::translate("MainWidget", "\320\241\320\260\320\264\320\270\321\202\321\214 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\320\265", nullptr));
         delete_b->setText(QCoreApplication::translate("MainWidget", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\320\265", nullptr));

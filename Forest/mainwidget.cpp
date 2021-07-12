@@ -17,7 +17,7 @@ MainWidget::MainWidget(QWidget *parent)
     ui->pogoda->setPixmap(sun); // вывести картинку в лейбл
     ui->place->setStyleSheet("background-image:url(\"dirt_grid.png\"); background-position: center;" ); // вывести земляной фон в group box
 
-    QObject::connect(ui->place, SIGNAL(click()), SLOT(Clicked_place())); // при клике в области place (площадка леса) работает слот
+    QObject::connect(ui->place, SIGNAL(clicked()), SLOT(Clicked_place())); // при клике в области place (площадка леса) работает слот
 
     QTimer *timer = new QTimer(); // таймер для работы модели
     timer->start(TIME_TICK); //запустить таймер с интервалом в одну секунду
@@ -33,10 +33,14 @@ void MainWidget::Clicked_place() //слот при нажатии внутри �
 {
     int x = cursor().pos().x();
     int y = cursor().pos().y();
-
+    ui->label->setText(QString::number(x));
+    ui->label_2->setText(QString::number(y));
 }
 
 void MainWidget::Timer_tick() //слот интервала таймера
 {
-
+    /*int x = cursor().pos().x();
+    int y = cursor().pos().y();
+    ui->label->setText(QString::number(x));
+    ui->label_2->setText(QString::number(y));*/
 }
