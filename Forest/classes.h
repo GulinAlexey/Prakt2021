@@ -9,8 +9,8 @@ class Forest; //объявление класса
 class Plant // класс Растение
 {
 protected:
-    int ox, oy; //координаты
-    int num_dirt; //номер ячейки почвы, на которой находится
+    int ox=0, oy=0; //координаты
+    int num_dirt=0; //номер ячейки почвы, на которой находится
     int height; //высота
     int radius; //радиус кроны
     int lightlove; //светолюбивость

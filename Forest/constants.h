@@ -1,6 +1,9 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+//макрос нахождения случайного числа в заданном диапазоне
+#define RAND(min,max) rand()%(max-min+1)+min
+
 /*ЗНАЧЕНИЯ ДЛЯ classes*/
 #define KOLVO_DIRT 12 // кол-во ячеек почвы
 #define DIRT_CELL_SIZE 200 //длина ребра одной ячейки почвы (квадратной)

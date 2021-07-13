@@ -17,10 +17,15 @@ Weather::Weather()
 
 void Grass::Init_rand() //трава, инициализация случайными значениями
 {
-    ox=0;
-    oy=0;
-    num_dirt=0;
     height=1;
+    //radius=;
+    //lightlove=;
+    //aggresiv=;
+    //wetlove=;
+    score_grow=0;
+    viability=1;
+    //max_height=;
+    //max_radius=;
 }
 
 void Bush::Init_rand() //куст, инициализация случайными значениями
