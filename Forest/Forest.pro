@@ -15,6 +15,7 @@ SOURCES += \
 
 HEADERS += \
     classes.h \
+    constants.h \
     mainwidget.h
 
 FORMS += \

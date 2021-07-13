@@ -2,8 +2,7 @@
 #define CLASSES_H
 
 #include <qlabel.h>
-
-#define KOLVO_DIRT 12 // кол-во ячеек почвы
+#include "constants.h"
 
 class Forest; //объявление класса
 
