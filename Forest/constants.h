@@ -20,6 +20,8 @@
 #define PLACE_SIZE_Y 600 //размер площадки леса по вертикали
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
+#define MIN_RADIUS_GRASS 5
+#define MAX_RADIUS_GRASS 200
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Bush - куст*/
 
