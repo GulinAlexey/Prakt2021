@@ -17,6 +17,10 @@ Weather::Weather()
 
 void Grass::Init_rand() //трава, инициализация случайными значениями
 {
+    ox=0;
+    oy=0;
+    num_dirt=0;
+    height=1;
 }
 
 void Bush::Init_rand() //куст, инициализация случайными значениями
@@ -46,6 +50,23 @@ int Forest::get_kolvo_bush()
 int Forest::get_kolvo_tree()
 {
     return kolvo_tree;
+}
+
+void Forest::Dirt_Init() //инициализация ячеек почвы
+{
+    int num=0; //номер ячейки почвы
+    for(int i=0, cell_y=0; i<KOLVO_CELL_Y; i++) //перебор по вертикали
+    {
+        for(int j=0, cell_x=0; j<KOLVO_CELL_X; j++) //перебор по горизонтали
+        {
+            dirt[num].ox_min=cell_x; //записать значение ox верхнего левого угла ячейки
+            dirt[num].oy_min=cell_y; //записать значение oy верхнего левого угла ячейки
+            num++; //перейти к сл. ячейке
+            cell_x+=DIRT_CELL_SIZE; //перейти к координате ox следующего верхнего левого угла
+
+        }
+        cell_y+=DIRT_CELL_SIZE; //перейти к координате oy следующего верхнего левого угла
+    }
 }
 
 void Forest::Add_plant(int x, int y, int type)//добавить растение
