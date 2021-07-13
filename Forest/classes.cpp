@@ -17,15 +17,15 @@ Weather::Weather()
 
 void Grass::Init_rand() //трава, инициализация случайными значениями
 {
-    height=1;
-    //radius=;
-    //lightlove=;
-    //aggresiv=;
-    //wetlove=;
-    score_grow=0;
-    viability=1;
-    //max_height=;
-    //max_radius=;
+    height=1; //начальная высота
+    //radius=; //начальный радиус кроны
+    //lightlove=; //светолюбивость
+    //aggresiv=; //агрессивность (скорость поглощения веществ и воды из почвы)
+    //wetlove=; //влаголюбивость
+    score_grow=0; //начальное кол-во очков роста
+    viability=1; //начальная жизнеспособность
+    //max_height=; //макс. высота растения
+    //max_radius=; //макс. радиус кроны
 }
 
 void Bush::Init_rand() //куст, инициализация случайными значениями

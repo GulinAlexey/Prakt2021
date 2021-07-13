@@ -20,6 +20,8 @@ MainWidget::MainWidget(QWidget *parent)
     ui->pogoda->setPixmap(sun); // вывести картинку в лейбл
     ui->place->setStyleSheet("background-image:url(\"dirt_grid.png\"); background-position: center;" ); // вывести земляной фон в frame
 
+    forest.Dirt_Init(); //инициализация ячеек почвы
+
     timer = new QTimer(); // таймер для работы модели
     timer->start(TIME_TICK); //запустить таймер с интервалом в одну секунду
     QObject::connect(timer, SIGNAL(timeout()), SLOT(Timer_tick())); //по истечении интервала работает слот
