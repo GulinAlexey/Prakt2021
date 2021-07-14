@@ -20,14 +20,27 @@
 #define PLACE_SIZE_Y 600 //размер площадки леса по вертикали
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
+#define HEIGHT_START_GRASS 1
+#define RADIUS_START_GRASS 5
+#define MIN_
+#define MAX_
+#define SCORE_GROW_START_GRASS 0
+#define VIABILITY_START_GRASS 1
 #define MIN_RADIUS_GRASS 5
 #define MAX_RADIUS_GRASS 200
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Bush - куст*/
+#define MIN_
+#define MAX_
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - дерево*/
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Dirt_cell - ячейка почвы*/
+#define MIN_FERTILITY 5
+#define MAX_FERTILITY 30
+#define EFFECTIV_START_DIRT 1
+#define MIN_WET_START_DIRT 0
+#define MAX_WET_START_DIRT 5
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Weather - погода*/
 

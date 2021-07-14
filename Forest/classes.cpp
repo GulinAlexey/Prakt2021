@@ -17,13 +17,13 @@ Weather::Weather()
 
 void Grass::Init_rand() //трава, инициализация случайными значениями
 {
-    height=1; //начальная высота
-    //radius=; //начальный радиус кроны
+    height=HEIGHT_START_GRASS; //начальная высота
+    radius=RADIUS_START_GRASS; //начальный радиус кроны
     //lightlove=; //светолюбивость
     //aggresiv=; //агрессивность (скорость поглощения веществ и воды из почвы)
     //wetlove=; //влаголюбивость
-    score_grow=0; //начальное кол-во очков роста
-    viability=1; //начальная жизнеспособность
+    score_grow=SCORE_GROW_START_GRASS; //начальное кол-во очков роста
+    viability=VIABILITY_START_GRASS; //начальная жизнеспособность
     //max_height=; //макс. высота растения
     max_radius=RAND(MIN_RADIUS_GRASS, MAX_RADIUS_GRASS); //макс. радиус кроны
 }
@@ -115,9 +115,9 @@ void Forest::Dirt_Init() //инициализация ячеек почвы
     }
     for(int i=0; i<KOLVO_DIRT; i++) //перебрать все ячейки
     {
-        //dirt[i].fertility=; // плодородность ячейки почвы
-        dirt[i].effectiv=1; // эффективность плодородности
-        //dirt[i].wet=; //влажность
+        dirt[i].fertility=RAND(MIN_FERTILITY, MAX_FERTILITY); // плодородность ячейки почвы
+        dirt[i].effectiv=EFFECTIV_START_DIRT; // эффективность плодородности
+        dirt[i].wet=RAND(MIN_WET_START_DIRT, MAX_WET_START_DIRT); //влажность
     }
 }
 
