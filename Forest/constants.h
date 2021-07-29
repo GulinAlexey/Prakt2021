@@ -21,11 +21,25 @@
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
 #define HEIGHT_START_GRASS 1
+
 #define RADIUS_START_GRASS 5
-#define MIN_
-#define MAX_
+
+#define MIN_LIGHTLOVE_GRASS 1
+#define MAX_LIGHTLOVE_GRASS 3
+
+#define MIN_AGGRESIV_GRASS 1
+#define MAX_AGGRESIV_GRASS 10
+
+#define MIN_WETLOVE_GRASS 10
+#define MAX_WETLOVE_GRASS 90
+
+#define MIN_END_HEIGHT_GRASS 30
+#define MAX_END_HEIGHT_GRASS 100
+
 #define SCORE_GROW_START_GRASS 0
+
 #define VIABILITY_START_GRASS 1
+
 #define MIN_RADIUS_GRASS 5
 #define MAX_RADIUS_GRASS 200
 

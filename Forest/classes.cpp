@@ -19,12 +19,12 @@ void Grass::Init_rand() //трава, инициализация случайн�
 {
     height=HEIGHT_START_GRASS; //начальная высота
     radius=RADIUS_START_GRASS; //начальный радиус кроны
-    //lightlove=; //светолюбивость
-    //aggresiv=; //агрессивность (скорость поглощения веществ и воды из почвы)
-    //wetlove=; //влаголюбивость
+    lightlove=RAND(MIN_LIGHTLOVE_GRASS, MAX_LIGHTLOVE_GRASS); //светолюбивость
+    aggresiv=RAND(MIN_AGGRESIV_GRASS, MAX_AGGRESIV_GRASS); //агрессивность (скорость поглощения веществ и воды из почвы)
+    wetlove=RAND(MIN_WETLOVE_GRASS, MAX_WETLOVE_GRASS); //влаголюбивость
     score_grow=SCORE_GROW_START_GRASS; //начальное кол-во очков роста
     viability=VIABILITY_START_GRASS; //начальная жизнеспособность
-    //max_height=; //макс. высота растения
+    end_height=RAND(MIN_END_HEIGHT_GRASS, MAX_END_HEIGHT_GRASS); //конечная (макс.) высота растения
     max_radius=RAND(MIN_RADIUS_GRASS, MAX_RADIUS_GRASS); //макс. радиус кроны
 }
 
