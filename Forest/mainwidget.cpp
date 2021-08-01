@@ -60,6 +60,9 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                 {
                     forest.get_img(new_img, forest.get_kolvo_grass()-1, planttype); //получить адрес для объекта - label с изображением растения
                     *new_img = new QLabel(""); //создать новый label для картинки данного растения
+                    int x_for_png, y_for_png, radius_for_png; //координаты x, y и радиус растения
+                    x_for_png=forest.get_x_plant(forest.get_kolvo_grass()-1, planttype); //получить значение поля растения
+
                 }
                 if(ui->bush_type->isChecked()==true)
                 {
