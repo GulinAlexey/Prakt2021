@@ -57,11 +57,20 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                 forest.Add_plant(x,y,planttype); //добавить растение выбранного типа с выбранными координатами
 
                 if(ui->grass_type->isChecked()==true)
+                {
                     forest.get_img(new_img, forest.get_kolvo_grass()-1, planttype); //получить адрес для объекта - label с изображением растения
+                    *new_img = new QLabel(""); //создать новый label для картинки данного растения
+                }
                 if(ui->bush_type->isChecked()==true)
+                {
                     forest.get_img(new_img, forest.get_kolvo_bush()-1, planttype); //получить адрес для объекта - label с изображением растения
+                    *new_img = new QLabel(""); //создать новый label для картинки данного растения
+                }
                 if(ui->tree_type->isChecked()==true)
+                {
                     forest.get_img(new_img, forest.get_kolvo_tree()-1, planttype); //получить адрес для объекта - label с изображением растения
+                    *new_img = new QLabel(""); //создать новый label для картинки данного растения
+                }
                 //*new_img = new QLabel(""); //создать новый label для картинки данного растения
                 //найти x, y, w и h через формулу, зная радиус?
                 //(*new_img)->setGeometry(x,y,w,h); //указать размеры картинки и её положение (координаты растения указывают на центр картинки, размер зависит от радиуса)

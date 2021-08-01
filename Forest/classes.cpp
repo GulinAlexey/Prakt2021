@@ -75,6 +75,52 @@ int Forest::get_kolvo_tree()
     return kolvo_tree;
 }
 
+int Forest::get_x_plant(int num, int type) //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].ox; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].ox; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].ox; //получить искомое значение поля
+    }
+}
+int Forest::get_y_plant(int num, int type) //получить поле "y" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].oy; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].oy; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].oy; //получить искомое значение поля
+    }
+}
+int Forest::get_radius_plant(int num, int type) //получить поле "radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].radius; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].radius; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].radius; //получить искомое значение поля
+    }
+}
+
 void Forest::Find_dirt_for_plant(int num, int type) //найти номер ячейки почвы для растения (координаты уже записаны в поля растения) (тип: 1 - трава, 2 - куст, 3 - дерево)
 {
     int x, y; //координаты растения, для которого нужно найти номер ячейки почвы

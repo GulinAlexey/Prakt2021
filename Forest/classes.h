@@ -87,6 +87,9 @@ public:
     void Find_dirt_for_plant(int num, int type); //найти номер ячейки почвы для растения (координаты уже записаны в поля растения) (тип: 1 - трава, 2 - куст, 3 - дерево)
 
     /*методы получения и установления полей объекта класса*/
+    int get_x_plant(int num, int type); //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_y_plant(int num, int type); //получить поле "y" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_radius_plant(int num, int type); //получить поле "radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_kolvo_grass();
     int get_kolvo_bush();
     int get_kolvo_tree();
