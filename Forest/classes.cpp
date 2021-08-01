@@ -30,10 +30,28 @@ void Grass::Init_rand() //трава, инициализация случайн�
 
 void Bush::Init_rand() //куст, инициализация случайными значениями
 {
+    height=HEIGHT_START_BUSH; //начальная высота
+    radius=RADIUS_START_BUSH; //начальный радиус кроны
+    lightlove=RAND(MIN_LIGHTLOVE_BUSH, MAX_LIGHTLOVE_BUSH); //светолюбивость
+    aggresiv=RAND(MIN_AGGRESIV_BUSH, MAX_AGGRESIV_BUSH); //агрессивность (скорость поглощения веществ и воды из почвы)
+    wetlove=RAND(MIN_WETLOVE_BUSH, MAX_WETLOVE_BUSH); //влаголюбивость
+    score_grow=SCORE_GROW_START_BUSH; //начальное кол-во очков роста
+    viability=VIABILITY_START_BUSH; //начальная жизнеспособность
+    end_height=RAND(MIN_END_HEIGHT_BUSH, MAX_END_HEIGHT_BUSH); //конечная (макс.) высота растения
+    max_radius=RAND(MIN_RADIUS_BUSH, MAX_RADIUS_BUSH); //макс. радиус кроны
 }
 
 void Tree::Init_rand() //дерево, инициализация случайными значениями
 {
+    height=HEIGHT_START_TREE; //начальная высота
+    radius=RADIUS_START_TREE; //начальный радиус кроны
+    lightlove=RAND(MIN_LIGHTLOVE_TREE, MAX_LIGHTLOVE_TREE); //светолюбивость
+    aggresiv=RAND(MIN_AGGRESIV_TREE, MAX_AGGRESIV_TREE); //агрессивность (скорость поглощения веществ и воды из почвы)
+    wetlove=RAND(MIN_WETLOVE_TREE, MAX_WETLOVE_TREE); //влаголюбивость
+    score_grow=SCORE_GROW_START_TREE; //начальное кол-во очков роста
+    viability=VIABILITY_START_TREE; //начальная жизнеспособность
+    end_height=RAND(MIN_END_HEIGHT_TREE, MAX_END_HEIGHT_TREE); //конечная (макс.) высота растения
+    max_radius=RAND(MIN_RADIUS_TREE, MAX_RADIUS_TREE); //макс. радиус кроны
 }
 
 void Plant::Change_OXY(int ox_new, int oy_new) //установка новых координат
