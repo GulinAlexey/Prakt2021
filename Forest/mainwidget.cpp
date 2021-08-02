@@ -83,7 +83,7 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     y_plant=forest.get_y_plant(forest.get_kolvo_grass()-1, planttype); //получить значение поля растения
                     radius_plant=forest.get_radius_plant(forest.get_kolvo_grass()-1, planttype); //получить значение поля растения
                     x_png = x_plant - radius_plant + PLACE_X_MIN; //получить координату x верхнего левого угла изображения растения
-                    y_png = y_plant + radius_plant + PLACE_Y_MIN; //получить координату y верхнего левого угла изображения растения
+                    y_png = y_plant - radius_plant + PLACE_Y_MIN; //получить координату y верхнего левого угла изображения растения
                     w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
                     new_img = new QLabel(" ", this); //создать новый label для картинки данного растения
                     new_img ->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
