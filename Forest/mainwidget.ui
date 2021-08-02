@@ -179,6 +179,9 @@
    </property>
   </widget>
   <widget class="QFrame" name="place">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>20</x>

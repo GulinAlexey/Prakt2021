@@ -8,16 +8,34 @@ QTimer *timer; // таймер для работы модели
 Forest forest; //объект - лес
 Weather weather; //объект - погода
 
+QPixmap *sun; //объект с картинкой солнца
+QPixmap *cloud; //объект с картинкой облака
+QPixmap *rain; //объект с картинкой дождя
+QPixmap *pgrass; //объект с картинкой Трава
+QPixmap *pgrass_selected; //объект с картинкой Трава выбранная
+QPixmap *pbush; //объект с картинкой Куст
+QPixmap *pbush_selected; //объект с картинкой Куст выбранный
+QPixmap *ptree; //объект с картинкой Дерево
+QPixmap *ptree_selected; //объект с картинкой Дерево выбранное
+
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MainWidget)
 {
     ui->setupUi(this);
     srand(time(NULL)); //автоматическая рандомизация генератора случайных чисел в зависимости от времени (чтобы всегда давал разный результат)
-    QPixmap sun = QPixmap("sun.png"); //объект с картинкой солнца
-    QPixmap cloud = QPixmap("cloud.png"); //объект с картинкой облака
-    QPixmap rain = QPixmap("rain.png"); //объект с картинкой дождя
-    ui->pogoda->setPixmap(sun); // вывести картинку в лейбл
+
+    sun = new QPixmap("sun.png"); //объект с картинкой солнца
+    cloud = new QPixmap("cloud.png"); //объект с картинкой облака
+    rain = new QPixmap("rain.png"); //объект с картинкой дождя
+    pgrass = new QPixmap("grass.png"); //объект с картинкой Трава
+    pgrass_selected = new QPixmap("grass_selected.png"); //объект с картинкой Трава выбранная
+    pbush = new QPixmap("bush.png"); //объект с картинкой Куст
+    pbush_selected = new QPixmap("bush_selected.png"); //объект с картинкой Куст выбранный
+    ptree = new QPixmap("tree.png"); //объект с картинкой Дерево
+    ptree_selected = new QPixmap("tree_selected.png"); //объект с картинкой Дерево выбранное
+
+    ui->pogoda->setPixmap(*sun); // вывести картинку в лейбл
     ui->place->setStyleSheet("background-image:url(\"dirt_grid.png\"); background-position: center;" ); // вывести земляной фон в frame
 
     forest.Dirt_Init(); //инициализация ячеек почвы
@@ -67,9 +85,13 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
                     y_png = y_plant + radius_plant; //получить координату y верхнего левого угла изображения растения
                     w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
-                    *new_img = new QLabel(""); //создать новый label для картинки данного растения
+                    (*new_img) = new QLabel(" ", this); //создать новый label для картинки данного растения
                     (*new_img)->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
+                    (*new_img)->setPixmap(*pgrass); // вывести картинку в лейбл
+                    (*new_img)->show();
 
+                    //добавить вывод картинки в label! И настроить адресацию по указателям!
+                    //(*new_img)->show();
                 }
                 if(ui->bush_type->isChecked()==true)
                 {
@@ -82,7 +104,7 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
                     y_png = y_plant + radius_plant; //получить координату y верхнего левого угла изображения растения
                     w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
-                    *new_img = new QLabel(""); //создать новый label для картинки данного растения
+                    *new_img = new QLabel(" ", this); //создать новый label для картинки данного растения
                     (*new_img)->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
                 }
                 if(ui->tree_type->isChecked()==true)
@@ -96,7 +118,7 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
                     y_png = y_plant + radius_plant; //получить координату y верхнего левого угла изображения растения
                     w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
-                    *new_img = new QLabel(""); //создать новый label для картинки данного растения
+                    *new_img = new QLabel(" ", this); //создать новый label для картинки данного растения
                     (*new_img)->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
                 }
 

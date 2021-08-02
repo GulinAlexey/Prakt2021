@@ -92,6 +92,7 @@ public:
         pogoda->setScaledContents(true);
         place = new QFrame(MainWidget);
         place->setObjectName(QString::fromUtf8("place"));
+        place->setEnabled(true);
         place->setGeometry(QRect(20, 20, 800, 600));
         place->setStyleSheet(QString::fromUtf8("background-color: rgb(47, 28, 11)"));
         place->setFrameShape(QFrame::StyledPanel);
