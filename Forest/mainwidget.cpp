@@ -59,9 +59,16 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                 if(ui->grass_type->isChecked()==true)
                 {
                     forest.get_img(new_img, forest.get_kolvo_grass()-1, planttype); //получить адрес для объекта - label с изображением растения
+                    int x_plant, y_plant, radius_plant; //координаты x, y и радиус растения
+                    int x_png, y_png, w_png, h_png; //координаты x, y изображения растения и его ширина, высота
+                    x_plant=forest.get_x_plant(forest.get_kolvo_grass()-1, planttype); //получить значение поля растения
+                    y_plant=forest.get_y_plant(forest.get_kolvo_grass()-1, planttype); //получить значение поля растения
+                    radius_plant=forest.get_radius_plant(forest.get_kolvo_grass()-1, planttype); //получить значение поля растения
+                    x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
+                    y_png = y_plant + radius_plant; //получить координату y верхнего левого угла изображения растения
+                    w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
                     *new_img = new QLabel(""); //создать новый label для картинки данного растения
-                    int x_for_png, y_for_png, radius_for_png; //координаты x, y и радиус растения
-                    x_for_png=forest.get_x_plant(forest.get_kolvo_grass()-1, planttype); //получить значение поля растения
+                    (*new_img)->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
 
                 }
                 if(ui->bush_type->isChecked()==true)
@@ -74,9 +81,7 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     forest.get_img(new_img, forest.get_kolvo_tree()-1, planttype); //получить адрес для объекта - label с изображением растения
                     *new_img = new QLabel(""); //создать новый label для картинки данного растения
                 }
-                //*new_img = new QLabel(""); //создать новый label для картинки данного растения
-                //найти x, y, w и h через формулу, зная радиус?
-                //(*new_img)->setGeometry(x,y,w,h); //указать размеры картинки и её положение (координаты растения указывают на центр картинки, размер зависит от радиуса)
+
             }
             if(ui->delete_b->isChecked()==true) //если был выбран режим удаления растения
             {
