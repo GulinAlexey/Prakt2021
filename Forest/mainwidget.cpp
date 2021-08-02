@@ -74,12 +74,30 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                 if(ui->bush_type->isChecked()==true)
                 {
                     forest.get_img(new_img, forest.get_kolvo_bush()-1, planttype); //получить адрес для объекта - label с изображением растения
+                    int x_plant, y_plant, radius_plant; //координаты x, y и радиус растения
+                    int x_png, y_png, w_png, h_png; //координаты x, y изображения растения и его ширина, высота
+                    x_plant=forest.get_x_plant(forest.get_kolvo_bush()-1, planttype); //получить значение поля растения
+                    y_plant=forest.get_y_plant(forest.get_kolvo_bush()-1, planttype); //получить значение поля растения
+                    radius_plant=forest.get_radius_plant(forest.get_kolvo_bush()-1, planttype); //получить значение поля растения
+                    x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
+                    y_png = y_plant + radius_plant; //получить координату y верхнего левого угла изображения растения
+                    w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
                     *new_img = new QLabel(""); //создать новый label для картинки данного растения
+                    (*new_img)->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
                 }
                 if(ui->tree_type->isChecked()==true)
                 {
                     forest.get_img(new_img, forest.get_kolvo_tree()-1, planttype); //получить адрес для объекта - label с изображением растения
+                    int x_plant, y_plant, radius_plant; //координаты x, y и радиус растения
+                    int x_png, y_png, w_png, h_png; //координаты x, y изображения растения и его ширина, высота
+                    x_plant=forest.get_x_plant(forest.get_kolvo_tree()-1, planttype); //получить значение поля растения
+                    y_plant=forest.get_y_plant(forest.get_kolvo_tree()-1, planttype); //получить значение поля растения
+                    radius_plant=forest.get_radius_plant(forest.get_kolvo_tree()-1, planttype); //получить значение поля растения
+                    x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
+                    y_png = y_plant + radius_plant; //получить координату y верхнего левого угла изображения растения
+                    w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
                     *new_img = new QLabel(""); //создать новый label для картинки данного растения
+                    (*new_img)->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
                 }
 
             }
