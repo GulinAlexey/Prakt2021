@@ -22,7 +22,7 @@
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
 #define HEIGHT_START_GRASS 1
 
-#define RADIUS_START_GRASS 5
+#define RADIUS_START_GRASS 20
 
 #define MIN_LIGHTLOVE_GRASS 1
 #define MAX_LIGHTLOVE_GRASS 3
@@ -46,7 +46,7 @@
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Bush - куст*/
 #define HEIGHT_START_BUSH 1
 
-#define RADIUS_START_BUSH 5
+#define RADIUS_START_BUSH 20
 
 #define MIN_LIGHTLOVE_BUSH 1
 #define MAX_LIGHTLOVE_BUSH 3
@@ -70,7 +70,7 @@
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Tree - дерево*/
 #define HEIGHT_START_TREE 1
 
-#define RADIUS_START_TREE 5
+#define RADIUS_START_TREE 20
 
 #define MIN_LIGHTLOVE_TREE 1
 #define MAX_LIGHTLOVE_TREE 3
