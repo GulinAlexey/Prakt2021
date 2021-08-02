@@ -82,13 +82,14 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     x_plant=forest.get_x_plant(forest.get_kolvo_grass()-1, planttype); //получить значение поля растения
                     y_plant=forest.get_y_plant(forest.get_kolvo_grass()-1, planttype); //получить значение поля растения
                     radius_plant=forest.get_radius_plant(forest.get_kolvo_grass()-1, planttype); //получить значение поля растения
-                    x_png = x_plant - radius_plant + PLACE_X_MIN; //получить координату x верхнего левого угла изображения растения
-                    y_png = y_plant - radius_plant + PLACE_Y_MIN; //получить координату y верхнего левого угла изображения растения
+                    x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
+                    y_png = y_plant - radius_plant; //получить координату y верхнего левого угла изображения растения
                     w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
-                    new_img = new QLabel(" ", this); //создать новый label для картинки данного растения
+                    new_img = new QLabel(" ", ui->place); //создать новый label для картинки данного растения
                     new_img ->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
                     new_img ->setPixmap(*pgrass); // вывести картинку в лейбл
                     new_img->setScaledContents(true); //автомасштабирование картинки внутри qlabel
+                    new_img->setStyleSheet("background-image:url(\"empty.png\");" ); // изменить фон на прозрачный (необходимо из-за наследования от place)
                     new_img ->show(); //вывести qlabel
 
 
@@ -101,13 +102,14 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     x_plant=forest.get_x_plant(forest.get_kolvo_bush()-1, planttype); //получить значение поля растения
                     y_plant=forest.get_y_plant(forest.get_kolvo_bush()-1, planttype); //получить значение поля растения
                     radius_plant=forest.get_radius_plant(forest.get_kolvo_bush()-1, planttype); //получить значение поля растения
-                    x_png = x_plant - radius_plant + PLACE_X_MIN; //получить координату x верхнего левого угла изображения растения
-                    y_png = y_plant - radius_plant + PLACE_Y_MIN; //получить координату y верхнего левого угла изображения растения
+                    x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
+                    y_png = y_plant - radius_plant; //получить координату y верхнего левого угла изображения растения
                     w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
-                    new_img = new QLabel(" ", this); //создать новый label для картинки данного растения
+                    new_img = new QLabel(" ", ui->place); //создать новый label для картинки данного растения
                     new_img ->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
                     new_img ->setPixmap(*pbush); // вывести картинку в лейбл
                     new_img->setScaledContents(true); //автомасштабирование картинки внутри qlabel
+                    new_img->setStyleSheet("background-image:url(\"empty.png\");" ); // изменить фон на прозрачный (необходимо из-за наследования от place)
                     new_img ->show(); //вывести qlabel
                 }
                 if(planttype==3)
@@ -118,13 +120,14 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     x_plant=forest.get_x_plant(forest.get_kolvo_tree()-1, planttype); //получить значение поля растения
                     y_plant=forest.get_y_plant(forest.get_kolvo_tree()-1, planttype); //получить значение поля растения
                     radius_plant=forest.get_radius_plant(forest.get_kolvo_tree()-1, planttype); //получить значение поля растения
-                    x_png = x_plant - radius_plant + PLACE_X_MIN; //получить координату x верхнего левого угла изображения растения
-                    y_png = y_plant - radius_plant + PLACE_Y_MIN; //получить координату y верхнего левого угла изображения растения
+                    x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
+                    y_png = y_plant - radius_plant; //получить координату y верхнего левого угла изображения растения
                     w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
-                    new_img = new QLabel(" ", this); //создать новый label для картинки данного растения
+                    new_img = new QLabel(" ", ui->place); //создать новый label для картинки данного растения
                     new_img ->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
                     new_img ->setPixmap(*ptree); // вывести картинку в лейбл
                     new_img->setScaledContents(true); //автомасштабирование картинки внутри qlabel
+                    new_img->setStyleSheet("background-image:url(\"empty.png\");" ); // изменить фон на прозрачный (необходимо из-за наследования от place)
                     new_img ->show(); //вывести qlabel
                 }
 
