@@ -162,6 +162,22 @@ void Forest::Find_dirt_for_plant(int num, int type) //найти номер яч
     }
 }
 
+int Forest::Belonging_of_coordinat(int num, int type, int x, int y) //проверка, что координаты x и y принадлежат окружности растения (возвращает 1, если верно и 0, если неверно)
+{
+    if(type==1) //трава
+    {
+
+    }
+    if(type==2) //куст
+    {
+
+    }
+    if(type==3) //дерево
+    {
+
+    }
+}
+
 void Forest::Dirt_Init() //инициализация ячеек почвы
 {
     int num=0; //номер ячейки почвы
