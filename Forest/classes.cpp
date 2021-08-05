@@ -162,19 +162,37 @@ void Forest::Find_dirt_for_plant(int num, int type) //найти номер яч
     }
 }
 
-int Forest::Belonging_of_coordinat(int num, int type, int x, int y) //проверка, что координаты x и y принадлежат окружности растения (возвращает 1, если верно и 0, если неверно)
+int Forest::Belonging_of_coordinat(int num, int type, int x_search, int y_search) //проверка, что координаты x и y принадлежат окружности растения (возвращает 1, если верно и 0, если неверно)
 {
     if(type==1) //трава
     {
-
+        int x_plant=grass[num].ox; //ox центра растения
+        int y_plant=grass[num].oy; //oy центра растения
+        int radius_plant=grass[num].radius; //радиус растения
+        if((pow(x_search-x_plant, 2) + pow(y_search-y_plant, 2))<=(radius_plant*radius_plant)) //проверка, принадлежат ли проверемые координаты окружности растения
+            return 1; //если верно
+        else
+            return 0; //если неверно
     }
     if(type==2) //куст
     {
-
+        int x_plant=bush[num].ox; //ox центра растения
+        int y_plant=bush[num].oy; //oy центра растения
+        int radius_plant=bush[num].radius; //радиус растения
+        if((pow(x_search-x_plant, 2) + pow(y_search-y_plant, 2))<=(radius_plant*radius_plant)) //проверка, принадлежат ли проверемые координаты окружности растения
+            return 1; //если верно
+        else
+            return 0; //если неверно
     }
     if(type==3) //дерево
     {
-
+        int x_plant=tree[num].ox; //ox центра растения
+        int y_plant=tree[num].oy; //oy центра растения
+        int radius_plant=tree[num].radius; //радиус растения
+        if((pow(x_search-x_plant, 2) + pow(y_search-y_plant, 2))<=(radius_plant*radius_plant)) //проверка, принадлежат ли проверемые координаты окружности растения
+            return 1; //если верно
+        else
+            return 0; //если неверно
     }
 }
 
