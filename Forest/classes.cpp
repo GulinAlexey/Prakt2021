@@ -137,6 +137,142 @@ int Forest::get_height_plant(int num, int type) //получить поле "hei
     }
 }
 
+int Forest::get_num_dirt_plant(int num, int type) //получить поле "num_dirt" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].num_dirt; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].num_dirt; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].num_dirt; //получить искомое значение поля
+    }
+}
+int Forest::get_lightlove_plant(int num, int type) //получить поле "lightlove" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].lightlove; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].lightlove; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].lightlove; //получить искомое значение поля
+    }
+}
+int Forest::get_aggresiv_plant(int num, int type) //получить поле "aggresiv" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].aggresiv; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].aggresiv; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].aggresiv; //получить искомое значение поля
+    }
+}
+int Forest::get_wetlove_plant(int num, int type) //получить поле "wetlove" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].wetlove; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].wetlove; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].wetlove; //получить искомое значение поля
+    }
+}
+int Forest::get_score_grow_plant(int num, int type) //получить поле "score_grow" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].score_grow; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].score_grow; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].score_grow; //получить искомое значение поля
+    }
+}
+int Forest::get_score_grow_max_plant(int num, int type) //получить поле "score_grow_max" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].score_grow_max; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].score_grow_max; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].score_grow_max; //получить искомое значение поля
+    }
+}
+float Forest::get_viability_plant(int num, int type) //получить поле "viability" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].viability; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].viability; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].viability; //получить искомое значение поля
+    }
+}
+int Forest::get_end_height_plant(int num, int type) //получить поле "end_height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].end_height; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].end_height; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].end_height; //получить искомое значение поля
+    }
+}
+int Forest::get_max_radius_plant(int num, int type) //получить поле "max_radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].max_radius; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].max_radius; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].max_radius; //получить искомое значение поля
+    }
+}
+
 void Forest::Find_dirt_for_plant(int num, int type) //найти номер ячейки почвы для растения (координаты уже записаны в поля растения) (тип: 1 - трава, 2 - куст, 3 - дерево)
 {
     int x, y; //координаты растения, для которого нужно найти номер ячейки почвы

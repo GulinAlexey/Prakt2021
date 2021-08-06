@@ -90,8 +90,17 @@ public:
     /*методы получения и установления полей объекта класса*/
     int get_x_plant(int num, int type); //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_y_plant(int num, int type); //получить поле "y" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
-    int get_radius_plant(int num, int type); //получить поле "radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_num_dirt_plant(int num, int type); //получить поле "num_dirt" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_height_plant(int num, int type); //получить поле "height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_radius_plant(int num, int type); //получить поле "radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_lightlove_plant(int num, int type); //получить поле "lightlove" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_aggresiv_plant(int num, int type); //получить поле "aggresiv" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_wetlove_plant(int num, int type); //получить поле "wetlove" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_score_grow_plant(int num, int type); //получить поле "score_grow" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_score_grow_max_plant(int num, int type); //получить поле "score_grow_max" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    float get_viability_plant(int num, int type); //получить поле "viability" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_end_height_plant(int num, int type); //получить поле "end_height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_max_radius_plant(int num, int type); //получить поле "max_radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_kolvo_grass();
     int get_kolvo_bush();
     int get_kolvo_tree();
