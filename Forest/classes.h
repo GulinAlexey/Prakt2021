@@ -82,7 +82,7 @@ public:
     Forest();
     void Add_plant(int x, int y, int type); //добавить растение (тип: 1 - трава, 2 - куст, 3 - дерево)
     void Delete_plant(int num, int type); //удалить растение (тип: 1 - трава, 2 - куст, 3 - дерево)
-    void get_img(QLabel** png, int num, int type); //вернуть указатель на изображение выбранного растения
+    void get_img(QLabel*** png, int num, int type); //вернуть указатель на изображение выбранного растения
     void Dirt_Init(); //инициализация ячеек почвы
     void Find_dirt_for_plant(int num, int type); //найти номер ячейки почвы для растения (координаты уже записаны в поля растения) (тип: 1 - трава, 2 - куст, 3 - дерево)
     int Belonging_of_coordinat(int num, int type, int x, int y); //проверка, что координаты x и y принадлежат окружности растения (возвращает 1, если верно и 0, если неверно)

@@ -65,7 +65,7 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
             if(ui->plant_b->isChecked()==true) //если был выбран режим посадки растения
             {
                 int planttype; //тип высаживаемого растения (1 - трава, 2 - куст, 3 - дерево)
-                QLabel *new_img=nullptr; //указатель на новый label с картинкой растения
+                QLabel **new_img=nullptr; //указатель на новый label с картинкой растения
                 if(ui->grass_type->isChecked()==true)
                     planttype=1;
                 if(ui->bush_type->isChecked()==true)
@@ -85,12 +85,12 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
                     y_png = y_plant - radius_plant; //получить координату y верхнего левого угла изображения растения
                     w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
-                    new_img = new QLabel(" ", ui->place); //создать новый label для картинки данного растения
-                    new_img ->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
-                    new_img ->setPixmap(*pgrass); // вывести картинку в лейбл
-                    new_img->setScaledContents(true); //автомасштабирование картинки внутри qlabel
-                    new_img->setStyleSheet("background-image:url(\"empty.png\");" ); // изменить фон на прозрачный (необходимо из-за наследования от place)
-                    new_img ->show(); //вывести qlabel
+                    (*new_img) = new QLabel(" ", ui->place); //создать новый label для картинки данного растения
+                    (*new_img) ->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
+                    (*new_img) ->setPixmap(*pgrass); // вывести картинку в лейбл
+                    (*new_img)->setScaledContents(true); //автомасштабирование картинки внутри qlabel
+                    (*new_img)->setStyleSheet("background-image:url(\"empty.png\");" ); // изменить фон на прозрачный (необходимо из-за наследования от place)
+                    (*new_img) ->show(); //вывести qlabel
 
 
                 }
@@ -105,12 +105,12 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
                     y_png = y_plant - radius_plant; //получить координату y верхнего левого угла изображения растения
                     w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
-                    new_img = new QLabel(" ", ui->place); //создать новый label для картинки данного растения
-                    new_img ->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
-                    new_img ->setPixmap(*pbush); // вывести картинку в лейбл
-                    new_img->setScaledContents(true); //автомасштабирование картинки внутри qlabel
-                    new_img->setStyleSheet("background-image:url(\"empty.png\");" ); // изменить фон на прозрачный (необходимо из-за наследования от place)
-                    new_img ->show(); //вывести qlabel
+                    (*new_img) = new QLabel(" ", ui->place); //создать новый label для картинки данного растения
+                    (*new_img) ->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
+                    (*new_img) ->setPixmap(*pbush); // вывести картинку в лейбл
+                    (*new_img)->setScaledContents(true); //автомасштабирование картинки внутри qlabel
+                    (*new_img)->setStyleSheet("background-image:url(\"empty.png\");" ); // изменить фон на прозрачный (необходимо из-за наследования от place)
+                    (*new_img) ->show(); //вывести qlabel
                 }
                 if(planttype==3)
                 {
@@ -123,18 +123,18 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     x_png = x_plant - radius_plant; //получить координату x верхнего левого угла изображения растения
                     y_png = y_plant - radius_plant; //получить координату y верхнего левого угла изображения растения
                     w_png = h_png = radius_plant*2; // получить ширину и высоту изображения
-                    new_img = new QLabel(" ", ui->place); //создать новый label для картинки данного растения
-                    new_img ->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
-                    new_img ->setPixmap(*ptree); // вывести картинку в лейбл
-                    new_img->setScaledContents(true); //автомасштабирование картинки внутри qlabel
-                    new_img->setStyleSheet("background-image:url(\"empty.png\");" ); // изменить фон на прозрачный (необходимо из-за наследования от place)
-                    new_img ->show(); //вывести qlabel
+                    (*new_img) = new QLabel(" ", ui->place); //создать новый label для картинки данного растения
+                    (*new_img) ->setGeometry(x_png,y_png,w_png,h_png); //указать размеры картинки и её положение
+                    (*new_img) ->setPixmap(*ptree); // вывести картинку в лейбл
+                    (*new_img)->setScaledContents(true); //автомасштабирование картинки внутри qlabel
+                    (*new_img)->setStyleSheet("background-image:url(\"empty.png\");" ); // изменить фон на прозрачный (необходимо из-за наследования от place)
+                    (*new_img) ->show(); //вывести qlabel
                 }
 
             }
             if(ui->delete_b->isChecked()==true) //если был выбран режим удаления растения (удаляется самое верхнее растение)
             {
-                int num_delete=0; //номер искомого растения для удаления
+                int num_delete=-1; //номер искомого растения для удаления
                 int type_delete=0; //тип искомого растения для удаления
                 int max_height=0; //наибольшая высота растения на данный момент (удаляется самое высокое растение)
                 for(int i=0, type=3, all=forest.get_kolvo_tree(); i<all; i++) //перебрать растения типа Дерево
@@ -176,12 +176,12 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                         }
                     }
                 }
-                if(num_delete!=0) //если найдено растение для удаления
+                if(num_delete!=-1) //если найдено растение для удаления
                 {
-                    QLabel *img_delete=nullptr; //указатель на label с картинкой растения
+                    QLabel **img_delete=nullptr; //указатель на label с картинкой растения
                     forest.get_img(&img_delete, num_delete, type_delete); //получить адрес для объекта - label с изображением растения
-                    img_delete->hide(); //удалить qlabel  с изображением растения
-                    //forest.Delete_plant(num_delete, type_delete); //удалить объект растения
+                    (*img_delete)->deleteLater(); //удалить qlabel  с изображением растения
+                    forest.Delete_plant(num_delete, type_delete); //удалить объект растения
                 }
 
             }

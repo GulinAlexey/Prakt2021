@@ -302,7 +302,7 @@ void Forest::Delete_plant(int num, int type) //удалить растение �
 
         for(int i=0, j=0; i<kolvo; i++)
         {
-            if(j!=num)
+            if(i!=num)
             {
                 plants_change[j]=plants_old[i]; //перенести значения в новый массив
                 j++;
@@ -322,7 +322,7 @@ void Forest::Delete_plant(int num, int type) //удалить растение �
 
         for(int i=0, j=0; i<kolvo; i++)
         {
-            if(j!=num)
+            if(i!=num)
             {
                 plants_change[j]=plants_old[i]; //перенести значения в новый массив
                 j++;
@@ -342,7 +342,7 @@ void Forest::Delete_plant(int num, int type) //удалить растение �
 
         for(int i=0, j=0; i<kolvo; i++)
         {
-            if(j!=num)
+            if(i!=num)
             {
                 plants_change[j]=plants_old[i]; //перенести значения в новый массив
                 j++;
@@ -356,14 +356,14 @@ void Forest::Delete_plant(int num, int type) //удалить растение �
     }
 }
 
-void Forest::get_img(QLabel** png, int num, int type) //получить указатель на изображение выбранного растения
+void Forest::get_img(QLabel*** png, int num, int type) //получить указатель на изображение выбранного растения
 {
     if(type==1)
-       *png=grass[num].img;
+       (*png)=&grass[num].img;
     if(type==2)
-       *png=bush[num].img;
+       (*png)=&bush[num].img;
     if(type==3)
-       *png=tree[num].img;
+       (*png)=&tree[num].img;
 }
 
 void Weather::Weather_Init() //инициализация погоды
