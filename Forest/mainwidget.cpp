@@ -282,6 +282,12 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         if(f_update==1)
         {
             ui->info_name->setText("Инфо о ячейке почвы");
+            ui->info_0->setText("NUM:");
+            ui->info_1->setText("OX верхн. лев. угла:");
+            ui->info_2->setText("OY верхн. лев. угла:");
+            ui->info_3->setText("Плодородность:");
+            ui->info_4->setText("Эффектив. плодородн.:");
+            ui->info_5->setText("Влажность:");
         }
     }
     if(type>=1 && type<=3 && f_update==1) //если инфо о растении и нужно обновить строки
@@ -289,7 +295,18 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         ui->info_name->setText("Инфо о растении");
         ui->info_0->setText("NUM:");
         ui->info_1->setText("OX центра:");
-
+        ui->info_2->setText("OY центра:");
+        ui->info_3->setText("NUM ячейки почвы:");
+        ui->info_4->setText("Высота:");
+        ui->info_5->setText("Радиус:");
+        ui->info_6->setText("Светолюбивость:");
+        ui->info_7->setText("Агрессивность:");
+        ui->info_8->setText("Влаголюбивость:");
+        ui->info_9->setText("Кол-во очков роста:");
+        ui->info_10->setText("Макс. кол-во очков роста:");
+        ui->info_11->setText("Жизнеспособность:");
+        ui->info_12->setText("Макс. высота:");
+        ui->info_13->setText("Макс. радиус:");
     }
 }
 
