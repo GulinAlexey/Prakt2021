@@ -121,6 +121,22 @@ int Forest::get_radius_plant(int num, int type) //получить поле "rad
     }
 }
 
+int Forest::get_height_plant(int num, int type) //получить поле "height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].height; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].height; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].height; //получить искомое значение поля
+    }
+}
+
 void Forest::Find_dirt_for_plant(int num, int type) //найти номер ячейки почвы для растения (координаты уже записаны в поля растения) (тип: 1 - трава, 2 - куст, 3 - дерево)
 {
     int x, y; //координаты растения, для которого нужно найти номер ячейки почвы

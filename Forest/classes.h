@@ -91,6 +91,7 @@ public:
     int get_x_plant(int num, int type); //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_y_plant(int num, int type); //получить поле "y" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_radius_plant(int num, int type); //получить поле "radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_height_plant(int num, int type); //получить поле "height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_kolvo_grass();
     int get_kolvo_bush();
     int get_kolvo_tree();

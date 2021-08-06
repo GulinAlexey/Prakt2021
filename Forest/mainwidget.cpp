@@ -132,8 +132,57 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                 }
 
             }
-            if(ui->delete_b->isChecked()==true) //если был выбран режим удаления растения
+            if(ui->delete_b->isChecked()==true) //если был выбран режим удаления растения (удаляется самое верхнее растение)
             {
+                int num_delete=0; //номер искомого растения для удаления
+                int type_delete=0; //тип искомого растения для удаления
+                int max_height=0; //наибольшая высота растения на данный момент (удаляется самое высокое растение)
+                for(int i=0, type=3, all=forest.get_kolvo_tree(); i<all; i++) //перебрать растения типа Дерево
+                {
+                    if(forest.Belonging_of_coordinat(i,type,x,y)==1) //если координаты клика мыши принадлежат окружности растения
+                    {
+                        int height_plant=forest.get_height_plant(i,type); //получить значение высоты данного растения
+                        if(height_plant>max_height) //если высота данного выше ранее сохранённой
+                        {
+                            max_height=height_plant; //теперь макс. высота имеет новое значение
+                            num_delete=i; //на данный момент удалению подлежит данное растение
+                            type_delete=type; //на данный момент удалению подлежит данное растение данного типа
+                        }
+                    }
+                }
+                for(int i=0, type=2, all=forest.get_kolvo_bush(); i<all; i++) //перебрать растения типа Куст
+                {
+                    if(forest.Belonging_of_coordinat(i,type,x,y)==1) //если координаты клика мыши принадлежат окружности растения
+                    {
+                        int height_plant=forest.get_height_plant(i,type); //получить значение высоты данного растения
+                        if(height_plant>max_height) //если высота данного выше ранее сохранённой
+                        {
+                            max_height=height_plant; //теперь макс. высота имеет новое значение
+                            num_delete=i; //на данный момент удалению подлежит данное растение
+                            type_delete=type; //на данный момент удалению подлежит данное растение данного типа
+                        }
+                    }
+                }
+                for(int i=0, type=1, all=forest.get_kolvo_grass(); i<all; i++) //перебрать растения типа Трава
+                {
+                    if(forest.Belonging_of_coordinat(i,type,x,y)==1) //если координаты клика мыши принадлежат окружности растения
+                    {
+                        int height_plant=forest.get_height_plant(i,type); //получить значение высоты данного растения
+                        if(height_plant>max_height) //если высота данного выше ранее сохранённой
+                        {
+                            max_height=height_plant; //теперь макс. высота имеет новое значение
+                            num_delete=i; //на данный момент удалению подлежит данное растение
+                            type_delete=type; //на данный момент удалению подлежит данное растение данного типа
+                        }
+                    }
+                }
+                if(num_delete!=0) //если найдено растение для удаления
+                {
+                    QLabel *img_delete=nullptr; //указатель на label с картинкой растения
+                    forest.get_img(&img_delete, num_delete, type_delete); //получить адрес для объекта - label с изображением растения
+                    img_delete->hide(); //удалить qlabel  с изображением растения
+                    //forest.Delete_plant(num_delete, type_delete); //удалить объект растения
+                }
 
             }
             if(ui->infoplant_b->isChecked()==true) //если был выбран режим инфо о растении
