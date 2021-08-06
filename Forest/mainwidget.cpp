@@ -291,6 +291,25 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
             ui->info_2->setText("Плодородность:");
             ui->info_3->setText("Эффектив. плодородн.:");
             ui->info_4->setText("Влажность:");
+            /*Очистка лишних строк*/
+            ui->info_5->setText(" ");
+            ui->info_6->setText(" ");
+            ui->info_7->setText(" ");
+            ui->info_8->setText(" ");
+            ui->info_9->setText(" ");
+            ui->info_10->setText(" ");
+            ui->info_11->setText(" ");
+            ui->info_12->setText(" ");
+            ui->info_13->setText(" ");
+            ui->i_5->setText(" ");
+            ui->i_6->setText(" ");
+            ui->i_7->setText(" ");
+            ui->i_8->setText(" ");
+            ui->i_9->setText(" ");
+            ui->i_10->setText(" ");
+            ui->i_11->setText(" ");
+            ui->i_12->setText(" ");
+            ui->i_13->setText(" ");
         }
         /*Вывод инфо о почве*/
     }
