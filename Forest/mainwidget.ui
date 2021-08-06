@@ -39,7 +39,7 @@
      <x>830</x>
      <y>20</y>
      <width>181</width>
-     <height>131</height>
+     <height>111</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -108,7 +108,7 @@
    <property name="geometry">
     <rect>
      <x>830</x>
-     <y>270</y>
+     <y>240</y>
      <width>181</width>
      <height>91</height>
     </rect>
@@ -466,7 +466,7 @@
    <property name="geometry">
     <rect>
      <x>830</x>
-     <y>163</y>
+     <y>140</y>
      <width>181</width>
      <height>91</height>
     </rect>
@@ -524,9 +524,9 @@
    <property name="geometry">
     <rect>
      <x>830</x>
-     <y>390</y>
+     <y>360</y>
      <width>150</width>
-     <height>301</height>
+     <height>331</height>
     </rect>
    </property>
    <property name="palette">
@@ -984,7 +984,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>35</y>
+      <y>60</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -993,6 +993,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>OX центра: </string>
@@ -1002,7 +1005,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>55</y>
+      <y>80</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1013,7 +1016,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>OY центра: </string>
@@ -1023,7 +1026,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>75</y>
+      <y>100</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1032,6 +1035,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>NUM ячейки почвы: </string>
@@ -1041,7 +1047,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>95</y>
+      <y>120</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1052,7 +1058,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Высота: </string>
@@ -1062,7 +1068,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>135</y>
+      <y>160</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1073,7 +1079,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Светолюбивость: </string>
@@ -1083,7 +1089,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>155</y>
+      <y>180</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1092,6 +1098,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Агрессивность: </string>
@@ -1101,7 +1110,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>175</y>
+      <y>200</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1112,7 +1121,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Влаголюбивость: </string>
@@ -1122,7 +1131,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>195</y>
+      <y>220</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1131,6 +1140,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Кол-во очков роста: </string>
@@ -1140,7 +1152,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>115</y>
+      <y>140</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1149,6 +1161,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Радиус: </string>
@@ -1158,7 +1173,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>215</y>
+      <y>240</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1169,7 +1184,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Макс. очков роста: </string>
@@ -1179,7 +1194,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>235</y>
+      <y>260</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1188,6 +1203,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Жизнеспособность: </string>
@@ -1197,7 +1215,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>255</y>
+      <y>280</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1208,7 +1226,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Макс. высота: </string>
@@ -1218,7 +1236,28 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>15</y>
+      <y>40</y>
+      <width>137</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>NUM: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="info_13">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1232,14 +1271,14 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>NUM: </string>
+     <string>Макс. радиус: </string>
     </property>
    </widget>
-   <widget class="QLabel" name="info_13">
+   <widget class="QLabel" name="info_00">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>275</y>
+      <y>20</y>
       <width>137</width>
       <height>16</height>
      </rect>
@@ -1249,8 +1288,11 @@
       <family>Consolas</family>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
     <property name="text">
-     <string>Макс. радиус: </string>
+     <string>Type: </string>
     </property>
    </widget>
   </widget>
@@ -1258,9 +1300,9 @@
    <property name="geometry">
     <rect>
      <x>980</x>
-     <y>390</y>
+     <y>360</y>
      <width>141</width>
-     <height>301</height>
+     <height>331</height>
     </rect>
    </property>
    <property name="palette">
@@ -1718,7 +1760,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>35</y>
+      <y>60</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1727,6 +1769,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>0</string>
@@ -1736,7 +1781,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>55</y>
+      <y>80</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1747,7 +1792,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>0</string>
@@ -1757,7 +1802,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>75</y>
+      <y>100</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1766,6 +1811,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>0</string>
@@ -1775,7 +1823,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>95</y>
+      <y>120</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1786,7 +1834,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>0</string>
@@ -1796,7 +1844,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>135</y>
+      <y>160</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1807,7 +1855,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>0</string>
@@ -1817,7 +1865,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>155</y>
+      <y>180</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1826,6 +1874,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>0</string>
@@ -1835,7 +1886,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>175</y>
+      <y>200</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1846,7 +1897,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>0</string>
@@ -1856,7 +1907,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>195</y>
+      <y>220</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1865,6 +1916,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>0</string>
@@ -1874,7 +1928,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>115</y>
+      <y>140</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1883,6 +1937,9 @@
      <font>
       <family>Consolas</family>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>0</string>
@@ -1892,7 +1949,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>215</y>
+      <y>240</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1903,7 +1960,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>0</string>
@@ -1913,25 +1970,7 @@
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>235</y>
-      <width>135</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Consolas</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="i_12">
-    <property name="geometry">
-     <rect>
-      <x>3</x>
-      <y>255</y>
+      <y>260</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1948,11 +1987,74 @@
      <string>0</string>
     </property>
    </widget>
+   <widget class="QLabel" name="i_12">
+    <property name="geometry">
+     <rect>
+      <x>3</x>
+      <y>280</y>
+      <width>135</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
    <widget class="QLabel" name="i_0">
     <property name="geometry">
      <rect>
       <x>3</x>
-      <y>15</y>
+      <y>40</y>
+      <width>135</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>-1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="i_13">
+    <property name="geometry">
+     <rect>
+      <x>3</x>
+      <y>300</y>
+      <width>135</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="i_00">
+    <property name="geometry">
+     <rect>
+      <x>3</x>
+      <y>20</y>
       <width>135</width>
       <height>16</height>
      </rect>
@@ -1969,30 +2071,12 @@
      <string>-1</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_13">
-    <property name="geometry">
-     <rect>
-      <x>3</x>
-      <y>275</y>
-      <width>135</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Consolas</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QLabel" name="info_name">
    <property name="geometry">
     <rect>
      <x>831</x>
-     <y>370</y>
+     <y>340</y>
      <width>291</width>
      <height>20</height>
     </rect>

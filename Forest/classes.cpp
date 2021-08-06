@@ -227,7 +227,7 @@ int Forest::get_score_grow_max_plant(int num, int type) //получить по�
        return tree[num].score_grow_max; //получить искомое значение поля
     }
 }
-float Forest::get_viability_plant(int num, int type) //получить поле "viability" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+double Forest::get_viability_plant(int num, int type) //получить поле "viability" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
 {
     if(type==1) //трава
     {

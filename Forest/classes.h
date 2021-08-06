@@ -18,7 +18,7 @@ protected:
     int wetlove; //влаголюбивость
     int score_grow; //текущее кол-во очков роста (при достижении максимума увеличивается высота и радиус, а данный показатель вновь обнуляется)
     int score_grow_max; //макс кол-во очков роста, требуемое для роста растения
-    float viability; //жизнеспособность (при уменьшении до нулевого значения растение умирает)
+    double viability; //жизнеспособность (при уменьшении до нулевого значения растение умирает)
 
     int end_height; //конечная (макс.) высота растения (случайно генерируется при посадке, значение зависит от типа растения)
     int max_radius; //макс. радиус кроны (случайно генерируется при посадке, значение зависит от типа растения)
@@ -98,7 +98,7 @@ public:
     int get_wetlove_plant(int num, int type); //получить поле "wetlove" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_score_grow_plant(int num, int type); //получить поле "score_grow" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_score_grow_max_plant(int num, int type); //получить поле "score_grow_max" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
-    float get_viability_plant(int num, int type); //получить поле "viability" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    double get_viability_plant(int num, int type); //получить поле "viability" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_end_height_plant(int num, int type); //получить поле "end_height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_max_radius_plant(int num, int type); //получить поле "max_radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_kolvo_grass();

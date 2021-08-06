@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWidget_t {
-    const uint offsetsAndSize[14];
-    char stringdata0[60];
+    const uint offsetsAndSize[22];
+    char stringdata0[89];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWidget_t, stringdata0) + ofs), len 
@@ -35,11 +35,16 @@ QT_MOC_LITERAL(22, 0), // ""
 QT_MOC_LITERAL(23, 10), // "Normalmode"
 QT_MOC_LITERAL(34, 5), // "value"
 QT_MOC_LITERAL(40, 9), // "Speedmode"
-QT_MOC_LITERAL(50, 9) // "Pausemode"
+QT_MOC_LITERAL(50, 9), // "Pausemode"
+QT_MOC_LITERAL(60, 10), // "Print_info"
+QT_MOC_LITERAL(71, 3), // "num"
+QT_MOC_LITERAL(75, 4), // "type"
+QT_MOC_LITERAL(80, 8) // "f_update"
 
     },
     "MainWidget\0Timer_tick\0\0Normalmode\0"
-    "value\0Speedmode\0Pausemode"
+    "value\0Speedmode\0Pausemode\0Print_info\0"
+    "num\0type\0f_update"
 };
 #undef QT_MOC_LITERAL
 
@@ -49,7 +54,7 @@ static const uint qt_meta_data_MainWidget[] = {
        9,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -57,16 +62,18 @@ static const uint qt_meta_data_MainWidget[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   38,    2, 0x0a,    0 /* Public */,
-       3,    1,   39,    2, 0x0a,    1 /* Public */,
-       5,    1,   42,    2, 0x0a,    3 /* Public */,
-       6,    1,   45,    2, 0x0a,    5 /* Public */,
+       1,    0,   44,    2, 0x0a,    0 /* Public */,
+       3,    1,   45,    2, 0x0a,    1 /* Public */,
+       5,    1,   48,    2, 0x0a,    3 /* Public */,
+       6,    1,   51,    2, 0x0a,    5 /* Public */,
+       7,    3,   54,    2, 0x0a,    7 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,    4,
     QMetaType::Void, QMetaType::Bool,    4,
     QMetaType::Void, QMetaType::Bool,    4,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    8,    9,   10,
 
        0        // eod
 };
@@ -81,6 +88,7 @@ void MainWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->Normalmode((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 2: _t->Speedmode((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 3: _t->Pausemode((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 4: _t->Print_info((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         default: ;
         }
     }
@@ -94,7 +102,7 @@ const QMetaObject MainWidget::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWidget_t
 
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
 
 
 >,
@@ -121,13 +129,13 @@ int MainWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

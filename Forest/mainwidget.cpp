@@ -234,8 +234,11 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                 if(num_info_new!=-1) //если найдено растение для вывода инфо
                 {
                     num_info=num_info_new; //записать новое значение номера для вывода
+                    int update_f=1; //флаг обновления названий строк
+                    if(type_of_info==0) //если до этого выводилась инфо о растении, то обновлять названия строк не надо
+                        update_f=0;
                     type_of_info=type_of_info_new; //записать новое значение типа для вывода
-
+                    Print_info(num_info, type_of_info, update_f); //вывести инфо в спец. блок
                 }
 
             }
@@ -279,34 +282,68 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
 {
     if(type==0) //если инфо о почве
     {
-        if(f_update==1)
+        if(f_update==1) //если нужно обновить строки
         {
             ui->info_name->setText("Инфо о ячейке почвы");
-            ui->info_0->setText("NUM:");
-            ui->info_1->setText("OX верхн. лев. угла:");
-            ui->info_2->setText("OY верхн. лев. угла:");
-            ui->info_3->setText("Плодородность:");
-            ui->info_4->setText("Эффектив. плодородн.:");
-            ui->info_5->setText("Влажность:");
+            ui->info_00->setText("NUM:");
+            ui->info_0->setText("OX верхн. лев. угла:");
+            ui->info_1->setText("OY верхн. лев. угла:");
+            ui->info_2->setText("Плодородность:");
+            ui->info_3->setText("Эффектив. плодородн.:");
+            ui->info_4->setText("Влажность:");
         }
+        /*Вывод инфо о почве*/
     }
-    if(type>=1 && type<=3 && f_update==1) //если инфо о растении и нужно обновить строки
+    if(type>=1 && type<=3) //если инфо о растении
     {
-        ui->info_name->setText("Инфо о растении");
-        ui->info_0->setText("NUM:");
-        ui->info_1->setText("OX центра:");
-        ui->info_2->setText("OY центра:");
-        ui->info_3->setText("NUM ячейки почвы:");
-        ui->info_4->setText("Высота:");
-        ui->info_5->setText("Радиус:");
-        ui->info_6->setText("Светолюбивость:");
-        ui->info_7->setText("Агрессивность:");
-        ui->info_8->setText("Влаголюбивость:");
-        ui->info_9->setText("Кол-во очков роста:");
-        ui->info_10->setText("Макс. кол-во очков роста:");
-        ui->info_11->setText("Жизнеспособность:");
-        ui->info_12->setText("Макс. высота:");
-        ui->info_13->setText("Макс. радиус:");
+        if(f_update==1) //если нужно обновить строки
+        {
+            ui->info_name->setText("Инфо о растении");
+            ui->info_00->setText("Type:");
+            ui->info_0->setText("NUM:");
+            ui->info_1->setText("OX центра:");
+            ui->info_2->setText("OY центра:");
+            ui->info_3->setText("NUM ячейки почвы:");
+            ui->info_4->setText("Высота:");
+            ui->info_5->setText("Радиус:");
+            ui->info_6->setText("Светолюбивость:");
+            ui->info_7->setText("Агрессивность:");
+            ui->info_8->setText("Влаголюбивость:");
+            ui->info_9->setText("Кол-во очков роста:");
+            ui->info_10->setText("Макс. кол-во очков роста:");
+            ui->info_11->setText("Жизнеспособность:");
+            ui->info_12->setText("Макс. высота:");
+            ui->info_13->setText("Макс. радиус:");
+        }
+        QString type_text; //строка с текстовым названием типа растения
+        switch(type)
+        {
+        case 1:
+            type_text="Grass";
+            break;
+        case 2:
+            type_text="Bush";
+            break;
+        case 3:
+            type_text="Tree";
+            break;
+        }
+        /*Вывод инфо о растении*/
+        ui->i_00->setText(type_text);
+        ui->i_0->setText(QString::number(num));
+        ui->i_1->setText(QString::number(forest.get_x_plant(num,type)));
+        ui->i_2->setText(QString::number(forest.get_y_plant(num,type)));
+        ui->i_3->setText(QString::number(forest.get_num_dirt_plant(num,type)));
+        ui->i_4->setText(QString::number(forest.get_height_plant(num,type)));
+        ui->i_5->setText(QString::number(forest.get_radius_plant(num,type)));
+        ui->i_6->setText(QString::number(forest.get_lightlove_plant(num,type)));
+        ui->i_7->setText(QString::number(forest.get_aggresiv_plant(num,type)));
+        ui->i_8->setText(QString::number(forest.get_wetlove_plant(num,type)));
+        ui->i_9->setText(QString::number(forest.get_score_grow_plant(num,type)));
+        ui->i_10->setText(QString::number(forest.get_score_grow_max_plant(num,type)));
+        ui->i_11->setText(QString::number(forest.get_viability_plant(num,type)));
+        ui->i_12->setText(QString::number(forest.get_end_height_plant(num,type)));
+        ui->i_13->setText(QString::number(forest.get_max_radius_plant(num,type)));
     }
 }
 
