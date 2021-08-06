@@ -279,9 +279,19 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
 {
     if(type==0) //если инфо о почве
     {
+        if(f_update==1)
+        {
+            ui->info_name->setText("Инфо о ячейке почвы");
+        }
     }
     if(type>=1 && type<=3 && f_update==1) //если инфо о растении и нужно обновить строки
     {
-        ui->info_name->
+        ui->info_name->setText("Инфо о растении");
+        ui->info_0->setText("NUM:");
+        ui->info_1->setText("OX центра:");
+
     }
 }
+
+//ui->label->setText(QString::number(x)); //вывести координату х (временная строка)
+//ui->label_2->setText(QString::number(y)); //вывести координату y (временная строка)
