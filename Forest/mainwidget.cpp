@@ -42,10 +42,11 @@ MainWidget::MainWidget(QWidget *parent)
     ui->place->setStyleSheet("background-image:url(\"dirt_grid.png\"); background-position: center;" ); // вывести земляной фон в frame
 
     forest.Dirt_Init(); //инициализация ячеек почвы
+    weather.Weather_Init(); //инициализация погоды
 
     Print_forest_info(); //вывести инфо о лесе
     Print_info(0, -1, 0); //очистить блок с инфо о растении
-    //Print_weather_info(); //вывести инфо о погоде
+    Print_weather_info(); //вывести инфо о погоде
 
     timer = new QTimer(); // таймер для работы модели
     timer->start(TIME_TICK); //запустить таймер с интервалом в одну секунду
@@ -291,7 +292,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
     ui->all_time_text->setText("Всего времени прошло (в тиках): "+QString::number(all_time)); //вывести на экран
 
     Print_forest_info(); //вывести инфо о лесе
-    //Print_weather_info(); //вывести инфо о погоде
+    Print_weather_info(); //вывести инфо о погоде
     if(type_of_info!=-1)
         Print_info(num_info, type_of_info, 0); //вывести инфо в спец. блок
 }
