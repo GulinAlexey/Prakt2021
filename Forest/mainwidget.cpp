@@ -235,7 +235,7 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                 {
                     num_info=num_info_new; //записать новое значение номера для вывода
                     int update_f=1; //флаг обновления названий строк
-                    if(type_of_info==0) //если до этого выводилась инфо о растении, то обновлять названия строк не надо
+                    if(type_of_info>=1 && type_of_info<=3) //если до этого выводилась инфо о растении, то обновлять названия строк не надо
                         update_f=0;
                     type_of_info=type_of_info_new; //записать новое значение типа для вывода
                     Print_info(num_info, type_of_info, update_f); //вывести инфо в спец. блок
@@ -244,7 +244,21 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
             }
             if(ui->infodirt_b->isChecked()==true) //если был выбран режим инфо о почве
             {
-
+                int num_cell=0; //переменная с номером ячейки почвы, на которую кликнули
+                for(int i=0; i<KOLVO_DIRT; i++) //перебрать все ячейки почвы, найти искомую по координатам
+                {
+                    if((x>forest.get_ox_min_dirt(i)) && (y>forest.get_oy_min_dirt(i)) && x<(forest.get_ox_min_dirt(i)+DIRT_CELL_SIZE) && y<(forest.get_oy_min_dirt(i)+DIRT_CELL_SIZE)) //если координаты растения принадлежат координатам ячейки
+                    {
+                        num_cell=i; //найдена искомая ячейка
+                        break; //остановить перебор
+                    }
+                }
+                int update_f=1; //флаг обновления названий строк
+                if(type_of_info==0) //если до этого выводилась инфо о растении, то обновлять названия строк не надо
+                    update_f=0;
+                num_info=num_cell; //записать новое значение номера для вывода
+                type_of_info=0; //записать новое значение типа для вывода
+                Print_info(num_info, type_of_info, update_f); //вывести инфо в спец. блок
             }
         }
     }
@@ -312,6 +326,12 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
             ui->i_13->setText(" ");
         }
         /*Вывод инфо о почве*/
+        ui->i_00->setText(QString::number(num));
+        ui->i_0->setText(QString::number(forest.get_ox_min_dirt(num)));
+        ui->i_1->setText(QString::number(forest.get_oy_min_dirt(num)));
+        ui->i_2->setText(QString::number(forest.get_fertility_dirt(num)));
+        ui->i_3->setText(QString::number(forest.get_effectiv_dirt(num)));
+        ui->i_4->setText(QString::number(forest.get_wet_dirt(num)));
     }
     if(type>=1 && type<=3) //если инфо о растении
     {

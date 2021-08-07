@@ -75,6 +75,28 @@ int Forest::get_kolvo_tree()
     return kolvo_tree;
 }
 
+int Forest::get_ox_min_dirt(int num) //получить поле "ox_min" выбранной ячейки почвы
+{
+    return dirt[num].ox_min; //получить искомое значение поля
+}
+int Forest::get_oy_min_dirt(int num) //получить поле "oy_min" выбранной ячейки почвы
+{
+    return dirt[num].oy_min; //получить искомое значение поля
+}
+
+int Forest::get_fertility_dirt(int num) //получить поле "fertility" выбранной ячейки почвы
+{
+    return dirt[num].fertility; //получить искомое значение поля
+}
+int Forest::get_effectiv_dirt(int num) //получить поле "effectiv" выбранной ячейки почвы
+{
+    return dirt[num].effectiv; //получить искомое значение поля
+}
+int Forest::get_wet_dirt(int num) //получить поле "wet" выбранной ячейки почвы
+{
+    return dirt[num].wet; //получить искомое значение поля
+}
+
 int Forest::get_x_plant(int num, int type) //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
 {
     if(type==1) //трава
