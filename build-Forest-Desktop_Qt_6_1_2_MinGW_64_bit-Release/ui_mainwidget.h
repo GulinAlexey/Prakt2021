@@ -989,7 +989,7 @@ public:
         winfo_3->setText(QCoreApplication::translate("MainWidget", "\320\222\321\200\320\265\320\274\321\217 \321\202\320\265\320\272\321\203\321\211. \321\201\320\276\321\201\321\202.:", nullptr));
         winfo_0->setText(QCoreApplication::translate("MainWidget", "\320\257\321\200\320\272\320\276\321\201\321\202\321\214 \321\201\320\276\320\273\320\275\321\206\320\260: ", nullptr));
         info_ftype->setTitle(QCoreApplication::translate("MainWidget", "\320\242\320\270\320\277", nullptr));
-        finfo_1->setText(QCoreApplication::translate("MainWidget", "\320\232\320\276\320\273-\320\262\320\276 \320\276\320\261\321\212\320\265\320\272\321\202\320\276\320\262 \320\242\321\200\320\260\320\262\320\260: ", nullptr));
+        finfo_1->setText(QCoreApplication::translate("MainWidget", "\320\232\320\276\320\273-\320\262\320\276 \320\265\320\264\320\270\320\275\320\270\321\206 \321\202\321\200\320\260\320\262\321\213: ", nullptr));
         finfo_2->setText(QCoreApplication::translate("MainWidget", "\320\232\320\276\320\273-\320\262\320\276 \320\272\321\203\321\201\321\202\320\276\320\262: ", nullptr));
         finfo_3->setText(QCoreApplication::translate("MainWidget", "\320\232\320\276\320\273-\320\262\320\276 \320\264\320\265\321\200\320\265\320\262\321\214\320\265\320\262: ", nullptr));
         finfo_0->setText(QCoreApplication::translate("MainWidget", "\320\232\320\276\320\273-\320\262\320\276 \321\217\321\207\320\265\320\265\320\272 \320\277\320\276\321\207\320\262\321\213: ", nullptr));

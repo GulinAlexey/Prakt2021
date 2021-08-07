@@ -3401,7 +3401,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Кол-во объектов Трава: </string>
+     <string>Кол-во единиц травы: </string>
     </property>
    </widget>
    <widget class="QLabel" name="finfo_2">

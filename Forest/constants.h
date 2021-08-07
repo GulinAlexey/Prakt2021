@@ -2,10 +2,11 @@
 #define CONSTANTS_H
 
 //макрос нахождения случайного числа в заданном диапазоне
-#define RAND(min,max) rand()%(max-min+1)+min
+#define RAND(min,max) (rand()%(max-min+1)+min)
 
 /*ЗНАЧЕНИЯ ДЛЯ classes*/
 #define KOLVO_DIRT 12 // кол-во ячеек почвы
+
 #define DIRT_CELL_SIZE 200 //длина ребра одной ячейки почвы (квадратной)
 #define KOLVO_CELL_X 4 //кол-во ячеек почвы по горизонтали
 #define KOLVO_CELL_Y 3 //кол-во ячеек почвы по вертикали
@@ -94,10 +95,27 @@
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Dirt_cell - ячейка почвы*/
 #define MIN_FERTILITY 5
 #define MAX_FERTILITY 30
+
 #define EFFECTIV_START_DIRT 1
+
 #define MIN_WET_START_DIRT 0
 #define MAX_WET_START_DIRT 5
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Weather - погода*/
+#define MIN_SUNSHINE_START 30
+#define MAX_SUNSHINE_START 50
+
+#define MIN_SUNSHINE 20
+#define MAX_SUNSHINE 70
+
+#define F_STATUS_START 0
+
+#define RAINFALL_TICK_SUN 0
+
+#define MIN_RAINFALL_TICK 10
+#define MAX_RAINFALL_TICK 100
+
+#define TIME_STATUS_START 0
+#define TIME_STATUS_END 10
 
 #endif // CONSTANTS_H
