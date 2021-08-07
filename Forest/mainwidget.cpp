@@ -397,5 +397,10 @@ void MainWidget::Print_weather_info() //слот вывода инфо о пог
     ui->w_3->setText(QString::number(weather.get_time_status()));
 }
 
+void MainWidget::Print_forest_info() //слот вывода инфо о лесе
+{
+
+}
+
 //ui->label->setText(QString::number(x)); //вывести координату х (временная строка)
 //ui->label_2->setText(QString::number(y)); //вывести координату y (временная строка)
