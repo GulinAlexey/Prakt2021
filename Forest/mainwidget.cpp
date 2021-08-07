@@ -43,6 +43,10 @@ MainWidget::MainWidget(QWidget *parent)
 
     forest.Dirt_Init(); //инициализация ячеек почвы
 
+    Print_forest_info(); //вывести инфо о лесе
+    Print_info(0, -1, 0); //очистить блок с инфо о растении
+    //Print_weather_info(); //вывести инфо о погоде
+
     timer = new QTimer(); // таймер для работы модели
     timer->start(TIME_TICK); //запустить таймер с интервалом в одну секунду
     QObject::connect(timer, SIGNAL(timeout()), SLOT(Timer_tick())); //по истечении интервала работает слот
@@ -133,6 +137,7 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     (*new_img)->setStyleSheet("background-image:url(\"empty.png\");" ); // изменить фон на прозрачный (необходимо из-за наследования от place)
                     (*new_img) ->show(); //вывести qlabel
                 }
+                Print_forest_info(); //вывести обновлённое инфо о лесе
 
             }
             if(ui->delete_b->isChecked()==true) //если был выбран режим удаления растения (удаляется самое верхнее растение)
@@ -184,7 +189,22 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
                     QLabel **img_delete=nullptr; //указатель на label с картинкой растения
                     forest.get_img(&img_delete, num_delete, type_delete); //получить адрес для объекта - label с изображением растения
                     (*img_delete)->deleteLater(); //удалить qlabel  с изображением растения
+                    if(type_delete==type_of_info && num_info>=num_delete) //проверить вывод инфо о выбранном растении (если удаляется выбранное, то переключиться на другое)
+                    {
+                        num_info=num_info-1;
+                        if(num_info<0) //если растений больше нет, то новую инфу не выводить
+                        {
+                            num_info=-1;
+                            type_of_info=-1;
+                            Print_info(0, -1, 0); //очистить блок с инфо о растении
+                        }
+                        else
+                            Print_info(num_info, type_of_info, 0); //вывести инфо о растении, которое теперь по счёту является тем же, что и ранее удалённое
+                    }
+
                     forest.Delete_plant(num_delete, type_delete); //удалить объект растения
+
+                    Print_forest_info(); //вывести обновлённое инфо о лесе
                 }
 
             }
@@ -269,6 +289,11 @@ void MainWidget::Timer_tick() //слот интервала таймера
 {
     all_time=all_time+1; //получить новое значение общего времени
     ui->all_time_text->setText("Всего времени прошло (в тиках): "+QString::number(all_time)); //вывести на экран
+
+    Print_forest_info(); //вывести инфо о лесе
+    //Print_weather_info(); //вывести инфо о погоде
+    if(type_of_info!=-1)
+        Print_info(num_info, type_of_info, 0); //вывести инфо в спец. блок
 }
 
 void MainWidget::Normalmode(bool value) //слот при переключении в нормальный режим времени
@@ -386,6 +411,41 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         ui->i_11->setText(QString::number(forest.get_viability_plant(num,type)));
         ui->i_12->setText(QString::number(forest.get_end_height_plant(num,type)));
         ui->i_13->setText(QString::number(forest.get_max_radius_plant(num,type)));
+    }
+    if(type<0) //очистить блок с инфо
+    {
+        ui->info_name->setText("Инфо о растении");
+        ui->info_00->setText(" ");
+        ui->info_0->setText(" ");
+        ui->info_1->setText(" ");
+        ui->info_2->setText(" ");
+        ui->info_3->setText(" ");
+        ui->info_4->setText(" ");
+        ui->info_5->setText(" ");
+        ui->info_6->setText(" ");
+        ui->info_7->setText(" ");
+        ui->info_8->setText(" ");
+        ui->info_9->setText(" ");
+        ui->info_10->setText(" ");
+        ui->info_11->setText(" ");
+        ui->info_12->setText(" ");
+        ui->info_13->setText(" ");
+
+        ui->i_00->setText(" ");
+        ui->i_0->setText(" ");
+        ui->i_1->setText(" ");
+        ui->i_2->setText(" ");
+        ui->i_3->setText(" ");
+        ui->i_4->setText(" ");
+        ui->i_5->setText(" ");
+        ui->i_6->setText(" ");
+        ui->i_7->setText(" ");
+        ui->i_8->setText(" ");
+        ui->i_9->setText(" ");
+        ui->i_10->setText(" ");
+        ui->i_11->setText(" ");
+        ui->i_12->setText(" ");
+        ui->i_13->setText(" ");
     }
 }
 

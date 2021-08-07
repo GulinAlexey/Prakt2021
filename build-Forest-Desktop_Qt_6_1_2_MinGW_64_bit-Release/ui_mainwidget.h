@@ -798,7 +798,7 @@ public:
         fi_0->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         label = new QLabel(MainWidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 630, 47, 13));
+        label->setGeometry(QRect(20, 630, 151, 16));
         QPalette palette6;
         palette6.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette6.setBrush(QPalette::Active, QPalette::Button, brush6);
@@ -861,7 +861,7 @@ public:
         label->setPalette(palette6);
         label_2 = new QLabel(MainWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(20, 660, 47, 13));
+        label_2->setGeometry(QRect(20, 650, 151, 16));
         QPalette palette7;
         palette7.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette7.setBrush(QPalette::Active, QPalette::Button, brush6);

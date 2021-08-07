@@ -79,6 +79,29 @@ int Forest::get_kolvo_dirt()
     return kolvo_dirt;
 }
 
+int Forest::get_kolvo_type(int type) //вернуть кол-во объектов выбранного типа (0 - ячейка почвы, 1 - трава, 2 - куст, 3 - дерево)
+{
+    switch(type)
+    {
+    case 0: //земля
+        return kolvo_dirt;
+        break;
+    case 1: //трава
+        return kolvo_grass;
+        break;
+    case 2: //куст
+        return kolvo_bush;
+        break;
+    case 3: //дерево
+        return kolvo_tree;
+        break;
+    default:
+        return 0;
+        break;
+    }
+
+}
+
 
 int Forest::get_ox_min_dirt(int num) //получить поле "ox_min" выбранной ячейки почвы
 {

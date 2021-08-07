@@ -92,6 +92,7 @@ public:
     int get_kolvo_bush();
     int get_kolvo_tree();
     int get_kolvo_dirt();
+    int get_kolvo_type(int type); //вернуть кол-во объектов выбранного типа (0 - ячейка почвы, 1 - трава, 2 - куст, 3 - дерево)
     /*методы получения и установления полей объекта класса Dirt_cell*/
     int get_ox_min_dirt(int num); //получить поле "ox_min" выбранной ячейки почвы
     int get_oy_min_dirt(int num); //получить поле "oy_min" выбранной ячейки почвы
