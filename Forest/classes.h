@@ -129,6 +129,8 @@ public:
     int get_sunshine();
     void set_f_status(int inp);
     int get_f_status();
+    void set_rainfall_tick(int inp);
+    int get_rainfall_tick();
     void set_time_status(int inp);
     int get_time_status();
 };

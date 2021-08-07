@@ -546,6 +546,14 @@ int Weather::get_f_status()
 {
     return f_status;
 }
+void Weather::set_rainfall_tick(int inp)
+{
+    rainfall_tick=inp;
+}
+int Weather::get_rainfall_tick()
+{
+    return rainfall_tick;
+}
 void Weather::set_time_status(int inp)
 {
     time_status=inp;

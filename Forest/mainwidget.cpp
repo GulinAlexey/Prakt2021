@@ -9,6 +9,7 @@ Forest forest; //объект - лес
 Weather weather; //объект - погода
 int num_info=-1; //номер растения/ячейки почвы для инфо
 int type_of_info=-1; //тип вывода инфо (-1 - никакое, 0 - ячейка почвы, 1 - трава, 2 - куст, 3 - дерево)
+int all_time=0; //общее время работы программы (кол-во тиков)
 
 QPixmap *sun; //объект с картинкой солнца
 QPixmap *cloud; //объект с картинкой облака
@@ -266,6 +267,8 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
 
 void MainWidget::Timer_tick() //слот интервала таймера
 {
+    all_time=all_time+1; //получить новое значение общего времени
+    ui->all_time_text->setText("Всего времени прошло (в тиках): "+QString::number(all_time)); //вывести на экран
 }
 
 void MainWidget::Normalmode(bool value) //слот при переключении в нормальный режим времени
@@ -384,6 +387,14 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         ui->i_12->setText(QString::number(forest.get_end_height_plant(num,type)));
         ui->i_13->setText(QString::number(forest.get_max_radius_plant(num,type)));
     }
+}
+
+void MainWidget::Print_weather_info() //слот вывода инфо о погоде
+{
+    ui->w_0->setText(QString::number(weather.get_sunshine()));
+    ui->w_1->setText(QString::number(weather.get_f_status()));
+    ui->w_2->setText(QString::number(weather.get_rainfall_tick()));
+    ui->w_3->setText(QString::number(weather.get_time_status()));
 }
 
 //ui->label->setText(QString::number(x)); //вывести координату х (временная строка)
