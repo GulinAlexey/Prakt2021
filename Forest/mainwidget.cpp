@@ -399,7 +399,10 @@ void MainWidget::Print_weather_info() //слот вывода инфо о пог
 
 void MainWidget::Print_forest_info() //слот вывода инфо о лесе
 {
-
+    ui->fi_0->setText(QString::number(forest.get_kolvo_dirt()));
+    ui->fi_1->setText(QString::number(forest.get_kolvo_grass()));
+    ui->fi_2->setText(QString::number(forest.get_kolvo_bush()));
+    ui->fi_3->setText(QString::number(forest.get_kolvo_tree()));
 }
 
 //ui->label->setText(QString::number(x)); //вывести координату х (временная строка)

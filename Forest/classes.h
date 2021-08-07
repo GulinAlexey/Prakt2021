@@ -87,6 +87,11 @@ public:
     void Find_dirt_for_plant(int num, int type); //найти номер ячейки почвы для растения (координаты уже записаны в поля растения) (тип: 1 - трава, 2 - куст, 3 - дерево)
     int Belonging_of_coordinat(int num, int type, int x, int y); //проверка, что координаты x и y принадлежат окружности растения (возвращает 1, если верно и 0, если неверно)
 
+    /*методы получения и установления полей объекта класса Forest*/
+    int get_kolvo_grass();
+    int get_kolvo_bush();
+    int get_kolvo_tree();
+    int get_kolvo_dirt();
     /*методы получения и установления полей объекта класса Dirt_cell*/
     int get_ox_min_dirt(int num); //получить поле "ox_min" выбранной ячейки почвы
     int get_oy_min_dirt(int num); //получить поле "oy_min" выбранной ячейки почвы
@@ -107,10 +112,6 @@ public:
     double get_viability_plant(int num, int type); //получить поле "viability" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_end_height_plant(int num, int type); //получить поле "end_height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_max_radius_plant(int num, int type); //получить поле "max_radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
-    /*методы получения и установления полей объекта класса Forest*/
-    int get_kolvo_grass();
-    int get_kolvo_bush();
-    int get_kolvo_tree();
 };
 
 class Weather //класс Погода

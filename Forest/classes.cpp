@@ -74,6 +74,11 @@ int Forest::get_kolvo_tree()
 {
     return kolvo_tree;
 }
+int Forest::get_kolvo_dirt()
+{
+    return kolvo_dirt;
+}
+
 
 int Forest::get_ox_min_dirt(int num) //получить поле "ox_min" выбранной ячейки почвы
 {
