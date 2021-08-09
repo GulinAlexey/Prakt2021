@@ -280,14 +280,19 @@ void MainWidget::Timer_tick() //слот интервала таймера
         {
         case F_SUN:
             weather.set_sunshine(RAND(SUNSHINE_SUN-SUNSHINE_SUN_RANGE, SUNSHINE_SUN+SUNSHINE_SUN_RANGE)); //яркость солнца случайно меняется каждый тик в своём диапазоне
+            weather.set_rainfall_tick(RAINFALL_TICK_SUN);
             break;
         case F_CLOUD:
             weather.set_sunshine(RAND(SUNSHINE_CLOUD-SUNSHINE_CLOUD_RANGE, SUNSHINE_CLOUD+SUNSHINE_CLOUD_RANGE)); //яркость солнца случайно меняется каждый тик в своём диапазоне
+            weather.set_rainfall_tick(RAINFALL_TICK_CLOUD); //небольшое кол-во осадков в виде росы
             break;
         case F_RAIN:
             weather.set_sunshine(RAND(SUNSHINE_RAIN-SUNSHINE_RAIN_RANGE, SUNSHINE_RAIN+SUNSHINE_RAIN_RANGE)); //яркость солнца случайно меняется каждый тик в своём диапазоне
+            weather.set_rainfall_tick(RAND(RAINFALL_TICK_RAIN-RAINFALL_TICK_RAIN_RANGE, RAINFALL_TICK_RAIN+RAINFALL_TICK_RAIN_RANGE)); //кол-во осадков случайно меняется каждый тик в своём диапазоне
             break;
         }
+
+
 
     }
 
