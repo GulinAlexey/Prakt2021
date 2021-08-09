@@ -114,7 +114,20 @@
 #define MIN_SUNSHINE 20
 #define MAX_SUNSHINE 70
 
+#define SUNSHINE_SUN 50
+#define SUNSHINE_SUN_RANGE 25
+
+#define SUNSHINE_CLOUD 20
+#define SUNSHINE_CLOUD_RANGE 15
+
+#define SUNSHINE_RAIN 10
+#define SUNSHINE_RAIN_RANGE 5
+
 #define F_STATUS_START 0
+
+#define F_SUN 0
+#define F_CLOUD 1
+#define F_RAIN 2
 
 #define RAINFALL_TICK_SUN 0
 

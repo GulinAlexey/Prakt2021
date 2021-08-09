@@ -241,6 +241,47 @@ void MainWidget::Timer_tick() //слот интервала таймера
     all_time=all_time+1; //получить новое значение общего времени
     ui->all_time_text->setText("Всего времени прошло (в тиках): "+QString::number(all_time)); //вывести на экран
 
+    weather.set_time_status(weather.get_time_status()+1); //увеличить кол-во времени текущей погоды
+    if(weather.get_time_status()==TIME_STATUS_END) //если время типа погоды закончилось, случайно выбрать один из двух других
+    {
+        int randm=RAND(0,1);
+        switch(weather.get_f_status()) //случайно установить другой статус погоды
+        {
+        case F_SUN:
+            switch(randm)
+            {
+            case 0:
+                weather.set_f_status(F_CLOUD);
+            case 1:
+                weather.set_f_status(F_RAIN);
+            }
+            break;
+        case F_CLOUD:
+            switch(randm)
+            {
+            case 0:
+                weather.set_f_status(F_SUN);
+            case 1:
+                weather.set_f_status(F_RAIN);
+            }
+            break;
+        case F_RAIN:
+            switch(randm)
+            {
+            case 0:
+                weather.set_f_status(F_SUN);
+            case 1:
+                weather.set_f_status(F_CLOUD);
+            }
+            break;
+        }
+
+
+    }
+
+
+
+
     Print_forest_info(); //вывести инфо о лесе
     Print_weather_info(); //вывести инфо о погоде
     if(type_of_info!=-1)

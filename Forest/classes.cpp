@@ -557,7 +557,7 @@ void Forest::get_img(QLabel*** png, int num, int type) //получить ука
 
 void Weather::Weather_Init() //инициализация погоды
 {
-    sunshine=RAND(MIN_SUNSHINE_START, MAX_SUNSHINE_START);
+    sunshine=SUNSHINE_SUN;
     f_status=F_STATUS_START;
     rainfall_tick=RAINFALL_TICK_SUN;
     time_status=TIME_STATUS_START;
