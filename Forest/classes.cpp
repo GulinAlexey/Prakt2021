@@ -128,6 +128,11 @@ int Forest::get_wet_dirt(int num) //получить поле "wet" выбран
     return dirt[num].wet; //получить искомое значение поля
 }
 
+void Forest::set_wet_dirt(int num, int inp) //установить значение поля "wet" выбранной ячейки почвы
+{
+    dirt[num].wet=inp;
+}
+
 int Forest::get_x_plant(int num, int type) //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
 {
     if(type==1) //трава

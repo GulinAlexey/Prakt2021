@@ -99,6 +99,8 @@ public:
     int get_fertility_dirt(int num); //получить поле "fertility" выбранной ячейки почвы
     int get_effectiv_dirt(int num); //получить поле "effectiv" выбранной ячейки почвы
     int get_wet_dirt(int num); //получить поле "wet" выбранной ячейки почвы
+
+    void set_wet_dirt(int num, int inp); //установить значение поля "wet" выбранной ячейки почвы
     /*методы получения и установления полей объекта класса Plant*/
     int get_x_plant(int num, int type); //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_y_plant(int num, int type); //получить поле "y" растения (тип: 1 - трава, 2 - куст, 3 - дерево)

@@ -292,6 +292,22 @@ void MainWidget::Timer_tick() //слот интервала таймера
             break;
         }
 
+        for(int i=0, kolvo=forest.get_kolvo_dirt(), rainf=weather.get_rainfall_tick(); i<kolvo; i++) //перебрать ячейки почвы
+        {
+            forest.set_wet_dirt(i, (forest.get_wet_dirt(i)+rainf)); //почва получает влагу
+        }
+
+        struct plant_sort
+        {
+            int num;
+            int type;
+            int height;
+            int agressiv;
+        } *plants;
+
+        plants = new plant_sort[forest.get_kolvo_grass()+forest.get_kolvo_bush()+forest.get_kolvo_tree()];
+
+        //for(int type=1; type<=3; type++)
 
 
     }
