@@ -297,7 +297,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
             forest.set_wet_dirt(i, (forest.get_wet_dirt(i)+rainf)); //почва получает влагу
         }
 
-        struct plant_sort
+        struct plant_sort //структура для сортировки растений (их упорядочиванию по высоте или агрессивности)
         {
             int num;
             int type;
@@ -305,10 +305,39 @@ void MainWidget::Timer_tick() //слот интервала таймера
             int agressiv;
         } *plants;
 
-        plants = new plant_sort[forest.get_kolvo_grass()+forest.get_kolvo_bush()+forest.get_kolvo_tree()];
+        int all_plants=forest.get_kolvo_grass()+forest.get_kolvo_bush()+forest.get_kolvo_tree(); //кол-во растений всех видов
+        plants = new plant_sort[all_plants]; //структура для сортировки
 
-        //for(int type=1; type<=3; type++)
+        for(int type=1, j=0; type<=3; type++)
+        {
+            for(int i=0, kolvo=forest.get_kolvo_type(type); i<kolvo; i++)
+            {
+                plants[j].num=i;
+                plants[j].type=type;
+                plants[j].height=forest.get_height_plant(i, type);
+                plants[j].agressiv=forest.get_aggresiv_plant(i, type);
+                j++;
+            }
+        }
 
+        for(int k=1; k<all_plants; k++) //метод пузырька
+            {
+                for(int i=0; i<all_plants-k; i++)
+                {
+                    if(plants[i].agressiv < plants[i+1].agressiv) //сортировка по убыванию
+                    { //ПЕРЕСТАВИТЬ ЗНАЧЕНИЯ
+                        plant_sort vsp;
+                        vsp=plants[i];
+                        plants[i]=plants[i+1];
+                        plants[i+1]=plants[i];
+                    }
+                }
+            }
+
+        for(int i=0; i<all_plants; i++)
+        {
+
+        }
 
     }
 
