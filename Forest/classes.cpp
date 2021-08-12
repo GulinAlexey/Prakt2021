@@ -27,6 +27,7 @@ void Grass::Init_rand() //трава, инициализация случайн�
     viability=VIABILITY_START_GRASS; //начальная жизнеспособность
     end_height=RAND(MIN_END_HEIGHT_GRASS, MAX_END_HEIGHT_GRASS); //конечная (макс.) высота растения
     max_radius=RAND(MIN_RADIUS_GRASS, MAX_RADIUS_GRASS); //макс. радиус кроны
+    feed_norm=FEED_NORM_GRASS; //нормальное разовое питание
 }
 
 void Bush::Init_rand() //куст, инициализация случайными значениями
@@ -41,6 +42,7 @@ void Bush::Init_rand() //куст, инициализация случайным
     viability=VIABILITY_START_BUSH; //начальная жизнеспособность
     end_height=RAND(MIN_END_HEIGHT_BUSH, MAX_END_HEIGHT_BUSH); //конечная (макс.) высота растения
     max_radius=RAND(MIN_RADIUS_BUSH, MAX_RADIUS_BUSH); //макс. радиус кроны
+    feed_norm=FEED_NORM_BUSH; //нормальное разовое питание
 }
 
 void Tree::Init_rand() //дерево, инициализация случайными значениями
@@ -55,6 +57,7 @@ void Tree::Init_rand() //дерево, инициализация случайн
     viability=VIABILITY_START_TREE; //начальная жизнеспособность
     end_height=RAND(MIN_END_HEIGHT_TREE, MAX_END_HEIGHT_TREE); //конечная (макс.) высота растения
     max_radius=RAND(MIN_RADIUS_TREE, MAX_RADIUS_TREE); //макс. радиус кроны
+    feed_norm=FEED_NORM_TREE; //нормальное разовое питание
 }
 
 void Plant::Change_OXY(int ox_new, int oy_new) //установка новых координат
@@ -328,6 +331,83 @@ int Forest::get_max_radius_plant(int num, int type) //получить поле 
     if(type==3) //дерево
     {
        return tree[num].max_radius; //получить искомое значение поля
+    }
+}
+
+int Forest::get_feed_norm_plant(int num, int type) //получить поле "feed_norm" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        return grass[num].feed_norm; //получить искомое значение поля
+    }
+    if(type==2) //куст
+    {
+        return bush[num].feed_norm; //получить искомое значение поля
+    }
+    if(type==3) //дерево
+    {
+       return tree[num].feed_norm; //получить искомое значение поля
+    }
+}
+
+void Forest::set_score_grow_plant(int num, int type, int inp) //установить значение поля "score_grow" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        grass[num].score_grow=inp;
+    }
+    if(type==2) //куст
+    {
+        bush[num].score_grow=inp;
+    }
+    if(type==3) //дерево
+    {
+       tree[num].score_grow=inp;
+    }
+}
+void Forest::set_height_plant(int num, int type, int inp) //получить поле "height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        grass[num].height=inp;
+    }
+    if(type==2) //куст
+    {
+        bush[num].height=inp;
+    }
+    if(type==3) //дерево
+    {
+       tree[num].height=inp;
+    }
+}
+void Forest::set_radius_plant(int num, int type, int inp) //получить поле "radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        grass[num].radius=inp;
+    }
+    if(type==2) //куст
+    {
+        bush[num].radius=inp;
+    }
+    if(type==3) //дерево
+    {
+       tree[num].radius=inp;
+    }
+}
+void Forest::set_viability_plant(int num, int type, double inp) //получить поле "viability" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+{
+    if(type==1) //трава
+    {
+        grass[num].viability=inp;
+    }
+    if(type==2) //куст
+    {
+        bush[num].viability=inp;
+    }
+    if(type==3) //дерево
+    {
+       tree[num].viability=inp;
     }
 }
 

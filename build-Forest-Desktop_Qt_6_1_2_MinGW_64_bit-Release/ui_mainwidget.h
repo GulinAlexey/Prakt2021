@@ -56,6 +56,7 @@ public:
     QLabel *info_0;
     QLabel *info_13;
     QLabel *info_00;
+    QLabel *info_14;
     QGroupBox *info_value;
     QLabel *i_1;
     QLabel *i_2;
@@ -72,6 +73,7 @@ public:
     QLabel *i_0;
     QLabel *i_13;
     QLabel *i_00;
+    QLabel *i_14;
     QLabel *info_name;
     QLabel *info_weather;
     QGroupBox *info_wvalue;
@@ -103,7 +105,7 @@ public:
     {
         if (MainWidget->objectName().isEmpty())
             MainWidget->setObjectName(QString::fromUtf8("MainWidget"));
-        MainWidget->resize(1359, 699);
+        MainWidget->resize(1359, 705);
         MainWidget->setMinimumSize(QSize(1359, 699));
         QIcon icon;
         icon.addFile(QString::fromUtf8("icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
@@ -169,7 +171,7 @@ public:
         tree_type->setGeometry(QRect(10, 60, 121, 17));
         info_type = new QGroupBox(MainWidget);
         info_type->setObjectName(QString::fromUtf8("info_type"));
-        info_type->setGeometry(QRect(830, 360, 161, 331));
+        info_type->setGeometry(QRect(830, 360, 161, 341));
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -325,9 +327,14 @@ public:
         info_00->setGeometry(QRect(10, 20, 148, 16));
         info_00->setFont(font);
         info_00->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        info_14 = new QLabel(info_type);
+        info_14->setObjectName(QString::fromUtf8("info_14"));
+        info_14->setGeometry(QRect(10, 320, 148, 16));
+        info_14->setFont(font);
+        info_14->setStyleSheet(QString::fromUtf8(""));
         info_value = new QGroupBox(MainWidget);
         info_value->setObjectName(QString::fromUtf8("info_value"));
-        info_value->setGeometry(QRect(990, 360, 131, 331));
+        info_value->setGeometry(QRect(990, 360, 131, 341));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette1.setBrush(QPalette::Active, QPalette::Button, brush1);
@@ -461,6 +468,11 @@ public:
         i_00->setGeometry(QRect(3, 20, 125, 16));
         i_00->setFont(font);
         i_00->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        i_14 = new QLabel(info_value);
+        i_14->setObjectName(QString::fromUtf8("i_14"));
+        i_14->setGeometry(QRect(3, 320, 125, 16));
+        i_14->setFont(font);
+        i_14->setStyleSheet(QString::fromUtf8(""));
         info_name = new QLabel(MainWidget);
         info_name->setObjectName(QString::fromUtf8("info_name"));
         info_name->setGeometry(QRect(831, 340, 291, 20));
@@ -960,6 +972,7 @@ public:
         info_0->setText(QCoreApplication::translate("MainWidget", "NUM: ", nullptr));
         info_13->setText(QCoreApplication::translate("MainWidget", "\320\234\320\260\320\272\321\201. \321\200\320\260\320\264\320\270\321\203\321\201: ", nullptr));
         info_00->setText(QCoreApplication::translate("MainWidget", "Type: ", nullptr));
+        info_14->setText(QCoreApplication::translate("MainWidget", "\320\235\320\276\321\200\320\274\320\260 \320\277\320\270\321\202\320\260\320\275\320\270\321\217:", nullptr));
         info_value->setTitle(QCoreApplication::translate("MainWidget", "\320\227\320\275\320\260\321\207\320\265\320\275\320\270\320\265", nullptr));
         i_1->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
         i_2->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
@@ -976,6 +989,7 @@ public:
         i_0->setText(QCoreApplication::translate("MainWidget", "-1", nullptr));
         i_13->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
         i_00->setText(QCoreApplication::translate("MainWidget", "-1", nullptr));
+        i_14->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
         info_name->setText(QCoreApplication::translate("MainWidget", " \320\230\320\275\321\204\320\276 \320\276 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\320\270", nullptr));
         info_weather->setText(QCoreApplication::translate("MainWidget", " \320\230\320\275\321\204\320\276 \320\276 \320\277\320\276\320\263\320\276\320\264\320\265", nullptr));
         info_wvalue->setTitle(QCoreApplication::translate("MainWidget", "\320\227\320\275\320\260\321\207\320\265\320\275\320\270\320\265", nullptr));

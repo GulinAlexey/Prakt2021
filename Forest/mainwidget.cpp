@@ -334,9 +334,17 @@ void MainWidget::Timer_tick() //слот интервала таймера
                 }
             }
 
-        for(int i=0; i<all_plants; i++)
+        for(int i=0; i<all_plants; i++) //перебрать все растения, получающие питание
         {
+            int num = plants->num;
+            int type = plants->type;
+            int num_dirt = forest.get_num_dirt_plant(num, type);
+            int feed = forest.get_fertility_dirt(num_dirt);
+            int remain = feed - forest.get_feed_norm_plant(num, type);
+            if (remain >= 0)
+            {
 
+            }
         }
 
     }
@@ -397,6 +405,7 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
             ui->info_11->setText(" ");
             ui->info_12->setText(" ");
             ui->info_13->setText(" ");
+            ui->info_14->setText(" ");
             ui->i_5->setText(" ");
             ui->i_6->setText(" ");
             ui->i_7->setText(" ");
@@ -406,6 +415,7 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
             ui->i_11->setText(" ");
             ui->i_12->setText(" ");
             ui->i_13->setText(" ");
+            ui->i_14->setText(" ");
         }
         /*Вывод инфо о почве*/
         ui->i_00->setText(QString::number(num));
@@ -435,6 +445,7 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
             ui->info_11->setText("Жизнеспособность:");
             ui->info_12->setText("Макс. высота:");
             ui->info_13->setText("Макс. радиус:");
+            ui->info_14->setText("Норма питания:");
         }
         QString type_text; //строка с текстовым названием типа растения
         switch(type)
@@ -465,6 +476,7 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         ui->i_11->setText(QString::number(forest.get_viability_plant(num,type)));
         ui->i_12->setText(QString::number(forest.get_end_height_plant(num,type)));
         ui->i_13->setText(QString::number(forest.get_max_radius_plant(num,type)));
+        ui->i_14->setText(QString::number(forest.get_feed_norm_plant(num,type)));
     }
     if(type<0) //очистить блок с инфо
     {
@@ -484,6 +496,7 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         ui->info_11->setText(" ");
         ui->info_12->setText(" ");
         ui->info_13->setText(" ");
+        ui->info_14->setText(" ");
 
         ui->i_00->setText(" ");
         ui->i_0->setText(" ");
@@ -500,6 +513,7 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         ui->i_11->setText(" ");
         ui->i_12->setText(" ");
         ui->i_13->setText(" ");
+        ui->i_14->setText(" ");
     }
 }
 
@@ -523,6 +537,8 @@ void MainWidget::Show_pic(int num, int type) //слот - вывести изо�
 {
     QLabel **new_img=nullptr; //указатель на новый label с картинкой растения
     forest.get_img(&new_img, num, type); //получить адрес для объекта - label с изображением растения
+    if(*new_img != nullptr) //удалить прошлую версию картинки, если она была
+        (*new_img)->deleteLater();
     int x_plant, y_plant, radius_plant; //координаты x, y и радиус растения
     int x_png, y_png, w_png, h_png; //координаты x, y изображения растения и его ширина, высота
     x_plant=forest.get_x_plant(num, type); //получить значение поля растения

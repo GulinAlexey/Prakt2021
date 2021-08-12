@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1359</width>
-    <height>699</height>
+    <height>705</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -264,7 +264,7 @@
      <x>830</x>
      <y>360</y>
      <width>161</width>
-     <height>331</height>
+     <height>341</height>
     </rect>
    </property>
    <property name="palette">
@@ -1033,6 +1033,27 @@
      <string>Type: </string>
     </property>
    </widget>
+   <widget class="QLabel" name="info_14">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>320</y>
+      <width>148</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Норма питания:</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="info_value">
    <property name="geometry">
@@ -1040,7 +1061,7 @@
      <x>990</x>
      <y>360</y>
      <width>131</width>
-     <height>331</height>
+     <height>341</height>
     </rect>
    </property>
    <property name="palette">
@@ -1807,6 +1828,27 @@
     </property>
     <property name="text">
      <string>-1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="i_14">
+    <property name="geometry">
+     <rect>
+      <x>3</x>
+      <y>320</y>
+      <width>125</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>0</string>
     </property>
    </widget>
   </widget>

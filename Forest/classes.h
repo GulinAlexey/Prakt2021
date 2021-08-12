@@ -16,6 +16,7 @@ protected:
     int lightlove; //светолюбивость
     int aggresiv; //агрессивность (скорость поглощения веществ и воды из почвы)
     int wetlove; //влаголюбивость
+    int feed_norm; //нормальное разовое потребление питания
     int score_grow; //текущее кол-во очков роста (при достижении максимума увеличивается высота и радиус, а данный показатель вновь обнуляется)
     int score_grow_max; //макс кол-во очков роста, требуемое для роста растения
     double viability; //жизнеспособность (при уменьшении до нулевого значения растение умирает)
@@ -87,6 +88,8 @@ public:
     void Find_dirt_for_plant(int num, int type); //найти номер ячейки почвы для растения (координаты уже записаны в поля растения) (тип: 1 - трава, 2 - куст, 3 - дерево)
     int Belonging_of_coordinat(int num, int type, int x, int y); //проверка, что координаты x и y принадлежат окружности растения (возвращает 1, если верно и 0, если неверно)
 
+
+
     /*методы получения и установления полей объекта класса Forest*/
     int get_kolvo_grass();
     int get_kolvo_bush();
@@ -115,6 +118,12 @@ public:
     double get_viability_plant(int num, int type); //получить поле "viability" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_end_height_plant(int num, int type); //получить поле "end_height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_max_radius_plant(int num, int type); //получить поле "max_radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    int get_feed_norm_plant(int num, int type); //получить поле "feed_norm" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+
+    void set_score_grow_plant(int num, int type, int inp); //установить значение поля "score_grow" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    void set_height_plant(int num, int type, int inp); //получить поле "height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    void set_radius_plant(int num, int type, int inp); //получить поле "radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
+    void set_viability_plant(int num, int type, double inp); //получить поле "viability" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
 };
 
 class Weather //класс Погода
