@@ -11,6 +11,15 @@
 #define KOLVO_CELL_X 4 //кол-во ячеек почвы по горизонтали
 #define KOLVO_CELL_Y 3 //кол-во ячеек почвы по вертикали
 
+#define GROW_GRASS_HEIGHT 5
+#define GROW_GRASS_RADIUS 10
+#define GROW_BUSH_HEIGHT 8
+#define GROW_BUSH_RADIUS 8
+#define GROW_TREE_HEIGHT 12
+#define GROW_TREE_RADIUS 3
+
+#define SCORE_GROW_START 0
+
 /*ЗНАЧЕНИЯ ДЛЯ mainwidget*/
 #define TIME_TICK 1000 //время интервала таймера в миллисекундах
 #define SPEED_TICK 333 //время ускоренного интервала таймера в миллисекундах

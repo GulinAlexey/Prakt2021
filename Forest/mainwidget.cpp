@@ -343,7 +343,30 @@ void MainWidget::Timer_tick() //слот интервала таймера
             int remain = feed - forest.get_feed_norm_plant(num, type);
             if (remain >= 0)
             {
+                forest.set_score_grow_plant(num, type, (forest.get_score_grow_plant(num, type)+1));
+                if(forest.get_score_grow_plant(num, type) == forest.get_score_grow_max_plant(num, type))
+                {
+                    forest.set_score_grow_plant(num, type, SCORE_GROW_START);
+                    int grow_height, grow_radius;
+                    switch (type)
+                    {
+                    case 1: //трава
+                        grow_height=GROW_GRASS_HEIGHT;
+                        grow_radius=GROW_GRASS_RADIUS;
+                        break;
+                    case 2: //куст
+                        grow_height=GROW_BUSH_HEIGHT;
+                        grow_radius=GROW_BUSH_RADIUS;
+                        break;
+                    case 3: //дерево
+                        grow_height=GROW_TREE_HEIGHT;
+                        grow_radius=GROW_TREE_RADIUS;
+                        break;
+                    }
+                    forest.set_height_plant(num, type, (forest.get_height_plant(num, type)+grow_height));
+                    forest.set_radius_plant(num, type, (forest.get_radius_plant(num, type)+grow_radius));
 
+                }
             }
         }
 
