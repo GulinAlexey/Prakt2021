@@ -14,6 +14,12 @@ Tree::Tree()
 {}
 Weather::Weather()
 {}
+Human::Human()
+{}
+Poacher::Poacher()
+{}
+Forester::Forester()
+{}
 
 void Grass::Init_rand() //трава, инициализация случайными значениями
 {
@@ -134,6 +140,11 @@ int Forest::get_wet_dirt(int num) //получить поле "wet" выбран
 void Forest::set_wet_dirt(int num, int inp) //установить значение поля "wet" выбранной ячейки почвы
 {
     dirt[num].wet=inp;
+}
+
+void Forest::set_fertility_dirt(int num, int inp) //установить значение поля "fertility" выбранной ячейки почвы
+{
+    dirt[num].fertility=inp;
 }
 
 int Forest::get_x_plant(int num, int type) //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)

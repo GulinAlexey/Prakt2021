@@ -252,8 +252,10 @@ void MainWidget::Timer_tick() //слот интервала таймера
             {
             case 0:
                 weather.set_f_status(F_CLOUD);
+                break;
             case 1:
                 weather.set_f_status(F_RAIN);
+                break;
             }
             break;
         case F_CLOUD:
@@ -261,8 +263,10 @@ void MainWidget::Timer_tick() //слот интервала таймера
             {
             case 0:
                 weather.set_f_status(F_SUN);
+                break;
             case 1:
                 weather.set_f_status(F_RAIN);
+                break;
             }
             break;
         case F_RAIN:
@@ -270,8 +274,10 @@ void MainWidget::Timer_tick() //слот интервала таймера
             {
             case 0:
                 weather.set_f_status(F_SUN);
+                break;
             case 1:
                 weather.set_f_status(F_CLOUD);
+                break;
             }
             break;
         }
@@ -308,7 +314,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
         int all_plants=forest.get_kolvo_grass()+forest.get_kolvo_bush()+forest.get_kolvo_tree(); //кол-во растений всех видов
         plants = new plant_sort[all_plants]; //структура для сортировки
 
-        for(int type=1, j=0; type<=3; type++)
+        for(int type=1, j=0; type<=3; type++) //заполнить структуру информацией о всех растениях
         {
             for(int i=0, kolvo=forest.get_kolvo_type(type); i<kolvo; i++)
             {
@@ -324,7 +330,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
             {
                 for(int i=0; i<all_plants-k; i++)
                 {
-                    if(plants[i].agressiv < plants[i+1].agressiv) //сортировка по убыванию
+                    if(plants[i].agressiv < plants[i+1].agressiv) //сортировка по убыванию агрессивности
                     { //ПЕРЕСТАВИТЬ ЗНАЧЕНИЯ
                         plant_sort vsp;
                         vsp=plants[i];
@@ -339,10 +345,14 @@ void MainWidget::Timer_tick() //слот интервала таймера
             int num = plants->num;
             int type = plants->type;
             int num_dirt = forest.get_num_dirt_plant(num, type);
+            int wet = forest.get_wet_dirt(num_dirt);
+
+
             int feed = forest.get_fertility_dirt(num_dirt);
             int remain = feed - forest.get_feed_norm_plant(num, type);
-            if (remain >= 0)
+            if (remain >= 0) //растение получило достаточно питания
             {
+                forest.set_fertility_dirt(num_dirt, feed+remain);
                 forest.set_score_grow_plant(num, type, (forest.get_score_grow_plant(num, type)+1));
                 if(forest.get_score_grow_plant(num, type) == forest.get_score_grow_max_plant(num, type))
                 {
@@ -367,6 +377,10 @@ void MainWidget::Timer_tick() //слот интервала таймера
                     forest.set_radius_plant(num, type, (forest.get_radius_plant(num, type)+grow_radius));
 
                 }
+            }
+            else //растение получило недостаточно питания
+            {
+
             }
         }
 

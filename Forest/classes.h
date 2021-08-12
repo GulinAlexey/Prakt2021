@@ -104,6 +104,7 @@ public:
     int get_wet_dirt(int num); //получить поле "wet" выбранной ячейки почвы
 
     void set_wet_dirt(int num, int inp); //установить значение поля "wet" выбранной ячейки почвы
+    void set_fertility_dirt(int num, int inp); //установить значение поля "fertility" выбранной ячейки почвы
     /*методы получения и установления полей объекта класса Plant*/
     int get_x_plant(int num, int type); //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_y_plant(int num, int type); //получить поле "y" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
@@ -148,5 +149,23 @@ public:
     int get_time_status();
 };
 
+class Human //класс Человек
+{
+private:
+public:
+    Human();
+};
+
+class Poacher : public Human //класс Контрабандист
+{
+public:
+    Poacher();
+};
+
+class Forester : public Human //класс Лесник
+{
+public:
+    Forester();
+};
 
 #endif // CLASSES_H
