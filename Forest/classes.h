@@ -152,12 +152,19 @@ public:
 class Human //класс Человек
 {
 private:
+    int ox=0, oy=0; //координаты
+    int speed; //скорость (кол-во пикселей за один шаг)
+    int target_ox, target_oy; //координаты цели
+    int tired; //усталость
+    int view_radius; //радиус поля обзора
 public:
     Human();
 };
 
-class Poacher : public Human //класс Контрабандист
+class Poacher : public Human //класс Браконьер
 {
+private:
+    int cutting_speed; //скорость рубки деревьев
 public:
     Poacher();
 };
@@ -166,6 +173,17 @@ class Forester : public Human //класс Лесник
 {
 public:
     Forester();
+};
+
+class Invaders //класс Чужаки (для леса)
+{
+private:
+    Poacher* poacher; //указатель на массив объектов Браконьер
+    int kolvo_poacher=0; //кол-во браконьеров
+public:
+    Invaders();
+    void Add_invader(int x, int y); //добавить чужака
+    void Delete_invader(int num); //удалить чужака
 };
 
 #endif // CLASSES_H

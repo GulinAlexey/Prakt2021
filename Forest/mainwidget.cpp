@@ -7,6 +7,9 @@
 QTimer *timer; // таймер для работы модели
 Forest forest; //объект - лес
 Weather weather; //объект - погода
+Forester forester; //объект - лесник
+Invaders invaders; //объект - чужаки
+
 int num_info=-1; //номер растения/ячейки почвы для инфо
 int type_of_info=-1; //тип вывода инфо (-1 - никакое, 0 - ячейка почвы, 1 - трава, 2 - куст, 3 - дерево)
 int all_time=0; //общее время работы программы (кол-во тиков)
@@ -342,10 +345,13 @@ void MainWidget::Timer_tick() //слот интервала таймера
 
         for(int i=0; i<all_plants; i++) //перебрать все растения, получающие питание
         {
-            int num = plants->num;
-            int type = plants->type;
-            int num_dirt = forest.get_num_dirt_plant(num, type);
-            int wet = forest.get_wet_dirt(num_dirt);
+            int num = plants[i].num; //номер растения
+            int type = plants[i].type; //тип растения
+            int num_dirt = forest.get_num_dirt_plant(num, type); //номер ячейки почвы с растением
+            int wet = forest.get_wet_dirt(num_dirt); //получаемая влажность
+            int sun = weather.get_sunshine(); //получаемый солнечный свет (пока без учёта наложения растений)
+
+
 
 
             int feed = forest.get_fertility_dirt(num_dirt);

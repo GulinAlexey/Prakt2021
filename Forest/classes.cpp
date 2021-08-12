@@ -20,6 +20,8 @@ Poacher::Poacher()
 {}
 Forester::Forester()
 {}
+Invaders::Invaders()
+{}
 
 void Grass::Init_rand() //трава, инициализация случайными значениями
 {
@@ -691,4 +693,14 @@ void Weather::set_time_status(int inp)
 int Weather::get_time_status()
 {
     return time_status;
+}
+
+void Invaders::Add_invader(int x, int y) //добавить чужака
+{
+
+}
+
+void Invaders::Delete_invader(int num) //удалить чужака
+{
+
 }
