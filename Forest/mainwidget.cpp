@@ -351,14 +351,16 @@ void MainWidget::Timer_tick() //слот интервала таймера
             int wet = forest.get_wet_dirt(num_dirt); //получаемая влажность
             int sun = weather.get_sunshine(); //получаемый солнечный свет (пока без учёта наложения растений)
 
+            int remain_wet = wet - forest.get_wet_dirt(num_dirt);
+
 
 
 
             int feed = forest.get_fertility_dirt(num_dirt);
-            int remain = feed - forest.get_feed_norm_plant(num, type);
-            if (remain >= 0) //растение получило достаточно питания
+            int remain_feed = feed - forest.get_feed_norm_plant(num, type);
+            if (remain_feed >= 0) //растение получило достаточно питания
             {
-                forest.set_fertility_dirt(num_dirt, feed+remain);
+                forest.set_fertility_dirt(num_dirt, feed+remain_feed);
                 forest.set_score_grow_plant(num, type, (forest.get_score_grow_plant(num, type)+1));
                 if(forest.get_score_grow_plant(num, type) == forest.get_score_grow_max_plant(num, type))
                 {
