@@ -5,6 +5,7 @@
 #include "constants.h"
 
 class Forest; //объявление класса
+class Invaders; //объявление класса
 
 class Plant // класс Растение
 {
@@ -151,12 +152,14 @@ public:
 
 class Human //класс Человек
 {
-private:
+protected:
     int ox=0, oy=0; //координаты
     int speed; //скорость (кол-во пикселей за один шаг)
     int target_ox, target_oy; //координаты цели
     int tired; //усталость
     int view_radius; //радиус поля обзора
+
+    QLabel *img; //указатель на label с изображением человека
 public:
     Human();
 };
@@ -167,18 +170,22 @@ private:
     int cutting_speed; //скорость рубки деревьев
 public:
     Poacher();
+    void Init(); //инициализация
+
+    friend class Invaders; //дружественный класс, имеет доступ ко всем полям данного
 };
 
 class Forester : public Human //класс Лесник
 {
 public:
     Forester();
+    void Init(); //инициализация
 };
 
 class Invaders //класс Чужаки (для леса)
 {
 private:
-    Poacher* poacher; //указатель на массив объектов Браконьер
+    Poacher* poachers; //указатель на массив объектов Браконьер
     int kolvo_poacher=0; //кол-во браконьеров
 public:
     Invaders();

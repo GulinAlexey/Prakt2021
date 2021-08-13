@@ -697,10 +697,39 @@ int Weather::get_time_status()
 
 void Invaders::Add_invader(int x, int y) //добавить чужака
 {
+    int kolvo = kolvo_poacher; //старое кол-во браконьеров
+    Poacher* poachers_old = poachers; //указатель на старый массив браконьеров
+    Poacher* poachers_change = new Poacher[kolvo+1]; //указатель на новый массив браконьеров
 
+    int i; //счётчик перебора всех объектов массива
+    for(i=0; i<kolvo; i++)
+        poachers_change[i]=poachers_old[i]; //перенести значения в новый массив
+    poachers_change[i].Init(); //инициализация
+    poachers_change[i].ox = x; //установить координату x
+    poachers_change[i].oy = y; //установить координату y
+    delete[] poachers_old; //очистить память от старого массива
+
+    poachers = poachers_change; //теперь указатель указывает на новый массив
+    kolvo_poacher++; //увеличить значение кол-ва объектов в массиве на 1
 }
 
 void Invaders::Delete_invader(int num) //удалить чужака
 {
+    int kolvo = kolvo_poacher; //старое кол-во браконьеров
+    Poacher* poachers_old = poachers; //указатель на старый массив браконьеров
+    Poacher* poachers_change = new Poacher[kolvo+1]; //указатель на новый массив браконьеров
 
+    for(int i=0, j=0; i<kolvo; i++)
+    {
+        if(i!=num)
+        {
+            poachers_change[j]=poachers_old[i]; //перенести значения в новый массив
+            j++;
+        }
+    }
+
+    delete[] poachers_old; //очистить память от старого массива
+
+    poachers = poachers_change; //теперь указатель указывает на новый массив
+    kolvo_poacher--; //уменьшить значение кол-ва объектов в массиве на 1
 }
