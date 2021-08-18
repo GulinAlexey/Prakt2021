@@ -243,11 +243,11 @@ void MainWidget::Timer_tick() //слот интервала таймера
 {
     all_time=all_time+1; //получить новое значение общего времени
     ui->all_time_text->setText("Всего времени прошло (в тиках): "+QString::number(all_time)); //вывести на экран
-
+/*
     weather.set_time_status(weather.get_time_status()+1); //увеличить кол-во времени текущей погоды
     if(weather.get_time_status()==TIME_STATUS_END) //если время типа погоды закончилось, случайно выбрать один из двух других
     {
-        int randm=RAND(0,1);
+        int randm=RAND(0,1); //случайное число 0 или 1
         switch(weather.get_f_status()) //случайно установить другой статус погоды
         {
         case F_SUN:
@@ -285,7 +285,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
             break;
         }
 
-        switch(weather.get_f_status())
+        switch(weather.get_f_status()) //изменить яркость солнца и кол-во осадков в зависимости от погоды
         {
         case F_SUN:
             weather.set_sunshine(RAND(SUNSHINE_SUN-SUNSHINE_SUN_RANGE, SUNSHINE_SUN+SUNSHINE_SUN_RANGE)); //яркость солнца случайно меняется каждый тик в своём диапазоне
@@ -310,6 +310,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
         {
             int num;
             int type;
+            int radius;
             int height;
             int agressiv;
         } *plants;
@@ -323,6 +324,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
             {
                 plants[j].num=i;
                 plants[j].type=type;
+                plants[j].radius=forest.get_radius_plant(i, type);
                 plants[j].height=forest.get_height_plant(i, type);
                 plants[j].agressiv=forest.get_aggresiv_plant(i, type);
                 j++;
@@ -351,13 +353,38 @@ void MainWidget::Timer_tick() //слот интервала таймера
             int wet = forest.get_wet_dirt(num_dirt); //получаемая влажность
             int sun = weather.get_sunshine(); //получаемый солнечный свет (пока без учёта наложения растений)
 
-            int remain_wet = wet - forest.get_wet_dirt(num_dirt);
+            int remain_wet = wet - forest.get_wet_dirt(num_dirt); //остаток влаги после растения
 
+            if(remain_wet >= 0) //растение получило достаточно влаги
+            {
 
+            }
+            else //растение получило недостаточно влаги
+            {
 
+            }
+
+            int sun_received; //полученное кол-во солнечного света с учётом более высоких растений
+            for (int k=0; k<all_plants; k++) //перебрать все растения
+            {
+
+                if(plants[k].height>plants[i].height) //если высота текущего растения выше исходного
+                {
+                    int ox1 = forest.get_x_plant(num, type); // координата ox центра окружности 1 (исходной)
+                    int oy1 = forest.get_y_plant(num, type); // координата oy центра окружности 1 (исходной)
+                    int ox2 = forest.get_x_plant(plants[k].num, plants[k].type); // координата ox центра окружности 2 (более высокого растения)
+                    int oy2 = forest.get_y_plant(plants[k].num, plants[k].type); // координата oy центра окружности 2 (более высокого растения)
+                    int dist = sqrt(((ox2-ox1)*(ox2-ox1))+((oy2-oy1)*(oy2-oy1))); //расстояние между центрами двух окружностей
+                    if(dist<(plants[i].radius+plants[k].radius)) //если окружности пересекаются
+                    {
+                        if()
+                    }
+                }
+
+            }
 
             int feed = forest.get_fertility_dirt(num_dirt);
-            int remain_feed = feed - forest.get_feed_norm_plant(num, type);
+            int remain_feed = feed - forest.get_feed_norm_plant(num, type); //остаток от питания после растения
             if (remain_feed >= 0) //растение получило достаточно питания
             {
                 forest.set_fertility_dirt(num_dirt, feed+remain_feed);
@@ -393,7 +420,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
         }
 
     }
-
+*/
 
 
 
