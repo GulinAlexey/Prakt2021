@@ -243,7 +243,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
 {
     all_time=all_time+1; //получить новое значение общего времени
     ui->all_time_text->setText("Всего времени прошло (в тиках): "+QString::number(all_time)); //вывести на экран
-/*
+
     weather.set_time_status(weather.get_time_status()+1); //увеличить кол-во времени текущей погоды
     if(weather.get_time_status()==TIME_STATUS_END) //если время типа погоды закончилось, случайно выбрать один из двух других
     {
@@ -284,6 +284,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
             }
             break;
         }
+    }
 
         switch(weather.get_f_status()) //изменить яркость солнца и кол-во осадков в зависимости от погоды
         {
@@ -377,7 +378,10 @@ void MainWidget::Timer_tick() //слот интервала таймера
                     int dist = sqrt(((ox2-ox1)*(ox2-ox1))+((oy2-oy1)*(oy2-oy1))); //расстояние между центрами двух окружностей
                     if(dist<(plants[i].radius+plants[k].radius)) //если окружности пересекаются
                     {
-                        if()
+                        if() //если исходное растение полностью находится внутри радиуса более высокого
+                        {
+
+                        }
                     }
                 }
 
@@ -419,8 +423,9 @@ void MainWidget::Timer_tick() //слот интервала таймера
             }
         }
 
-    }
-*/
+
+
+
 
 
 
@@ -428,6 +433,25 @@ void MainWidget::Timer_tick() //слот интервала таймера
     Print_weather_info(); //вывести инфо о погоде
     if(type_of_info!=-1)
         Print_info(num_info, type_of_info, 0); //вывести инфо в спец. блок
+
+    for(int k=1; k<all_plants; k++) //метод пузырька
+        {
+            for(int i=0; i<all_plants-k; i++)
+            {
+                if(plants[i].height > plants[i+1].height) //сортировка по возрастанию высоты
+                { //ПЕРЕСТАВИТЬ ЗНАЧЕНИЯ
+                    plant_sort vsp;
+                    vsp=plants[i];
+                    plants[i]=plants[i+1];
+                    plants[i+1]=plants[i];
+                }
+            }
+        }
+
+    for(int i=0; i<all_plants; i++) //перебрать все растения
+    {
+        Show_pic(plants[i].num, plants[i].type); //вывести картинки растений (Сначала более низкие. Верхние на них наслаиваются)
+    }
 }
 
 void MainWidget::Normalmode(bool value) //слот при переключении в нормальный режим времени
