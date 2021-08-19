@@ -286,142 +286,142 @@ void MainWidget::Timer_tick() //слот интервала таймера
         }
     }
 
-        switch(weather.get_f_status()) //изменить яркость солнца и кол-во осадков в зависимости от погоды
+    switch(weather.get_f_status()) //изменить яркость солнца и кол-во осадков в зависимости от погоды
+    {
+    case F_SUN:
+        weather.set_sunshine(RAND(SUNSHINE_SUN-SUNSHINE_SUN_RANGE, SUNSHINE_SUN+SUNSHINE_SUN_RANGE)); //яркость солнца случайно меняется каждый тик в своём диапазоне
+        weather.set_rainfall_tick(RAINFALL_TICK_SUN);
+        break;
+    case F_CLOUD:
+        weather.set_sunshine(RAND(SUNSHINE_CLOUD-SUNSHINE_CLOUD_RANGE, SUNSHINE_CLOUD+SUNSHINE_CLOUD_RANGE)); //яркость солнца случайно меняется каждый тик в своём диапазоне
+        weather.set_rainfall_tick(RAINFALL_TICK_CLOUD); //небольшое кол-во осадков в виде росы
+        break;
+    case F_RAIN:
+        weather.set_sunshine(RAND(SUNSHINE_RAIN-SUNSHINE_RAIN_RANGE, SUNSHINE_RAIN+SUNSHINE_RAIN_RANGE)); //яркость солнца случайно меняется каждый тик в своём диапазоне
+        weather.set_rainfall_tick(RAND(RAINFALL_TICK_RAIN-RAINFALL_TICK_RAIN_RANGE, RAINFALL_TICK_RAIN+RAINFALL_TICK_RAIN_RANGE)); //кол-во осадков случайно меняется каждый тик в своём диапазоне
+        break;
+    }
+
+    for(int i=0, kolvo=forest.get_kolvo_dirt(), rainf=weather.get_rainfall_tick(); i<kolvo; i++) //перебрать ячейки почвы
+    {
+        forest.set_wet_dirt(i, (forest.get_wet_dirt(i)+rainf)); //почва получает влагу
+    }
+
+    struct plant_sort //структура для сортировки растений (их упорядочиванию по высоте или агрессивности)
+    {
+        int num;
+        int type;
+        int radius;
+        int height;
+        int agressiv;
+    } *plants;
+
+    int all_plants=forest.get_kolvo_grass()+forest.get_kolvo_bush()+forest.get_kolvo_tree(); //кол-во растений всех видов
+    plants = new plant_sort[all_plants]; //структура для сортировки
+
+    for(int type=1, j=0; type<=3; type++) //заполнить структуру информацией о всех растениях
+    {
+        for(int i=0, kolvo=forest.get_kolvo_type(type); i<kolvo; i++)
         {
-        case F_SUN:
-            weather.set_sunshine(RAND(SUNSHINE_SUN-SUNSHINE_SUN_RANGE, SUNSHINE_SUN+SUNSHINE_SUN_RANGE)); //яркость солнца случайно меняется каждый тик в своём диапазоне
-            weather.set_rainfall_tick(RAINFALL_TICK_SUN);
-            break;
-        case F_CLOUD:
-            weather.set_sunshine(RAND(SUNSHINE_CLOUD-SUNSHINE_CLOUD_RANGE, SUNSHINE_CLOUD+SUNSHINE_CLOUD_RANGE)); //яркость солнца случайно меняется каждый тик в своём диапазоне
-            weather.set_rainfall_tick(RAINFALL_TICK_CLOUD); //небольшое кол-во осадков в виде росы
-            break;
-        case F_RAIN:
-            weather.set_sunshine(RAND(SUNSHINE_RAIN-SUNSHINE_RAIN_RANGE, SUNSHINE_RAIN+SUNSHINE_RAIN_RANGE)); //яркость солнца случайно меняется каждый тик в своём диапазоне
-            weather.set_rainfall_tick(RAND(RAINFALL_TICK_RAIN-RAINFALL_TICK_RAIN_RANGE, RAINFALL_TICK_RAIN+RAINFALL_TICK_RAIN_RANGE)); //кол-во осадков случайно меняется каждый тик в своём диапазоне
-            break;
+            plants[j].num=i;
+            plants[j].type=type;
+            plants[j].radius=forest.get_radius_plant(i, type);
+            plants[j].height=forest.get_height_plant(i, type);
+            plants[j].agressiv=forest.get_aggresiv_plant(i, type);
+            j++;
         }
+    }
 
-        for(int i=0, kolvo=forest.get_kolvo_dirt(), rainf=weather.get_rainfall_tick(); i<kolvo; i++) //перебрать ячейки почвы
+    for(int k=1; k<all_plants; k++) //метод пузырька
         {
-            forest.set_wet_dirt(i, (forest.get_wet_dirt(i)+rainf)); //почва получает влагу
-        }
-
-        struct plant_sort //структура для сортировки растений (их упорядочиванию по высоте или агрессивности)
-        {
-            int num;
-            int type;
-            int radius;
-            int height;
-            int agressiv;
-        } *plants;
-
-        int all_plants=forest.get_kolvo_grass()+forest.get_kolvo_bush()+forest.get_kolvo_tree(); //кол-во растений всех видов
-        plants = new plant_sort[all_plants]; //структура для сортировки
-
-        for(int type=1, j=0; type<=3; type++) //заполнить структуру информацией о всех растениях
-        {
-            for(int i=0, kolvo=forest.get_kolvo_type(type); i<kolvo; i++)
+            for(int i=0; i<all_plants-k; i++)
             {
-                plants[j].num=i;
-                plants[j].type=type;
-                plants[j].radius=forest.get_radius_plant(i, type);
-                plants[j].height=forest.get_height_plant(i, type);
-                plants[j].agressiv=forest.get_aggresiv_plant(i, type);
-                j++;
-            }
-        }
-
-        for(int k=1; k<all_plants; k++) //метод пузырька
-            {
-                for(int i=0; i<all_plants-k; i++)
-                {
-                    if(plants[i].agressiv < plants[i+1].agressiv) //сортировка по убыванию агрессивности
-                    { //ПЕРЕСТАВИТЬ ЗНАЧЕНИЯ
-                        plant_sort vsp;
-                        vsp=plants[i];
-                        plants[i]=plants[i+1];
-                        plants[i+1]=plants[i];
-                    }
+                if(plants[i].agressiv < plants[i+1].agressiv) //сортировка по убыванию агрессивности
+                { //ПЕРЕСТАВИТЬ ЗНАЧЕНИЯ
+                    plant_sort vsp;
+                    vsp=plants[i];
+                    plants[i]=plants[i+1];
+                    plants[i+1]=plants[i];
                 }
             }
+        }
 
-        for(int i=0; i<all_plants; i++) //перебрать все растения, получающие питание
+    for(int i=0; i<all_plants; i++) //перебрать все растения, получающие питание
+    {
+        int num = plants[i].num; //номер растения
+        int type = plants[i].type; //тип растения
+        int num_dirt = forest.get_num_dirt_plant(num, type); //номер ячейки почвы с растением
+        int wet = forest.get_wet_dirt(num_dirt); //получаемая влажность
+        int sun = weather.get_sunshine(); //получаемый солнечный свет (пока без учёта наложения растений)
+
+        int remain_wet = wet - forest.get_wet_dirt(num_dirt); //остаток влаги после растения
+
+        if(remain_wet >= 0) //растение получило достаточно влаги
         {
-            int num = plants[i].num; //номер растения
-            int type = plants[i].type; //тип растения
-            int num_dirt = forest.get_num_dirt_plant(num, type); //номер ячейки почвы с растением
-            int wet = forest.get_wet_dirt(num_dirt); //получаемая влажность
-            int sun = weather.get_sunshine(); //получаемый солнечный свет (пока без учёта наложения растений)
 
-            int remain_wet = wet - forest.get_wet_dirt(num_dirt); //остаток влаги после растения
+        }
+        else //растение получило недостаточно влаги
+        {
 
-            if(remain_wet >= 0) //растение получило достаточно влаги
+        }
+
+        int sun_received; //полученное кол-во солнечного света с учётом более высоких растений
+        for (int k=0; k<all_plants; k++) //перебрать все растения
+        {
+
+            if(plants[k].height>plants[i].height) //если высота текущего растения выше исходного
             {
-
-            }
-            else //растение получило недостаточно влаги
-            {
-
-            }
-
-            int sun_received; //полученное кол-во солнечного света с учётом более высоких растений
-            for (int k=0; k<all_plants; k++) //перебрать все растения
-            {
-
-                if(plants[k].height>plants[i].height) //если высота текущего растения выше исходного
+                int ox1 = forest.get_x_plant(num, type); // координата ox центра окружности 1 (исходной)
+                int oy1 = forest.get_y_plant(num, type); // координата oy центра окружности 1 (исходной)
+                int ox2 = forest.get_x_plant(plants[k].num, plants[k].type); // координата ox центра окружности 2 (более высокого растения)
+                int oy2 = forest.get_y_plant(plants[k].num, plants[k].type); // координата oy центра окружности 2 (более высокого растения)
+                int dist = sqrt(((ox2-ox1)*(ox2-ox1))+((oy2-oy1)*(oy2-oy1))); //расстояние между центрами двух окружностей
+                if(dist<(plants[i].radius+plants[k].radius)) //если окружности пересекаются
                 {
-                    int ox1 = forest.get_x_plant(num, type); // координата ox центра окружности 1 (исходной)
-                    int oy1 = forest.get_y_plant(num, type); // координата oy центра окружности 1 (исходной)
-                    int ox2 = forest.get_x_plant(plants[k].num, plants[k].type); // координата ox центра окружности 2 (более высокого растения)
-                    int oy2 = forest.get_y_plant(plants[k].num, plants[k].type); // координата oy центра окружности 2 (более высокого растения)
-                    int dist = sqrt(((ox2-ox1)*(ox2-ox1))+((oy2-oy1)*(oy2-oy1))); //расстояние между центрами двух окружностей
-                    if(dist<(plants[i].radius+plants[k].radius)) //если окружности пересекаются
+                    if() //если исходное растение полностью находится внутри радиуса более высокого
                     {
-                        if() //если исходное растение полностью находится внутри радиуса более высокого
-                        {
 
-                        }
                     }
                 }
-
             }
 
-            int feed = forest.get_fertility_dirt(num_dirt);
-            int remain_feed = feed - forest.get_feed_norm_plant(num, type); //остаток от питания после растения
-            if (remain_feed >= 0) //растение получило достаточно питания
+        }
+
+        int feed = forest.get_fertility_dirt(num_dirt);
+        int remain_feed = feed - forest.get_feed_norm_plant(num, type); //остаток от питания после растения
+        if (remain_feed >= 0) //растение получило достаточно питания
+        {
+            forest.set_fertility_dirt(num_dirt, feed+remain_feed);
+            forest.set_score_grow_plant(num, type, (forest.get_score_grow_plant(num, type)+1));
+            if(forest.get_score_grow_plant(num, type) == forest.get_score_grow_max_plant(num, type))
             {
-                forest.set_fertility_dirt(num_dirt, feed+remain_feed);
-                forest.set_score_grow_plant(num, type, (forest.get_score_grow_plant(num, type)+1));
-                if(forest.get_score_grow_plant(num, type) == forest.get_score_grow_max_plant(num, type))
+                forest.set_score_grow_plant(num, type, SCORE_GROW_START);
+                int grow_height, grow_radius;
+                switch (type)
                 {
-                    forest.set_score_grow_plant(num, type, SCORE_GROW_START);
-                    int grow_height, grow_radius;
-                    switch (type)
-                    {
-                    case 1: //трава
-                        grow_height=GROW_GRASS_HEIGHT;
-                        grow_radius=GROW_GRASS_RADIUS;
-                        break;
-                    case 2: //куст
-                        grow_height=GROW_BUSH_HEIGHT;
-                        grow_radius=GROW_BUSH_RADIUS;
-                        break;
-                    case 3: //дерево
-                        grow_height=GROW_TREE_HEIGHT;
-                        grow_radius=GROW_TREE_RADIUS;
-                        break;
-                    }
-                    forest.set_height_plant(num, type, (forest.get_height_plant(num, type)+grow_height));
-                    forest.set_radius_plant(num, type, (forest.get_radius_plant(num, type)+grow_radius));
-
+                case 1: //трава
+                    grow_height=GROW_GRASS_HEIGHT;
+                    grow_radius=GROW_GRASS_RADIUS;
+                    break;
+                case 2: //куст
+                    grow_height=GROW_BUSH_HEIGHT;
+                    grow_radius=GROW_BUSH_RADIUS;
+                    break;
+                case 3: //дерево
+                    grow_height=GROW_TREE_HEIGHT;
+                    grow_radius=GROW_TREE_RADIUS;
+                    break;
                 }
-            }
-            else //растение получило недостаточно питания
-            {
+                forest.set_height_plant(num, type, (forest.get_height_plant(num, type)+grow_height));
+                forest.set_radius_plant(num, type, (forest.get_radius_plant(num, type)+grow_radius));
 
             }
         }
+        else //растение получило недостаточно питания
+        {
+
+        }
+    }
 
 
 
