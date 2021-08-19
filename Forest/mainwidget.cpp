@@ -372,11 +372,12 @@ void MainWidget::Timer_tick() //слот интервала таймера
         }
 
         int sun_received; //полученное кол-во солнечного света с учётом более высоких растений
+        int square_sun_shielded=0; //площадь исходного растения, которая была закрыта от солнца более высоким
         for (int k=0; k<all_plants; k++) //перебрать все растения
         {
-
             if(plants[k].height>plants[i].height) //если высота текущего растения выше исходного
             {
+                int new_square_sun_shielded=0; //площадь исходного растения, которая была закрыта от солнца данным растением
                 int ox1 = forest.get_x_plant(num, type); // координата ox центра окружности 1 (исходной)
                 int oy1 = forest.get_y_plant(num, type); // координата oy центра окружности 1 (исходной)
                 int ox2 = forest.get_x_plant(plants[k].num, plants[k].type); // координата ox центра окружности 2 (более высокого растения)
@@ -399,6 +400,11 @@ void MainWidget::Timer_tick() //слот интервала таймера
 
                         }
                     }
+                }
+
+                if(new_square_sun_shielded > square_sun_shielded) //если данное растение закрывает исходное сильнее предыдущего, то изменить значение перекрытой площади на новое
+                {
+                    square_sun_shielded=new_square_sun_shielded;
                 }
             }
 
