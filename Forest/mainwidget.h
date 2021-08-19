@@ -28,5 +28,6 @@ public slots: //публичные слоты
     void Print_weather_info(); //слот вывода инфо о погоде
     void Print_forest_info(); //слот вывода инфо о лесе
     void Show_pic(int num, int type); //слот - вывести изображение растения
+    void Show_pic_human(int num, int type); //слот - вывести изображение человека (лесника или браконьера)
 };
 #endif // MAINWIDGET_H

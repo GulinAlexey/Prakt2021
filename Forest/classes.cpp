@@ -695,6 +695,34 @@ int Weather::get_time_status()
     return time_status;
 }
 
+void Forester::get_img(QLabel*** png) //вернуть указатель на изображение лесника
+{
+    (*png)=&img;
+}
+
+int Forester::get_ox() //получить поле "ox"
+{
+    return ox;
+}
+int Forester::get_oy() //получить поле "oy"
+{
+    return oy;
+}
+
+int Invaders::get_ox(int num) //получить поле "ox" выбранного браконьера
+{
+    return poachers[num].ox;
+}
+int Invaders::get_oy(int num) //получить поле "oy" выбранного браконьера
+{
+    return poachers[num].oy;
+}
+
+void Invaders::get_img(QLabel*** png, int num) //вернуть указатель на изображение выбранного браконьера
+{
+    (*png)=&poachers[num].img;
+}
+
 void Invaders::Add_invader(int x, int y) //добавить чужака
 {
     int kolvo = kolvo_poacher; //старое кол-во браконьеров

@@ -180,6 +180,11 @@ class Forester : public Human //класс Лесник
 public:
     Forester();
     void Init(); //инициализация
+
+    /*методы получения и установления полей*/
+    int get_ox(); //получить поле "ox"
+    int get_oy(); //получить поле "oy"
+    void get_img(QLabel*** png); //вернуть указатель на изображение лесника
 };
 
 class Invaders //класс Чужаки (для леса)
@@ -191,6 +196,11 @@ public:
     Invaders();
     void Add_invader(int x, int y); //добавить чужака
     void Delete_invader(int num); //удалить чужака
+
+    /*методы получения и установления полей*/
+    int get_ox(int num); //получить поле "ox" выбранного браконьера
+    int get_oy(int num); //получить поле "oy" выбранной браконьера
+    void get_img(QLabel*** png, int num); //вернуть указатель на изображение выбранного браконьера
 };
 
 #endif // CLASSES_H
