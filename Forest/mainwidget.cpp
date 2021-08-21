@@ -2,6 +2,7 @@
 #include "ui_mainwidget.h"
 #include "classes.h" //классы растение, погода и т. д. для работы программы
 #include <qtimer.h>
+#include <math.h>
 #include <QMouseEvent>
 
 QTimer *timer; // таймер для работы модели
@@ -364,7 +365,6 @@ void MainWidget::Timer_tick() //слот интервала таймера
 
         if(remain_wet >= 0) //растение получило достаточно влаги
         {
-
         }
         else //растение получило недостаточно влаги
         {
@@ -372,12 +372,12 @@ void MainWidget::Timer_tick() //слот интервала таймера
         }
 
         int sun_received; //полученное кол-во солнечного света с учётом более высоких растений
-        int square_sun_shielded=0; //площадь исходного растения, которая была закрыта от солнца более высоким
+        double square_sun_shielded=0; //площадь исходного растения, которая была закрыта от солнца более высоким
         for (int k=0; k<all_plants; k++) //перебрать все растения
         {
             if(plants[k].height>plants[i].height) //если высота текущего растения выше исходного
             {
-                int new_square_sun_shielded=0; //площадь исходного растения, которая была закрыта от солнца данным растением
+                double new_square_sun_shielded=0; //площадь исходного растения, которая была закрыта от солнца данным растением
                 int ox1 = forest.get_x_plant(num, type); // координата ox центра окружности 1 (исходной)
                 int oy1 = forest.get_y_plant(num, type); // координата oy центра окружности 1 (исходной)
                 int ox2 = forest.get_x_plant(plants[k].num, plants[k].type); // координата ox центра окружности 2 (более высокого растения)
@@ -387,13 +387,13 @@ void MainWidget::Timer_tick() //слот интервала таймера
                 {
                     if(dist<(plants[k].radius-plants[i].radius)) //если исходное растение полностью находится внутри радиуса более высокого
                     {
-
+                        new_square_sun_shielded=M_PI*plants[i].radius*plants[i].radius; // S = pi * r^2,  закрытая площадь = площадь всего более низкого растения
                     }
                     else
                     {
                         if(dist<(plants[i].radius-plants[k].radius)) //если более высокое растение полностью находится внутри радиуса исходного
                         {
-
+                            new_square_sun_shielded=M_PI*plants[k].radius*plants[k].radius; // S = pi * r^2,  закрытая площадь = площадь всего более высокого растения
                         }
                         else //если окружности частично пересекаются
                         {
