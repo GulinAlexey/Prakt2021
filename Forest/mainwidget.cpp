@@ -409,6 +409,8 @@ void MainWidget::Timer_tick() //слот интервала таймера
             }
 
         }
+        int square = M_PI*plants[i].radius*plants[i].radius; //площадь круга данного растения
+        sun_received = sun * (1-(square_sun_shielded/square)); //растение получает солн. свет с учётом закрытой площади
 
         int feed = forest.get_fertility_dirt(num_dirt);
         int remain_feed = feed - forest.get_feed_norm_plant(num, type); //остаток от питания после растения
