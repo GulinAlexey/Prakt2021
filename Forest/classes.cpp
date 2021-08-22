@@ -697,8 +697,8 @@ int Weather::get_time_status()
 
 void Forester::Init() //инициализация
 {
-    ox=10;
-    oy=10;
+    ox=HOUSE_OX;
+    oy=HOUSE_OY;
 }
 
 void Poacher::Init() //инициализация
