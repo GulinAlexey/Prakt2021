@@ -29,5 +29,6 @@ public slots: //публичные слоты
     void Print_forest_info(); //слот вывода инфо о лесе
     void Show_pic(int num, int type); //слот - вывести изображение растения
     void Show_pic_human(int num, int type); //слот - вывести изображение человека (лесника или браконьера)
+    void Show_pic_house(); //слот - вывести изображение домика лесника
 };
 #endif // MAINWIDGET_H
