@@ -695,6 +695,17 @@ int Weather::get_time_status()
     return time_status;
 }
 
+void Forester::Init() //инициализация
+{
+    ox=10;
+    oy=10;
+}
+
+void Poacher::Init() //инициализация
+{
+
+}
+
 void Forester::get_img(QLabel*** png) //вернуть указатель на изображение лесника
 {
     (*png)=&img;
