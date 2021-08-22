@@ -80,7 +80,14 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
     {
         int x = (cursor().pos().x())- (this->geometry().x())- PLACE_X_MIN; //координата х мыши относительно place (площадка леса)
         int y = cursor().pos().y()- (this->geometry().y())- PLACE_Y_MIN; //координата у мыши относительно place (площадка леса)
-        if(x>0 && y>0 && x<PLACE_SIZE_X && y<PLACE_SIZE_Y) //если клик произошёл внутри площадки леса (place)
+
+        int f_click_house=0; //флаг клика в домик
+        if(x>(HOUSE_OX-RADIUS_PIC_HOUSE) && y>(HOUSE_OY-RADIUS_PIC_HOUSE) && x<(HOUSE_OX+RADIUS_PIC_HOUSE) && y<(HOUSE_OY+RADIUS_PIC_HOUSE))
+        {
+            f_click_house=1; //если кликнут домик, то отметить флагом и больше ничего не выполнять
+        }
+
+        if(x>0 && y>0 && x<PLACE_SIZE_X && y<PLACE_SIZE_Y && f_click_house==0) //если клик произошёл внутри площадки леса (place)
         {
             if(ui->plant_b->isChecked()==true) //если был выбран режим посадки растения
             {
