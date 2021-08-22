@@ -100,6 +100,10 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *all_time_text;
+    QGroupBox *human_timemode;
+    QRadioButton *normal_human;
+    QRadioButton *pause_human;
+    QRadioButton *stop_human;
 
     void setupUi(QWidget *MainWidget)
     {
@@ -933,6 +937,21 @@ public:
         all_time_text = new QLabel(MainWidget);
         all_time_text->setObjectName(QString::fromUtf8("all_time_text"));
         all_time_text->setGeometry(QRect(20, 1, 691, 16));
+        human_timemode = new QGroupBox(MainWidget);
+        human_timemode->setObjectName(QString::fromUtf8("human_timemode"));
+        human_timemode->setGeometry(QRect(1130, 320, 181, 91));
+        human_timemode->setStyleSheet(QString::fromUtf8("background-color: rgb(243, 208, 172);"));
+        normal_human = new QRadioButton(human_timemode);
+        normal_human->setObjectName(QString::fromUtf8("normal_human"));
+        normal_human->setGeometry(QRect(10, 20, 91, 17));
+        normal_human->setChecked(false);
+        pause_human = new QRadioButton(human_timemode);
+        pause_human->setObjectName(QString::fromUtf8("pause_human"));
+        pause_human->setGeometry(QRect(10, 40, 91, 17));
+        stop_human = new QRadioButton(human_timemode);
+        stop_human->setObjectName(QString::fromUtf8("stop_human"));
+        stop_human->setGeometry(QRect(10, 60, 82, 17));
+        stop_human->setChecked(true);
 
         retranslateUi(MainWidget);
 
@@ -947,7 +966,7 @@ public:
         delete_b->setText(QCoreApplication::translate("MainWidget", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\320\265", nullptr));
         infoplant_b->setText(QCoreApplication::translate("MainWidget", "\320\230\320\275\321\204\320\276 \320\276 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\320\270", nullptr));
         infodirt_b->setText(QCoreApplication::translate("MainWidget", "\320\230\320\275\321\204\320\276 \320\276 \320\277\320\276\321\207\320\262\320\265", nullptr));
-        timemode->setTitle(QCoreApplication::translate("MainWidget", "\320\240\320\265\320\266\320\270\320\274 \320\262\321\200\320\265\320\274\320\265\320\275\320\270", nullptr));
+        timemode->setTitle(QCoreApplication::translate("MainWidget", "\320\240\320\265\320\266\320\270\320\274 \320\262\321\200\320\265\320\274\320\265\320\275\320\270 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\320\271", nullptr));
         normal_b->setText(QCoreApplication::translate("MainWidget", "\320\235\320\276\321\200\320\274\320\260\320\273\321\214\320\275\321\213\320\271", nullptr));
         speed_b->setText(QCoreApplication::translate("MainWidget", "\320\243\321\201\320\272\320\276\321\200\320\265\320\275\320\275\321\213\320\271", nullptr));
         pause_b->setText(QCoreApplication::translate("MainWidget", "\320\237\320\260\321\203\320\267\320\260", nullptr));
@@ -1016,6 +1035,10 @@ public:
         label->setText(QCoreApplication::translate("MainWidget", "TextLabel", nullptr));
         label_2->setText(QCoreApplication::translate("MainWidget", "TextLabel", nullptr));
         all_time_text->setText(QCoreApplication::translate("MainWidget", "\320\222\321\201\320\265\320\263\320\276 \320\262\321\200\320\265\320\274\320\265\320\275\320\270 \320\277\321\200\320\276\321\210\320\273\320\276 (\320\262 \321\202\320\270\320\272\320\260\321\205): 0", nullptr));
+        human_timemode->setTitle(QCoreApplication::translate("MainWidget", "\320\240\320\265\320\266\320\270\320\274 \320\262\321\200\320\265\320\274\320\265\320\275\320\270 \320\273\321\216\320\264\320\265\320\271", nullptr));
+        normal_human->setText(QCoreApplication::translate("MainWidget", "\320\235\320\276\321\200\320\274\320\260\320\273\321\214\320\275\321\213\320\271", nullptr));
+        pause_human->setText(QCoreApplication::translate("MainWidget", "\320\237\320\260\321\203\320\267\320\260", nullptr));
+        stop_human->setText(QCoreApplication::translate("MainWidget", "\320\222\321\213\320\272\320\273.", nullptr));
     } // retranslateUi
 
 };

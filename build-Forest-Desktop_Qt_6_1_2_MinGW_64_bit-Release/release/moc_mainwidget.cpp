@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWidget_t {
-    const uint offsetsAndSize[28];
-    char stringdata0[135];
+    const uint offsetsAndSize[36];
+    char stringdata0[196];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWidget_t, stringdata0) + ofs), len 
@@ -32,23 +32,29 @@ static const qt_meta_stringdata_MainWidget_t qt_meta_stringdata_MainWidget = {
 QT_MOC_LITERAL(0, 10), // "MainWidget"
 QT_MOC_LITERAL(11, 10), // "Timer_tick"
 QT_MOC_LITERAL(22, 0), // ""
-QT_MOC_LITERAL(23, 10), // "Normalmode"
-QT_MOC_LITERAL(34, 5), // "value"
-QT_MOC_LITERAL(40, 9), // "Speedmode"
-QT_MOC_LITERAL(50, 9), // "Pausemode"
-QT_MOC_LITERAL(60, 10), // "Print_info"
-QT_MOC_LITERAL(71, 3), // "num"
-QT_MOC_LITERAL(75, 4), // "type"
-QT_MOC_LITERAL(80, 8), // "f_update"
-QT_MOC_LITERAL(89, 18), // "Print_weather_info"
-QT_MOC_LITERAL(108, 17), // "Print_forest_info"
-QT_MOC_LITERAL(126, 8) // "Show_pic"
+QT_MOC_LITERAL(23, 16), // "Timer_human_tick"
+QT_MOC_LITERAL(40, 10), // "Normalmode"
+QT_MOC_LITERAL(51, 5), // "value"
+QT_MOC_LITERAL(57, 9), // "Speedmode"
+QT_MOC_LITERAL(67, 9), // "Pausemode"
+QT_MOC_LITERAL(77, 16), // "Normalmode_human"
+QT_MOC_LITERAL(94, 15), // "Pausemode_human"
+QT_MOC_LITERAL(110, 10), // "Stop_human"
+QT_MOC_LITERAL(121, 10), // "Print_info"
+QT_MOC_LITERAL(132, 3), // "num"
+QT_MOC_LITERAL(136, 4), // "type"
+QT_MOC_LITERAL(141, 8), // "f_update"
+QT_MOC_LITERAL(150, 18), // "Print_weather_info"
+QT_MOC_LITERAL(169, 17), // "Print_forest_info"
+QT_MOC_LITERAL(187, 8) // "Show_pic"
 
     },
-    "MainWidget\0Timer_tick\0\0Normalmode\0"
-    "value\0Speedmode\0Pausemode\0Print_info\0"
-    "num\0type\0f_update\0Print_weather_info\0"
-    "Print_forest_info\0Show_pic"
+    "MainWidget\0Timer_tick\0\0Timer_human_tick\0"
+    "Normalmode\0value\0Speedmode\0Pausemode\0"
+    "Normalmode_human\0Pausemode_human\0"
+    "Stop_human\0Print_info\0num\0type\0f_update\0"
+    "Print_weather_info\0Print_forest_info\0"
+    "Show_pic"
 };
 #undef QT_MOC_LITERAL
 
@@ -58,7 +64,7 @@ static const uint qt_meta_data_MainWidget[] = {
        9,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -66,24 +72,32 @@ static const uint qt_meta_data_MainWidget[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   62,    2, 0x0a,    0 /* Public */,
-       3,    1,   63,    2, 0x0a,    1 /* Public */,
-       5,    1,   66,    2, 0x0a,    3 /* Public */,
-       6,    1,   69,    2, 0x0a,    5 /* Public */,
-       7,    3,   72,    2, 0x0a,    7 /* Public */,
-      11,    0,   79,    2, 0x0a,   11 /* Public */,
-      12,    0,   80,    2, 0x0a,   12 /* Public */,
-      13,    2,   81,    2, 0x0a,   13 /* Public */,
+       1,    0,   86,    2, 0x0a,    0 /* Public */,
+       3,    0,   87,    2, 0x0a,    1 /* Public */,
+       4,    1,   88,    2, 0x0a,    2 /* Public */,
+       6,    1,   91,    2, 0x0a,    4 /* Public */,
+       7,    1,   94,    2, 0x0a,    6 /* Public */,
+       8,    1,   97,    2, 0x0a,    8 /* Public */,
+       9,    1,  100,    2, 0x0a,   10 /* Public */,
+      10,    1,  103,    2, 0x0a,   12 /* Public */,
+      11,    3,  106,    2, 0x0a,   14 /* Public */,
+      15,    0,  113,    2, 0x0a,   18 /* Public */,
+      16,    0,  114,    2, 0x0a,   19 /* Public */,
+      17,    2,  115,    2, 0x0a,   20 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,    4,
-    QMetaType::Void, QMetaType::Bool,    4,
-    QMetaType::Void, QMetaType::Bool,    4,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    8,    9,   10,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,    5,
+    QMetaType::Void, QMetaType::Bool,    5,
+    QMetaType::Void, QMetaType::Bool,    5,
+    QMetaType::Void, QMetaType::Bool,    5,
+    QMetaType::Void, QMetaType::Bool,    5,
+    QMetaType::Void, QMetaType::Bool,    5,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   12,   13,   14,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,    8,    9,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   12,   13,
 
        0        // eod
 };
@@ -95,13 +109,17 @@ void MainWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         (void)_t;
         switch (_id) {
         case 0: _t->Timer_tick(); break;
-        case 1: _t->Normalmode((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 2: _t->Speedmode((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 3: _t->Pausemode((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 4: _t->Print_info((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 5: _t->Print_weather_info(); break;
-        case 6: _t->Print_forest_info(); break;
-        case 7: _t->Show_pic((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 1: _t->Timer_human_tick(); break;
+        case 2: _t->Normalmode((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 3: _t->Speedmode((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 4: _t->Pausemode((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 5: _t->Normalmode_human((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 6: _t->Pausemode_human((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 7: _t->Stop_human((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 8: _t->Print_info((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 9: _t->Print_weather_info(); break;
+        case 10: _t->Print_forest_info(); break;
+        case 11: _t->Show_pic((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -115,7 +133,7 @@ const QMetaObject MainWidget::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWidget_t
 
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
 
 
 >,
@@ -142,13 +160,13 @@ int MainWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 12)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 12;
     }
     return _id;
 }

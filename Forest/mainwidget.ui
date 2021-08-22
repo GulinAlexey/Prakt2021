@@ -117,7 +117,7 @@
     <string notr="true">background-color: rgb(205, 208, 255);</string>
    </property>
    <property name="title">
-    <string>Режим времени</string>
+    <string>Режим времени растений</string>
    </property>
    <widget class="QRadioButton" name="normal_b">
     <property name="geometry">
@@ -4987,6 +4987,67 @@
    <property name="text">
     <string>Всего времени прошло (в тиках): 0</string>
    </property>
+  </widget>
+  <widget class="QGroupBox" name="human_timemode">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>320</y>
+     <width>141</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(243, 208, 172);</string>
+   </property>
+   <property name="title">
+    <string>Режим времени людей</string>
+   </property>
+   <widget class="QRadioButton" name="normal_human">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Нормальный</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="pause_human">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Пауза</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="stop_human">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Выкл.</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
