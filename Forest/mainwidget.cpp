@@ -261,8 +261,8 @@ void MainWidget::Timer_tick() //слот интервала таймера
     {
         Show_pic(1,6); //вывести её
         f_house_img=1; //отметить флагом
-    }
-    /*
+    }/*
+
     all_time=all_time+1; //получить новое значение общего времени
     ui->all_time_text->setText("Всего времени прошло (в тиках): "+QString::number(all_time)); //вывести на экран
 
@@ -492,7 +492,7 @@ void MainWidget::Timer_tick() //слот интервала таймера
     {
         Show_pic(plants[i].num, plants[i].type); //вывести картинки растений (Сначала более низкие. Верхние на них наслаиваются)
     }
-    */
+*/
 }
 
 void MainWidget::Normalmode(bool value) //слот при переключении в нормальный режим времени
