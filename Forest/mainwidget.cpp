@@ -979,16 +979,11 @@ void MainWidget::Add_invader() //слот добавления нового бр
 {
     int ox_start, oy_start; //стартовые координаты браконьера
     int rand_start= RAND(1,3); //случайное число для выбора угла (кроме угла с домиком лесника)
-    switch(rand_start)
-    {
-    case 1:
+    ox_start = invaders.get_corner(rand_start, X_CORNER); //получить координату выбранного случайного угла
+    oy_start = invaders.get_corner(rand_start, Y_CORNER); //получить координату выбранного случайного угла
 
-        break;
-    case 2:
-        break;
-    case 3:
-        break;
-    }
+    invaders.Add_invader(ox_start, oy_start); //добавить браконьера с выбранными стартовыми координатами
+    Show_pic(invaders.get_kolvo_poacher()-1, TYPE_POACHER); //вывести его картинку на экран
 }
 void MainWidget::Find_target(int num, int type) //найти цель для человека (тип: 1 - лесник, 2 - браконьер)
 {

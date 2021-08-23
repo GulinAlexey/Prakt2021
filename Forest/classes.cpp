@@ -836,3 +836,8 @@ void Invaders::set_corners() //установить координаты для 
     corners[2][Y_CORNER]=PLACE_SIZE_Y;
 
 }
+
+int Invaders::get_corner(int num, int coord) //получить значение координаты одного из углов
+{
+    return corners[num][coord];
+}

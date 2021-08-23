@@ -214,6 +214,7 @@ public:
     int get_cutting_speed(int num); //получить поле "cutting_speed" выбранного браконьера
 
     void set_corners(); //установить координаты для углов
+    int get_corner(int num, int coord); //получить значение координаты одного из углов
 
     void get_img(QLabel*** png, int num); //вернуть указатель на изображение выбранного браконьера
     int get_kolvo_poacher(); //получить кол-во браконьеров
