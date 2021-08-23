@@ -583,11 +583,17 @@ void MainWidget::Stop_human(bool value) //слот при переключени
 {
     if(value==true)
     {
+        QLabel **img_delete=nullptr; //указатель на label с картинкой для удаления
         human_tick->stop(); //остановить таймер
         forester_is_on=0; //отметить флагом "выключение" лесника
+        forester.get_img(&img_delete); //получить адрес для объекта - label с изображением лесника
+        (*img_delete)->deleteLater(); //удалить qlabel  с изображением лесника
+
         while(invaders.get_kolvo_poacher()!=0) //удалить всех браконьеров
         {
-            invaders.Delete_invader(0);
+            invaders.get_img(&img_delete, 0); //получить адрес для объекта - label с изображением браконьера
+            (*img_delete)->deleteLater(); //удалить qlabel  с изображением браконьера
+            invaders.Delete_invader(0); //удалить самого браконьера
         }
         Print_human_info(forester_is_on, 1); //вывести пустые строки (так как первым передаётся 0)
     }
