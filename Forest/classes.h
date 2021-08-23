@@ -196,6 +196,7 @@ class Invaders //класс Чужаки (для леса)
 {
 private:
     Poacher* poachers; //указатель на массив объектов Браконьер
+    int corners [3][2]; //массив координат углов для старта браконьеров и их побега (второй индекс - если [0], то x; если [1], то y)
     int kolvo_poacher=0; //кол-во браконьеров
 public:
     Invaders();
@@ -211,6 +212,8 @@ public:
     int get_tired(int num); //получить поле "tired" выбранного браконьера
     int get_view_radius(int num); //получить поле "view_radius" выбранного браконьера
     int get_cutting_speed(int num); //получить поле "cutting_speed" выбранного браконьера
+
+    void set_corners(); //установить координаты для углов
 
     void get_img(QLabel*** png, int num); //вернуть указатель на изображение выбранного браконьера
     int get_kolvo_poacher(); //получить кол-во браконьеров

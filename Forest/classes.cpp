@@ -823,3 +823,16 @@ void Invaders::Delete_invader(int num) //удалить чужака
     poachers = poachers_change; //теперь указатель указывает на новый массив
     kolvo_poacher--; //уменьшить значение кол-ва объектов в массиве на 1
 }
+
+void Invaders::set_corners() //установить координаты для углов появления браконьеров
+{
+    corners[0][X_CORNER]=0;
+    corners[0][Y_CORNER]=0;
+
+    corners[1][X_CORNER]=PLACE_SIZE_X;
+    corners[1][Y_CORNER]=0;
+
+    corners[2][X_CORNER]=0;
+    corners[2][Y_CORNER]=PLACE_SIZE_Y;
+
+}

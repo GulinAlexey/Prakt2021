@@ -168,4 +168,12 @@
 #define TIME_STATUS_START 0
 #define TIME_STATUS_END 10
 
+/*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Forester - лесник*/
+
+/*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Poacher - браконьер*/
+
+/*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Invaders - чужаки*/
+#define X_CORNER 0 // обозначение для координаты ox в массиве corner[][_] (одна из координат данного угла)
+#define Y_CORNER 1 // обозначение для координаты oy в массиве corner[][_] (одна из координат данного угла)
+
 #endif // CONSTANTS_H
