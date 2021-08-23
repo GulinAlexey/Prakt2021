@@ -589,7 +589,7 @@ void MainWidget::Normalmode_human(bool value) //слот при переключ
 {
     if(value==true)
     {
-        timer->start(TIME_HUMAN_TICK); //запустить таймер с интервалом в полсекунды
+        human_tick->start(TIME_HUMAN_TICK); //запустить таймер с интервалом в полсекунды
         if(f_pause_human==0) //если до этого не была включена пауза (то есть нужно восстановить людей на поле)
         {
             forester_is_on=1; //отметить флагом "включение" лесника
