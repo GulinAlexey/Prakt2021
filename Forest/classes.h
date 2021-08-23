@@ -184,6 +184,11 @@ public:
     /*методы получения и установления полей*/
     int get_ox(); //получить поле "ox"
     int get_oy(); //получить поле "oy"
+    int get_speed(); //получить поле "speed"
+    int get_target_ox(); //получить поле "target_ox"
+    int get_target_oy(); //получить поле "target_oy"
+    int get_tired(); //получить поле "tired"
+    int get_view_radius(); //получить поле "view_radius"
     void get_img(QLabel*** png); //вернуть указатель на изображение лесника
 };
 
@@ -199,7 +204,14 @@ public:
 
     /*методы получения и установления полей*/
     int get_ox(int num); //получить поле "ox" выбранного браконьера
-    int get_oy(int num); //получить поле "oy" выбранной браконьера
+    int get_oy(int num); //получить поле "oy" выбранного браконьера
+    int get_speed(int num); //получить поле "speed" выбранного браконьера
+    int get_target_ox(int num); //получить поле "target_ox" выбранного браконьера
+    int get_target_oy(int num); //получить поле "target_oy" выбранного браконьера
+    int get_tired(int num); //получить поле "tired" выбранного браконьера
+    int get_view_radius(int num); //получить поле "view_radius" выбранного браконьера
+    int get_cutting_speed(int num); //получить поле "cutting_speed" выбранного браконьера
+
     void get_img(QLabel*** png, int num); //вернуть указатель на изображение выбранного браконьера
     int get_kolvo_poacher(); //получить кол-во браконьеров
 };

@@ -551,6 +551,7 @@ void MainWidget::Normalmode_human(bool value) //слот при переключ
         forester_is_on=1; //отметить флагом "включение" лесника
         forester.Init(); //инициализация лесника
 
+        Print_human_info(forester_is_on); //вывести инфо о людях (так как передаётся 1)
     }
 }
 void MainWidget::Pausemode_human(bool value) //слот при переключении в режим времени - паузу для людей
@@ -570,6 +571,7 @@ void MainWidget::Stop_human(bool value) //слот при переключени
         {
             invaders.Delete_invader(0);
         }
+        Print_human_info(forester_is_on); //вывести пустые строки (так как передаётся 0)
     }
 }
 
@@ -708,9 +710,120 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
     }
 }
 
-void MainWidget::Print_human_info(int f_clear) //слот вывода инфо о людях (если передан отмеченный флаг, то просто вывести пустые строки)
+void MainWidget::Print_human_info(int f_output, int f_update) //слот вывода инфо о людях (если передан неотмеченный первый флаг, то просто вывести пустые строки) (флаг обновления показывает, надо ли обновлять названия столбцов)
 {
+    if(f_output==0 && f_update==1) //если не выводить инфо и обновить строки, то вывести пустые строки
+    {
+        ui->infoh_1->setText(" ");
+        ui->infoh_2->setText(" ");
+        ui->infoh_3->setText(" ");
+        ui->infoh_4->setText(" ");
+        ui->infoh_5->setText(" ");
+        ui->infoh_6->setText(" ");
+        ui->infoh_7->setText(" ");
+        ui->infoh_8->setText(" ");
+        ui->infoh_9->setText(" ");
+        ui->infoh_10->setText(" ");
+        ui->infoh_11->setText(" ");
 
+        ui->f1_1->setText(" ");
+        ui->f1_2->setText(" ");
+        ui->f1_3->setText(" ");
+        ui->f1_4->setText(" ");
+        ui->f1_5->setText(" ");
+        ui->f1_6->setText(" ");
+        ui->f1_7->setText(" ");
+        ui->f1_8->setText(" ");
+        ui->f1_9->setText(" ");
+        ui->f1_10->setText(" ");
+        ui->f1_11->setText(" ");
+    }
+    if(f_output==1 && f_update==1) //вывести названия строк
+    {
+        ui->infoh_1->setText("OX:");
+        ui->infoh_2->setText("OY:");
+        ui->infoh_3->setText("Скорость:");
+        ui->infoh_4->setText("OX цели:");
+        ui->infoh_5->setText("OY цели:");
+        ui->infoh_6->setText("Усталость:");
+        ui->infoh_7->setText("Рад. обзора:");
+        ui->infoh_8->setText("Скор. рубки:");
+        ui->infoh_9->setText(" ");
+        ui->infoh_10->setText(" ");
+        ui->infoh_11->setText(" ");
+    }
+    if(f_output==1) //вывести инфо о леснике
+    {
+        ui->f1_1->setText(QString::number(forester.get_ox()));
+        ui->f1_2->setText(QString::number(forester.get_oy()));
+        ui->f1_3->setText(QString::number(forester.get_speed()));
+        ui->f1_4->setText(QString::number(forester.get_target_ox()));
+        ui->f1_5->setText(QString::number(forester.get_target_oy()));
+        ui->f1_6->setText(QString::number(forester.get_tired()));
+        ui->f1_7->setText(QString::number(forester.get_view_radius()));
+        ui->f1_8->setText(" ");
+        ui->f1_9->setText(" ");
+        ui->f1_10->setText(" ");
+        ui->f1_11->setText(" ");
+    }
+    if(invaders.get_kolvo_poacher()>=1 && f_output==1) //если есть 1 браконьер и вкл. вывод, то вывести инфо о нём
+    {
+        int num=1; //номер браконьера для вывода инфо
+        ui->p1_1->setText(QString::number(invaders.get_ox(num)));
+        ui->p1_2->setText(QString::number(invaders.get_oy(num)));
+        ui->p1_3->setText(QString::number(invaders.get_speed(num)));
+        ui->p1_4->setText(QString::number(invaders.get_target_ox(num)));
+        ui->p1_5->setText(QString::number(invaders.get_target_oy(num)));
+        ui->p1_6->setText(QString::number(invaders.get_tired(num)));
+        ui->p1_7->setText(QString::number(invaders.get_view_radius(num)));
+        ui->p1_8->setText(QString::number(invaders.get_cutting_speed(num)));
+        ui->p1_9->setText(" ");
+        ui->p1_10->setText(" ");
+        ui->p1_11->setText(" ");
+    }
+    else //вывести пустые ячейки в инфо о 1-м браконьере
+    {
+        ui->p1_1->setText(" ");
+        ui->p1_2->setText(" ");
+        ui->p1_3->setText(" ");
+        ui->p1_4->setText(" ");
+        ui->p1_5->setText(" ");
+        ui->p1_6->setText(" ");
+        ui->p1_7->setText(" ");
+        ui->p1_8->setText(" ");
+        ui->p1_9->setText(" ");
+        ui->p1_10->setText(" ");
+        ui->p1_11->setText(" ");
+    }
+    if(invaders.get_kolvo_poacher()>=2 && f_output==1) //если есть 2-й браконьер и вкл. вывод, то вывести инфо о нём
+    {
+        int num=2; //номер браконьера для вывода инфо
+        ui->p2_1->setText(QString::number(invaders.get_ox(num)));
+        ui->p2_2->setText(QString::number(invaders.get_oy(num)));
+        ui->p2_3->setText(QString::number(invaders.get_speed(num)));
+        ui->p2_4->setText(QString::number(invaders.get_target_ox(num)));
+        ui->p2_5->setText(QString::number(invaders.get_target_oy(num)));
+        ui->p2_6->setText(QString::number(invaders.get_tired(num)));
+        ui->p2_7->setText(QString::number(invaders.get_view_radius(num)));
+        ui->p2_8->setText(QString::number(invaders.get_cutting_speed(num)));
+        ui->p2_9->setText(" ");
+        ui->p2_10->setText(" ");
+        ui->p2_11->setText(" ");
+    }
+    else //вывести пустые ячейки в инфо о 2-м браконьере
+    {
+        ui->p2_1->setText(" ");
+        ui->p2_2->setText(" ");
+        ui->p2_3->setText(" ");
+        ui->p2_4->setText(" ");
+        ui->p2_5->setText(" ");
+        ui->p2_6->setText(" ");
+        ui->p2_7->setText(" ");
+        ui->p2_8->setText(" ");
+        ui->p2_9->setText(" ");
+        ui->p2_10->setText(" ");
+        ui->p2_11->setText(" ");
+    }
 }
 
 void MainWidget::Print_weather_info() //слот вывода инфо о погоде

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1428</width>
-    <height>814</height>
+    <width>1359</width>
+    <height>705</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -5054,7 +5054,7 @@
     <rect>
      <x>1131</x>
      <y>420</y>
-     <width>235</width>
+     <width>219</width>
      <height>20</height>
     </rect>
    </property>
@@ -5073,7 +5073,7 @@
     <rect>
      <x>1130</x>
      <y>440</y>
-     <width>95</width>
+     <width>87</width>
      <height>261</height>
     </rect>
    </property>
@@ -5531,7 +5531,7 @@
    <widget class="QLabel" name="infoh_3">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>60</y>
       <width>81</width>
       <height>16</height>
@@ -5546,13 +5546,13 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>OX центра: </string>
+     <string>Скорость: </string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_4">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>80</y>
       <width>81</width>
       <height>16</height>
@@ -5567,13 +5567,13 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>OY центра: </string>
+     <string>OX цели: </string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_5">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>100</y>
       <width>81</width>
       <height>16</height>
@@ -5588,13 +5588,13 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>NUM ячейки почвы: </string>
+     <string>OY цели: </string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_6">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>120</y>
       <width>81</width>
       <height>16</height>
@@ -5609,13 +5609,13 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Высота: </string>
+     <string>Усталость: </string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_8">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>160</y>
       <width>81</width>
       <height>16</height>
@@ -5630,13 +5630,13 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Светолюбивость: </string>
+     <string>Скор. рубки:</string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_9">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>180</y>
       <width>81</width>
       <height>16</height>
@@ -5651,13 +5651,13 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Агрессивность: </string>
+     <string> </string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_10">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>200</y>
       <width>81</width>
       <height>16</height>
@@ -5672,13 +5672,13 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Влаголюбивость: </string>
+     <string> </string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_11">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>220</y>
       <width>81</width>
       <height>16</height>
@@ -5693,13 +5693,13 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Кол-во очков роста: </string>
+     <string> </string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_7">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>140</y>
       <width>81</width>
       <height>16</height>
@@ -5714,13 +5714,13 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Радиус: </string>
+     <string>Рад. обзора: </string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>40</y>
       <width>81</width>
       <height>16</height>
@@ -5735,13 +5735,13 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>NUM: </string>
+     <string>OY: </string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_1">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>3</x>
       <y>20</y>
       <width>81</width>
       <height>16</height>
@@ -5756,14 +5756,14 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Type: </string>
+     <string>OX: </string>
     </property>
    </widget>
   </widget>
-  <widget class="QGroupBox" name="info_h1_value">
+  <widget class="QGroupBox" name="info_f1_value">
    <property name="geometry">
     <rect>
-     <x>1222</x>
+     <x>1210</x>
      <y>440</y>
      <width>48</width>
      <height>261</height>
@@ -6220,7 +6220,7 @@
    <property name="flat">
     <bool>false</bool>
    </property>
-   <widget class="QLabel" name="h1_3">
+   <widget class="QLabel" name="f1_3">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6241,7 +6241,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="h1_4">
+   <widget class="QLabel" name="f1_4">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6262,7 +6262,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="h1_5">
+   <widget class="QLabel" name="f1_5">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6283,7 +6283,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="h1_6">
+   <widget class="QLabel" name="f1_6">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6304,7 +6304,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="h1_8">
+   <widget class="QLabel" name="f1_8">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6325,7 +6325,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="h1_9">
+   <widget class="QLabel" name="f1_9">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6346,7 +6346,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="h1_10">
+   <widget class="QLabel" name="f1_10">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6367,7 +6367,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="h1_11">
+   <widget class="QLabel" name="f1_11">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6388,7 +6388,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="h1_7">
+   <widget class="QLabel" name="f1_7">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6409,7 +6409,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="h1_2">
+   <widget class="QLabel" name="f1_2">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6427,10 +6427,10 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>-1</string>
+     <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="h1_1">
+   <widget class="QLabel" name="f1_1">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6448,14 +6448,14 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>-1</string>
+     <string>0</string>
     </property>
    </widget>
   </widget>
-  <widget class="QGroupBox" name="info_h2_value">
+  <widget class="QGroupBox" name="info_p1_value">
    <property name="geometry">
     <rect>
-     <x>1270</x>
+     <x>1256</x>
      <y>440</y>
      <width>48</width>
      <height>261</height>
@@ -6912,7 +6912,7 @@
    <property name="flat">
     <bool>false</bool>
    </property>
-   <widget class="QLabel" name="i_24">
+   <widget class="QLabel" name="p1_3">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6933,7 +6933,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_25">
+   <widget class="QLabel" name="p1_4">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6954,7 +6954,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_26">
+   <widget class="QLabel" name="p1_5">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6975,7 +6975,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_28">
+   <widget class="QLabel" name="p1_6">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -6996,7 +6996,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_30">
+   <widget class="QLabel" name="p1_8">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7017,7 +7017,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_31">
+   <widget class="QLabel" name="p1_9">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7038,7 +7038,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_32">
+   <widget class="QLabel" name="p1_10">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7059,7 +7059,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_33">
+   <widget class="QLabel" name="p1_11">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7080,7 +7080,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_34">
+   <widget class="QLabel" name="p1_7">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7101,7 +7101,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_35">
+   <widget class="QLabel" name="p1_2">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7119,10 +7119,10 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>-1</string>
+     <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_36">
+   <widget class="QLabel" name="p1_1">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7140,14 +7140,14 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>-1</string>
+     <string>0</string>
     </property>
    </widget>
   </widget>
-  <widget class="QGroupBox" name="info_h3_value">
+  <widget class="QGroupBox" name="info_p2_value">
    <property name="geometry">
     <rect>
-     <x>1318</x>
+     <x>1302</x>
      <y>440</y>
      <width>48</width>
      <height>261</height>
@@ -7604,7 +7604,7 @@
    <property name="flat">
     <bool>false</bool>
    </property>
-   <widget class="QLabel" name="i_46">
+   <widget class="QLabel" name="p2_3">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7625,7 +7625,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_47">
+   <widget class="QLabel" name="p2_4">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7646,7 +7646,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_48">
+   <widget class="QLabel" name="p2_5">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7667,7 +7667,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_49">
+   <widget class="QLabel" name="p2_6">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7688,7 +7688,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_50">
+   <widget class="QLabel" name="p2_8">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7709,7 +7709,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_51">
+   <widget class="QLabel" name="p2_9">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7730,7 +7730,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_52">
+   <widget class="QLabel" name="p2_10">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7751,7 +7751,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_53">
+   <widget class="QLabel" name="p2_11">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7772,7 +7772,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_54">
+   <widget class="QLabel" name="p2_7">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7793,7 +7793,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_55">
+   <widget class="QLabel" name="p2_2">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7811,10 +7811,10 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>-1</string>
+     <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i_56">
+   <widget class="QLabel" name="p2_1">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -7832,7 +7832,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>-1</string>
+     <string>0</string>
     </property>
    </widget>
   </widget>
