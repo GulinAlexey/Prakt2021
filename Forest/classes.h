@@ -201,6 +201,7 @@ public:
     int get_ox(int num); //получить поле "ox" выбранного браконьера
     int get_oy(int num); //получить поле "oy" выбранной браконьера
     void get_img(QLabel*** png, int num); //вернуть указатель на изображение выбранного браконьера
+    int get_kolvo_poacher(); //получить кол-во браконьеров
 };
 
 #endif // CLASSES_H

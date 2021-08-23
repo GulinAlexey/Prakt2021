@@ -17,6 +17,7 @@ int num_info=-1; //номер растения/ячейки почвы для и
 int type_of_info=-1; //тип вывода инфо (-1 - никакое, 0 - ячейка почвы, 1 - трава, 2 - куст, 3 - дерево)
 int all_time=0; //общее время работы программы (кол-во тиков)
 int f_house_img=0; //флаг вывода картинки дома лесника
+int forester_is_on=0; //флаг "включения" лесника (иначе он не выводится на экран)
 
 QPixmap *sun; //объект с картинкой солнца
 QPixmap *cloud; //объект с картинкой облака
@@ -547,6 +548,9 @@ void MainWidget::Normalmode_human(bool value) //слот при переключ
     if(value==true)
     {
         timer->start(TIME_HUMAN_TICK); //запустить таймер с интервалом в полсекунды
+        forester_is_on=1; //отметить флагом "включение" лесника
+        forester.Init(); //инициализация лесника
+
     }
 }
 void MainWidget::Pausemode_human(bool value) //слот при переключении в режим времени - паузу для людей
@@ -561,6 +565,11 @@ void MainWidget::Stop_human(bool value) //слот при переключени
     if(value==true)
     {
         human_tick->stop(); //остановить таймер
+        forester_is_on=0; //отметить флагом "выключение" лесника
+        while(invaders.get_kolvo_poacher()!=0) //удалить всех браконьеров
+        {
+            invaders.Delete_invader(0);
+        }
     }
 }
 

@@ -734,6 +734,11 @@ void Invaders::get_img(QLabel*** png, int num) //вернуть указател
     (*png)=&poachers[num].img;
 }
 
+int Invaders::get_kolvo_poacher() //получить кол-во браконьеров
+{
+    return kolvo_poacher;
+}
+
 void Invaders::Add_invader(int x, int y) //добавить чужака
 {
     int kolvo = kolvo_poacher; //старое кол-во браконьеров
