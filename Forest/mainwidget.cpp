@@ -446,6 +446,21 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
         }
         int square = M_PI*plants[i].radius*plants[i].radius; //площадь круга данного растения
         sun_received = sun * (1-(square_sun_shielded/square)); //растение получает солн. свет с учётом закрытой площади
+        if(sun_received!=0) //если растение получило хоть немного солн. света
+        {
+            if(sun_received>=(forest.get_lightlove_plant(i,type)-SUNSHINE_NORM_FORPLANT_RANGE) && sun_received<=(forest.get_lightlove_plant(i,type)+SUNSHINE_NORM_FORPLANT_RANGE)) //если полученное кол-во света удовлетворяет норм. диапазону растения
+            {
+
+            }
+            else //если получено слишком мало/много солн. света
+            {
+
+            }
+        }
+        else //если растение не получило солн. света вовсе
+        {
+
+        }
 
         int feed = forest.get_fertility_dirt(num_dirt);
         int remain_feed = feed - forest.get_feed_norm_plant(num, type); //остаток от питания после растения
