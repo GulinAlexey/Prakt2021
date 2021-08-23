@@ -708,6 +708,11 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
     }
 }
 
+void MainWidget::Print_human_info(int f_clear) //слот вывода инфо о людях (если передан отмеченный флаг, то просто вывести пустые строки)
+{
+
+}
+
 void MainWidget::Print_weather_info() //слот вывода инфо о погоде
 {
     ui->w_0->setText(QString::number(weather.get_sunshine()));
