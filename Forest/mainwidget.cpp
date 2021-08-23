@@ -540,7 +540,25 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
 {
 
 
+
+
+
     Print_human_info(forester_is_on, 0); //вывести инфо о людях (так как первым передаётся 1)
+    for(int i=0, kolvo=invaders.get_kolvo_poacher(); i<kolvo; i++) //обновить картинки браконьеров
+    {
+        QLabel **old_img=nullptr; //указатель на label со старой картинкой
+        invaders.get_img(&old_img, i); //получить адрес для объекта - label со старым изображением браконьера
+        (*old_img)->deleteLater(); //удалить qlabel со старым изображением
+
+        Show_pic(i, TYPE_POACHER); //вывести новую картинку на экран
+    }
+
+    /*Обновить картинку лесника*/
+    QLabel **old_img=nullptr; //указатель на label со старой картинкой
+    forester.get_img(&old_img); //получить адрес для объекта - label со старым изображением лесника
+    (*old_img)->deleteLater(); //удалить qlabel со старым изображением
+
+    Show_pic(1, TYPE_FORESTER); //вывести новую картинку на экран
 }
 
 void MainWidget::Normalmode(bool value) //слот при переключении в нормальный режим времени
