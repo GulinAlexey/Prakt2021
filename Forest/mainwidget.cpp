@@ -578,7 +578,7 @@ void MainWidget::Normalmode_human(bool value) //слот при переключ
             forester.Init(); //инициализация лесника
             Show_pic(1, TYPE_FORESTER); //вывести картинку лесника на экран
 
-
+            Add_invader(); //добавить браконьера и вывести его картинку на экран
 
             Print_human_info(forester_is_on, 1); //вывести инфо о людях (так как первым передаётся 1)
             f_pause_human=0; //отметить, что предыдущим состоянием была не пауза
