@@ -699,11 +699,17 @@ void Forester::Init() //инициализация
 {
     ox=HOUSE_OX;
     oy=HOUSE_OY;
+    speed=;
+    tired=;
+    view_radius=;
 }
 
 void Poacher::Init() //инициализация
 {
-
+    speed=;
+    tired=;
+    view_radius=;
+    cutting_speed=;
 }
 
 void Forester::get_img(QLabel*** png) //вернуть указатель на изображение лесника
