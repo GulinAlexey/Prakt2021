@@ -1035,5 +1035,51 @@ void MainWidget::Add_invader() //слот добавления нового бр
 }
 void MainWidget::Find_target(int num, int type) //найти цель для человека (тип: 1 - лесник, 2 - браконьер)
 {
+    switch(type)
+    {
+    case 1: //лесник
+        if(weather.get_f_status()!=F_RAIN) //если сейчас не дождь
+        {
+            int min_dist=-1; //расстояние до ближайшей цели
+            int num_target=-1; //номер цели (номер браконьера)
+            for(int i=0, kolvo=invaders.get_kolvo_poacher(); i<kolvo; i++)
+            {
+                int ox1 = forester.get_ox(); // координата ox лесника
+                int oy1 = forester.get_oy(); // координата oy лесника
+                int ox2 = invaders.get_ox(i); // координата ox текущего браконьера
+                int oy2 = invaders.get_oy(i); // координата oy текущего браконьера
+                int dist = sqrt(((ox2-ox1)*(ox2-ox1))+((oy2-oy1)*(oy2-oy1))); //расстояние между двумя точками
 
+                if(dist<=forester.get_view_radius()) //если браконьер находится внутри области видимости
+                {
+                    if(dist<min_dist || min_dist==-1) //если найдена ближайшая цель
+                    {
+                        min_dist=dist; //записать расстояние до этой цели как минимальное
+                        num_target=i; //записать номер цели
+                    }
+                }
+
+            }
+            if(min_dist!=-1) //если в области видимости найден браконьер
+            {
+                forester.set_target_type(TARGET_POACHER); //цель лесника - браконьер
+                forester.set_target_ox(invaders.get_ox(num_target)); //установить координаты цели - браконьер
+                forester.set_target_oy(invaders.get_oy(num_target)); //установить координаты цели - браконьер
+
+            }
+            else //если в области видимости не найден браконьер
+            {
+
+            }
+        }
+        else // если сейчас дождь
+        {
+            forester.set_target_type(TARGET_HOUSE); //в дождь цель лесника - дом
+            forester.set_target_ox(HOUSE_OX); //установить координаты цели - дом
+            forester.set_target_oy(HOUSE_OY); //установить координаты цели - дом
+        }
+        break;
+    case 2: //браконьер
+        break;
+    }
 }

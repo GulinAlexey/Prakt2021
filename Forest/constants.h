@@ -44,6 +44,9 @@
 
 #define DIST_ACTION_HUMAN (RADIUS_PIC_HUMAN+6) //дальность действия человека (при приближении к цели на это расстояние действие совершается)
 
+#define TARGET_HOUSE 1 //номер цели человека - дом лесника
+#define TARGET_POACHER 2 //номер цели человека - браконьер
+
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
 #define HEIGHT_START_GRASS 1
 

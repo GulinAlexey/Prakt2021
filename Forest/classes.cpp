@@ -757,6 +757,36 @@ int Forester::get_target_type() //получить поле "target_type"
     return target_type;
 }
 
+void Forester::set_ox(int inp) //установить поле "ox"
+{
+    ox=inp;
+}
+void Forester::set_oy(int inp) //установить поле "oy"
+{
+    oy=inp;
+}
+void Forester::set_speed(int inp) //установить поле "speed"
+{
+    speed=inp;
+}
+void Forester::set_target_ox(int inp) //установить поле "target_ox"
+{
+    target_ox=inp;
+}
+void Forester::set_target_oy(int inp) //установить поле "target_oy"
+{
+    target_oy=inp;
+}
+void Forester::set_tired(int inp) //установить поле "tired"
+{
+    tired=inp;
+}
+
+void Forester::set_target_type(int inp) //установить поле "target_type"
+{
+    target_type=inp;
+}
+
 int Invaders::get_ox(int num) //получить поле "ox" выбранного браконьера
 {
     return poachers[num].ox;

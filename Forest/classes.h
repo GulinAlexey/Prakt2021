@@ -162,7 +162,7 @@ protected:
     int ox=0, oy=0; //координаты
     int speed; //скорость (кол-во пикселей за один шаг)
     int target_ox, target_oy; //координаты цели
-    int target_type=0; //тип цели
+    int target_type=-1; //тип цели
     int tired; //усталость
     int view_radius; //радиус поля обзора
 
@@ -198,6 +198,14 @@ public:
     int get_view_radius(); //получить поле "view_radius"
     int get_target_type(); //получить поле "target_type"
     void get_img(QLabel*** png); //вернуть указатель на изображение лесника
+
+    void set_ox(int inp); //установить поле "ox"
+    void set_oy(int inp); //установить поле "oy"
+    void set_speed(int inp); //установить поле "speed"
+    void set_target_ox(int inp); //установить поле "target_ox"
+    void set_target_oy(int inp); //установить поле "target_oy"
+    void set_tired(int inp); //установить поле "tired"
+    void set_target_type(int inp); //установить поле "target_type"
 };
 
 class Invaders //класс Чужаки (для леса)
@@ -223,7 +231,7 @@ public:
     int get_target_type(int num); //получить поле "target_type" выбранного браконьера
 
     void set_corners(); //установить координаты для углов
-    int get_corner(int num, int coord); //получить значение координаты одного из углов
+    int get_corner(int num, int coord); //получить значение координаты одного из углов (coord - x или y)
 
     void get_img(QLabel*** png, int num); //вернуть указатель на изображение выбранного браконьера
     int get_kolvo_poacher(); //получить кол-во браконьеров
