@@ -747,6 +747,11 @@ int Forester::get_view_radius() //получить поле "view_radius"
     return view_radius;
 }
 
+int Forester::get_target_type() //получить поле "target_type"
+{
+    return target_type;
+}
+
 int Invaders::get_ox(int num) //получить поле "ox" выбранного браконьера
 {
     return poachers[num].ox;
@@ -779,6 +784,11 @@ int Invaders::get_view_radius(int num) //получить поле "view_radius"
 int Invaders::get_cutting_speed(int num) //получить поле "cutting_speed" выбранного браконьера
 {
     return poachers[num].cutting_speed;
+}
+
+int Invaders::get_target_type(int num) //получить поле "target_type" выбранного браконьера
+{
+    return poachers[num].target_type;
 }
 
 void Invaders::get_img(QLabel*** png, int num) //вернуть указатель на изображение выбранного браконьера

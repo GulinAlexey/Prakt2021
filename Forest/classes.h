@@ -190,6 +190,7 @@ public:
     int get_target_oy(); //получить поле "target_oy"
     int get_tired(); //получить поле "tired"
     int get_view_radius(); //получить поле "view_radius"
+    int get_target_type(); //получить поле "target_type"
     void get_img(QLabel*** png); //вернуть указатель на изображение лесника
 };
 
@@ -213,6 +214,7 @@ public:
     int get_tired(int num); //получить поле "tired" выбранного браконьера
     int get_view_radius(int num); //получить поле "view_radius" выбранного браконьера
     int get_cutting_speed(int num); //получить поле "cutting_speed" выбранного браконьера
+    int get_target_type(int num); //получить поле "target_type" выбранного браконьера
 
     void set_corners(); //установить координаты для углов
     int get_corner(int num, int coord); //получить значение координаты одного из углов
