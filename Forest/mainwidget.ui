@@ -39,7 +39,7 @@
      <x>830</x>
      <y>20</y>
      <width>181</width>
-     <height>111</height>
+     <height>104</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -108,7 +108,7 @@
    <property name="geometry">
     <rect>
      <x>830</x>
-     <y>240</y>
+     <y>220</y>
      <width>181</width>
      <height>91</height>
     </rect>
@@ -204,9 +204,9 @@
    <property name="geometry">
     <rect>
      <x>830</x>
-     <y>140</y>
+     <y>128</y>
      <width>181</width>
-     <height>91</height>
+     <height>86</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -262,9 +262,9 @@
    <property name="geometry">
     <rect>
      <x>830</x>
-     <y>360</y>
+     <y>340</y>
      <width>161</width>
-     <height>341</height>
+     <height>361</height>
     </rect>
    </property>
    <property name="palette">
@@ -1054,14 +1054,35 @@
      <string>Норма питания:</string>
     </property>
    </widget>
+   <widget class="QLabel" name="info_15">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>340</y>
+      <width>148</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Степень срубленности:</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="info_value">
    <property name="geometry">
     <rect>
      <x>990</x>
-     <y>360</y>
+     <y>340</y>
      <width>131</width>
-     <height>341</height>
+     <height>361</height>
     </rect>
    </property>
    <property name="palette">
@@ -1851,12 +1872,33 @@
      <string>0</string>
     </property>
    </widget>
+   <widget class="QLabel" name="i_15">
+    <property name="geometry">
+     <rect>
+      <x>3</x>
+      <y>340</y>
+      <width>125</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QLabel" name="info_name">
    <property name="geometry">
     <rect>
      <x>831</x>
-     <y>340</y>
+     <y>320</y>
      <width>291</width>
      <height>20</height>
     </rect>
@@ -5651,7 +5693,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string/>
+     <string>Тип цели:</string>
     </property>
    </widget>
    <widget class="QLabel" name="infoh_10">
