@@ -983,3 +983,13 @@ void Invaders::set_route_points() //установить координаты д
     route_points[7][X_CORNER]=700;
     route_points[7][Y_CORNER]=100;
 }
+
+int Forester::get_route_points(int num, int coord) //получить координаты точки маршрута лесника (coord - x или y)
+{
+    return route_points[num][coord];
+}
+
+int Invaders::get_route_points(int num, int coord) //получить координату точки маршрута перемещения браконьеров (coord - x или y)
+{
+    return route_points[num][coord];
+}

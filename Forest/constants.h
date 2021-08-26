@@ -49,6 +49,9 @@
 #define TARGET_POACHER 2 //номер цели человека - браконьер
 #define TARGET_TREE 3 //номер цели человека - дерево
 #define TARGET_CORNER_ESCAPE 4 //номер цели - угол для побега (браконьера от лесника)
+#define TARGET_ROUTE 5 //номер цели - следующая точка маршрута патрулирования (исследования)
+
+#define KOLVO_ROUTE_POINTS 8 //кол-во точек маршрута (лесника и браконьеров)
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
 #define HEIGHT_START_GRASS 1

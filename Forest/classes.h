@@ -191,6 +191,7 @@ public:
     void Init(); //инициализация
 
     void set_route_points(); //установить координаты для маршрута патрулирования лесника
+    int get_route_points(int num, int coord); //получить координаты точки маршрута лесника (coord - x или y)
 
     /*методы получения и установления полей*/
     int get_ox(); //получить поле "ox"
@@ -247,6 +248,7 @@ public:
 
     void set_corners(); //установить координаты для углов
     void set_route_points(); //установить координаты для маршрута перемещения браконьеров
+    int get_route_points(int num, int coord); //получить координату точки маршрута перемещения браконьеров (coord - x или y)
     int get_corner(int num, int coord); //получить значение координаты одного из углов (coord - x или y)
 
     void get_img(QLabel*** png, int num); //вернуть указатель на изображение выбранного браконьера
