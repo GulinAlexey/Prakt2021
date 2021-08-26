@@ -49,9 +49,13 @@ public:
 
 class Tree : public Plant //класс Дерево
 {
+private:
+    int cutting_degree=0; //степень срубленности дерева
 public:
     Tree();
     void Init_rand(); //инициализация случайными значениями
+
+    friend class Forest; //дружественный класс, имеет доступ ко всем полям данного
 };
 
 class Dirt_cell //класс ячейки почвы
@@ -122,6 +126,8 @@ public:
     int get_max_radius_plant(int num, int type); //получить поле "max_radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_feed_norm_plant(int num, int type); //получить поле "feed_norm" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
 
+    int get_cutting_degree_tree(int num); //получить поле "cutting_degree" дерева
+
     void set_score_grow_plant(int num, int type, int inp); //установить значение поля "score_grow" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     void set_height_plant(int num, int type, int inp); //получить поле "height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     void set_radius_plant(int num, int type, int inp); //получить поле "radius" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
@@ -156,7 +162,7 @@ protected:
     int ox=0, oy=0; //координаты
     int speed; //скорость (кол-во пикселей за один шаг)
     int target_ox, target_oy; //координаты цели
-    int target_type; //тип цели
+    int target_type=0; //тип цели
     int tired; //усталость
     int view_radius; //радиус поля обзора
 
