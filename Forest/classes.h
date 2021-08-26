@@ -230,6 +230,16 @@ public:
     int get_cutting_speed(int num); //получить поле "cutting_speed" выбранного браконьера
     int get_target_type(int num); //получить поле "target_type" выбранного браконьера
 
+    void set_ox(int num, int inp); //установить поле "ox" выбранного браконьера
+    void set_oy(int num, int inp); //установить поле "oy" выбранного браконьера
+    void set_speed(int num, int inp); //установить поле "speed" выбранного браконьера
+    void set_target_ox(int num, int inp); //установить поле "target_ox" выбранного браконьера
+    void set_target_oy(int num, int inp); //установить поле "target_oy" выбранного браконьера
+    void set_tired(int num, int inp); //установить поле "tired" выбранного браконьера
+    void set_view_radius(int num, int inp); //установить поле "view_radius" выбранного браконьера
+    void set_cutting_speed(int num, int inp); //установить поле "cutting_speed" выбранного браконьера
+    void set_target_type(int num, int inp); //установить поле "target_type" выбранного браконьера
+
     void set_corners(); //установить координаты для углов
     int get_corner(int num, int coord); //получить значение координаты одного из углов (coord - x или y)
 

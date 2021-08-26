@@ -826,6 +826,43 @@ int Invaders::get_target_type(int num) //получить поле "target_type"
     return poachers[num].target_type;
 }
 
+void Invaders::set_ox(int num, int inp) //установить поле "ox" выбранного браконьера
+{
+    poachers[num].ox=inp;
+}
+void Invaders::set_oy(int num, int inp) //установить поле "oy" выбранного браконьера
+{
+    poachers[num].oy=inp;
+}
+void Invaders::set_speed(int num, int inp) //установить поле "speed" выбранного браконьера
+{
+    poachers[num].speed=inp;
+}
+void Invaders::set_target_ox(int num, int inp) //установить поле "target_ox" выбранного браконьера
+{
+    poachers[num].target_ox=inp;
+}
+void Invaders::set_target_oy(int num, int inp) //установить поле "target_oy" выбранного браконьера
+{
+    poachers[num].target_oy=inp;
+}
+void Invaders::set_tired(int num, int inp) //установить поле "tired" выбранного браконьера
+{
+    poachers[num].tired=inp;
+}
+void Invaders::set_view_radius(int num, int inp) //установить поле "view_radius" выбранного браконьера
+{
+    poachers[num].view_radius=inp;
+}
+void Invaders::set_cutting_speed(int num, int inp) //установить поле "cutting_speed" выбранного браконьера
+{
+    poachers[num].cutting_speed=inp;
+}
+void Invaders::set_target_type(int num, int inp) //установить поле "target_type" выбранного браконьера
+{
+    poachers[num].target_type=inp;
+}
+
 void Invaders::get_img(QLabel*** png, int num) //вернуть указатель на изображение выбранного браконьера
 {
     (*png)=&poachers[num].img;

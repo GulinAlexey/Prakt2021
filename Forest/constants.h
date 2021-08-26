@@ -39,6 +39,7 @@
 #define HOUSE_OY 515 //координата oy центра дома лесника
 #define RADIUS_PIC_HOUSE 60 //радиус картинки дома лесника (половина длины стороны квадрата)
 
+#define TYPE_TREE 3 //номер типа - дерево
 #define TYPE_FORESTER 4 //номер лесника при выводе картинки
 #define TYPE_POACHER 5 //номер лесника при выводе картинки
 
@@ -46,6 +47,7 @@
 
 #define TARGET_HOUSE 1 //номер цели человека - дом лесника
 #define TARGET_POACHER 2 //номер цели человека - браконьер
+#define TARGET_TREE 3 //номер цели человека - дерево
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
 #define HEIGHT_START_GRASS 1
