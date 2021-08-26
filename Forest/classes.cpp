@@ -932,54 +932,54 @@ int Invaders::get_corner(int num, int coord) //получить значение
 
 void Forester::set_route_points() //установить координаты для маршрута патрулирования лесника
 {
-    route_points[0][X_CORNER]=;
-    route_points[0][Y_CORNER]=;
+    route_points[0][X_CORNER]=700;
+    route_points[0][Y_CORNER]=500;
 
-    route_points[1][X_CORNER]=;
-    route_points[1][Y_CORNER]=;
+    route_points[1][X_CORNER]=700;
+    route_points[1][Y_CORNER]=100;
 
-    route_points[2][X_CORNER]=;
-    route_points[2][Y_CORNER]=;
+    route_points[2][X_CORNER]=500;
+    route_points[2][Y_CORNER]=100;
 
-    route_points[3][X_CORNER]=;
-    route_points[3][Y_CORNER]=;
+    route_points[3][X_CORNER]=500;
+    route_points[3][Y_CORNER]=500;
 
-    route_points[4][X_CORNER]=;
-    route_points[4][Y_CORNER]=;
+    route_points[4][X_CORNER]=300;
+    route_points[4][Y_CORNER]=500;
 
-    route_points[5][X_CORNER]=;
-    route_points[5][Y_CORNER]=;
+    route_points[5][X_CORNER]=300;
+    route_points[5][Y_CORNER]=100;
 
-    route_points[6][X_CORNER]=;
-    route_points[6][Y_CORNER]=;
+    route_points[6][X_CORNER]=100;
+    route_points[6][Y_CORNER]=100;
 
-    route_points[7][X_CORNER]=;
-    route_points[7][Y_CORNER]=;
+    route_points[7][X_CORNER]=100;
+    route_points[7][Y_CORNER]=500;
 }
 
 void Invaders::set_route_points() //установить координаты для маршрута перемещения браконьеров
 {
-    route_points[0][X_CORNER]=;
-    route_points[0][Y_CORNER]=;
+    route_points[0][X_CORNER]=100;
+    route_points[0][Y_CORNER]=100;
 
-    route_points[1][X_CORNER]=;
-    route_points[1][Y_CORNER]=;
+    route_points[1][X_CORNER]=100;
+    route_points[1][Y_CORNER]=500;
 
-    route_points[2][X_CORNER]=;
-    route_points[2][Y_CORNER]=;
+    route_points[2][X_CORNER]=300;
+    route_points[2][Y_CORNER]=500;
 
-    route_points[3][X_CORNER]=;
-    route_points[3][Y_CORNER]=;
+    route_points[3][X_CORNER]=300;
+    route_points[3][Y_CORNER]=100;
 
-    route_points[4][X_CORNER]=;
-    route_points[4][Y_CORNER]=;
+    route_points[4][X_CORNER]=500;
+    route_points[4][Y_CORNER]=100;
 
-    route_points[5][X_CORNER]=;
-    route_points[5][Y_CORNER]=;
+    route_points[5][X_CORNER]=500;
+    route_points[5][Y_CORNER]=500;
 
-    route_points[6][X_CORNER]=;
-    route_points[6][Y_CORNER]=;
+    route_points[6][X_CORNER]=700;
+    route_points[6][Y_CORNER]=350;
 
-    route_points[7][X_CORNER]=;
-    route_points[7][Y_CORNER]=;
+    route_points[7][X_CORNER]=700;
+    route_points[7][Y_CORNER]=100;
 }
