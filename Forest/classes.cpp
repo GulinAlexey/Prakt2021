@@ -699,17 +699,17 @@ void Forester::Init() //инициализация
 {
     ox=HOUSE_OX;
     oy=HOUSE_OY;
-    speed=;
-    tired=;
-    view_radius=;
+    speed=SPEED_FORESTER;
+    tired=TIRED_HUMAN_START;
+    view_radius=VIEW_RADIUS_FORESTER;
 }
 
 void Poacher::Init() //инициализация
 {
-    speed=;
-    tired=;
-    view_radius=;
-    cutting_speed=;
+    speed=RAND(MIN_SPEED_POACHER, MAX_SPEED_POACHER);
+    tired=TIRED_HUMAN_START;
+    view_radius=RAND(MIN_VIEW_RADIUS_POACHER, MAX_VIEW_RADIUS_POACHER);
+    cutting_speed=RAND(MIN_CUTTING_SPEED_POACHER, MAX_CUTTING_SPEED_POACHER);
 }
 
 void Forester::get_img(QLabel*** png) //вернуть указатель на изображение лесника

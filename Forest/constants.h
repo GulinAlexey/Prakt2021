@@ -168,9 +168,23 @@
 #define TIME_STATUS_START 0
 #define TIME_STATUS_END 10
 
+/*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Human - человек*/
+#define TIRED_HUMAN_START 0
+
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Forester - лесник*/
+#define SPEED_FORESTER 40
+#define VIEW_RADIUS_FORESTER 120
+
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Poacher - браконьер*/
+#define MIN_SPEED_POACHER 30
+#define MAX_SPEED_POACHER 50
+#define MIN_VIEW_RADIUS_POACHER 80
+#define MAX_VIEW_RADIUS_POACHER 130
+#define MIN_CUTTING_SPEED_POACHER 5
+#define MAX_CUTTING_SPEED_POACHER 15
+
+#define MAX_CUTTING 50
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Invaders - чужаки*/
 #define X_CORNER 0 // обозначение для координаты ox в массиве corner[][_] (одна из координат данного угла)
