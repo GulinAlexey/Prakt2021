@@ -42,6 +42,8 @@
 #define TYPE_FORESTER 4 //номер лесника при выводе картинки
 #define TYPE_POACHER 5 //номер лесника при выводе картинки
 
+#define DIST_ACTION_HUMAN (RADIUS_PIC_HUMAN+6) //дальность действия человека (при приближении к цели на это расстояние действие совершается)
+
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
 #define HEIGHT_START_GRASS 1
 

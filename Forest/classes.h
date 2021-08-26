@@ -156,6 +156,7 @@ protected:
     int ox=0, oy=0; //координаты
     int speed; //скорость (кол-во пикселей за один шаг)
     int target_ox, target_oy; //координаты цели
+    int target_type; //тип цели
     int tired; //усталость
     int view_radius; //радиус поля обзора
 
