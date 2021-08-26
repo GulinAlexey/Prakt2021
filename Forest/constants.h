@@ -48,6 +48,7 @@
 #define TARGET_HOUSE 1 //номер цели человека - дом лесника
 #define TARGET_POACHER 2 //номер цели человека - браконьер
 #define TARGET_TREE 3 //номер цели человека - дерево
+#define TARGET_CORNER_ESCAPE 4 //номер цели - угол для побега (браконьера от лесника)
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
 #define HEIGHT_START_GRASS 1
