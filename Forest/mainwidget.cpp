@@ -564,6 +564,20 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
 
 void MainWidget::Timer_human_tick() //слот интервала таймера для людей
 {
+    if(invaders.get_kolvo_poacher()<MAX_KOLVO_POACHER) //если кол-во браконьеров меньше максимального
+    {
+        time_for_new_poacher=time_for_new_poacher+1; //увеличить счётчик появления нового браконьера
+    }
+    else //если браконьеров достаточно
+    {
+        time_for_new_poacher=0; //обнулить счётчик
+    }
+    if(time_for_new_poacher==TIME_FOR_NEW_POACHER_MAX) //если пришло время добавить
+    {
+        Add_invader(); //добавить браконьера и вывести его картинку на экран
+        time_for_new_poacher=0; //обнулить счётчик
+    }
+
     int old_target = forester.get_target_type();
     int old_target_ox = forester.get_target_ox();
     int old_target_oy = forester.get_target_oy();
