@@ -75,7 +75,6 @@ MainWidget::MainWidget(QWidget *parent)
     QObject::connect(timer, SIGNAL(timeout()), SLOT(Timer_tick())); //по истечении интервала работает слот
 
     human_tick = new QTimer(); // таймер для работы моделей - людей (их перемещение и взаимодействие)
-    human_tick->start(TIME_HUMAN_TICK); //запустить таймер с интервалом в полсекунды
     QObject::connect(human_tick, SIGNAL(timeout()), SLOT(Timer_human_tick())); //по истечении интервала работает слот
 
 
