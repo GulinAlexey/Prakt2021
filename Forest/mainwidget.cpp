@@ -570,6 +570,13 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
 
     Find_target(1, TARGET_FIND_FORESTER); //найти цель для лесника
 
+    if(forester.get_target_type()==TARGET_ROUTE && old_target==TARGET_ROUTE) //если человек до этого шёл по маршруту, и не увидел ничего нового, то продолжить идти по маршруту
+    {
+        forester.set_target_type(old_target);
+        forester.set_target_ox(old_target_ox);
+        forester.set_target_oy(old_target_oy);
+    }
+
 
 
 
