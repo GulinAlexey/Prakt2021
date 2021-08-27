@@ -849,6 +849,11 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
     (*old_img)->deleteLater(); //удалить qlabel со старым изображением
 
     Show_pic(1, TYPE_FORESTER); //вывести новую картинку на экран
+
+    Print_forest_info(); //вывести инфо о лесе
+    if(type_of_info!=-1)
+        Print_info(num_info, type_of_info, 0); //вывести инфо в спец. блок
+
 }
 
 void MainWidget::Normalmode(bool value) //слот при переключении в нормальный режим времени
