@@ -564,7 +564,11 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
 
 void MainWidget::Timer_human_tick() //слот интервала таймера для людей
 {
+    int old_target = forester.get_target_type();
+    int old_target_ox = forester.get_target_ox();
+    int old_target_oy = forester.get_target_oy();
 
+    Find_target(1, TARGET_FIND_FORESTER); //найти цель для лесника
 
 
 
