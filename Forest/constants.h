@@ -151,8 +151,6 @@
 #define MIN_FERTILITY 5
 #define MAX_FERTILITY 30
 
-#define EFFECTIV_START_DIRT 1
-
 #define MIN_WET_START_DIRT 0
 #define MAX_WET_START_DIRT 5
 
@@ -190,7 +188,6 @@
 #define TIME_STATUS_END 10
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Human - человек*/
-#define TIRED_HUMAN_START 0
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Forester - лесник*/
 #define SPEED_FORESTER 40

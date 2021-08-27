@@ -135,10 +135,7 @@ int Forest::get_fertility_now_dirt(int num) //получить поле "fertili
 {
     return dirt[num].fertility_now; //получить искомое значение поля
 }
-int Forest::get_effectiv_dirt(int num) //получить поле "effectiv" выбранной ячейки почвы
-{
-    return dirt[num].effectiv; //получить искомое значение поля
-}
+
 int Forest::get_wet_dirt(int num) //получить поле "wet" выбранной ячейки почвы
 {
     return dirt[num].wet; //получить искомое значение поля
@@ -536,7 +533,6 @@ void Forest::Dirt_Init() //инициализация ячеек почвы
     {
         dirt[i].fertility=RAND(MIN_FERTILITY, MAX_FERTILITY); // плодородность ячейки почвы
         dirt[i].fertility_now=dirt[i].fertility; //плодородность ячейки почвы для текущего растения в цикле поглощений
-        dirt[i].effectiv=EFFECTIV_START_DIRT; // эффективность плодородности
         dirt[i].wet=RAND(MIN_WET_START_DIRT, MAX_WET_START_DIRT); //влажность
     }
 }
@@ -719,14 +715,12 @@ void Forester::Init() //инициализация
     ox=HOUSE_OX;
     oy=HOUSE_OY;
     speed=SPEED_FORESTER;
-    tired=TIRED_HUMAN_START;
     view_radius=VIEW_RADIUS_FORESTER;
 }
 
 void Poacher::Init() //инициализация
 {
     speed=RAND(MIN_SPEED_POACHER, MAX_SPEED_POACHER);
-    tired=TIRED_HUMAN_START;
     view_radius=RAND(MIN_VIEW_RADIUS_POACHER, MAX_VIEW_RADIUS_POACHER);
     cutting_speed=RAND(MIN_CUTTING_SPEED_POACHER, MAX_CUTTING_SPEED_POACHER);
 }
@@ -756,10 +750,6 @@ int Forester::get_target_ox() //получить поле "target_ox"
 int Forester::get_target_oy() //получить поле "target_oy"
 {
     return target_oy;
-}
-int Forester::get_tired() //получить поле "tired"
-{
-    return tired;
 }
 int Forester::get_view_radius() //получить поле "view_radius"
 {
@@ -791,10 +781,6 @@ void Forester::set_target_oy(int inp) //установить поле "target_oy
 {
     target_oy=inp;
 }
-void Forester::set_tired(int inp) //установить поле "tired"
-{
-    tired=inp;
-}
 
 void Forester::set_target_type(int inp) //установить поле "target_type"
 {
@@ -822,10 +808,7 @@ int Invaders::get_target_oy(int num) //получить поле "target_oy" в�
 {
     return poachers[num].target_oy;
 }
-int Invaders::get_tired(int num) //получить поле "tired" выбранного браконьера
-{
-    return poachers[num].tired;
-}
+
 int Invaders::get_view_radius(int num) //получить поле "view_radius" выбранного браконьера
 {
     return poachers[num].view_radius;
@@ -859,10 +842,6 @@ void Invaders::set_target_ox(int num, int inp) //установить поле "
 void Invaders::set_target_oy(int num, int inp) //установить поле "target_oy" выбранного браконьера
 {
     poachers[num].target_oy=inp;
-}
-void Invaders::set_tired(int num, int inp) //установить поле "tired" выбранного браконьера
-{
-    poachers[num].tired=inp;
 }
 void Invaders::set_view_radius(int num, int inp) //установить поле "view_radius" выбранного браконьера
 {

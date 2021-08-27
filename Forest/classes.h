@@ -64,7 +64,6 @@ private:
     int ox_min, oy_min; //координаты верхнего левого угла ячейки
     int fertility; // плодородность почвы для одного растения в начале цикла поглощения питания растениями
     int fertility_now; // плодородность почвы для одного растения в данный момент
-    int effectiv; // эффективность плодородности (изначально 1, при истощении/насыщении изменяется)
     int wet; //влажность
 public:
     Dirt_cell();
@@ -107,7 +106,6 @@ public:
     int get_oy_min_dirt(int num); //получить поле "oy_min" выбранной ячейки почвы
     int get_fertility_dirt(int num); //получить поле "fertility" выбранной ячейки почвы
     int get_fertility_now_dirt(int num); //получить поле "fertility_now" выбранной ячейки почвы
-    int get_effectiv_dirt(int num); //получить поле "effectiv" выбранной ячейки почвы
     int get_wet_dirt(int num); //получить поле "wet" выбранной ячейки почвы
 
     void set_wet_dirt(int num, int inp); //установить значение поля "wet" выбранной ячейки почвы
@@ -167,7 +165,6 @@ protected:
     int speed; //скорость (кол-во пикселей за один шаг)
     int target_ox, target_oy; //координаты цели
     int target_type=-1; //тип цели
-    int tired; //усталость
     int view_radius; //радиус поля обзора
 
     QLabel *img; //указатель на label с изображением человека
@@ -203,7 +200,6 @@ public:
     int get_speed(); //получить поле "speed"
     int get_target_ox(); //получить поле "target_ox"
     int get_target_oy(); //получить поле "target_oy"
-    int get_tired(); //получить поле "tired"
     int get_view_radius(); //получить поле "view_radius"
     int get_target_type(); //получить поле "target_type"
     void get_img(QLabel*** png); //вернуть указатель на изображение лесника
@@ -213,7 +209,6 @@ public:
     void set_speed(int inp); //установить поле "speed"
     void set_target_ox(int inp); //установить поле "target_ox"
     void set_target_oy(int inp); //установить поле "target_oy"
-    void set_tired(int inp); //установить поле "tired"
     void set_target_type(int inp); //установить поле "target_type"
 };
 
@@ -235,7 +230,6 @@ public:
     int get_speed(int num); //получить поле "speed" выбранного браконьера
     int get_target_ox(int num); //получить поле "target_ox" выбранного браконьера
     int get_target_oy(int num); //получить поле "target_oy" выбранного браконьера
-    int get_tired(int num); //получить поле "tired" выбранного браконьера
     int get_view_radius(int num); //получить поле "view_radius" выбранного браконьера
     int get_cutting_speed(int num); //получить поле "cutting_speed" выбранного браконьера
     int get_target_type(int num); //получить поле "target_type" выбранного браконьера
@@ -245,7 +239,6 @@ public:
     void set_speed(int num, int inp); //установить поле "speed" выбранного браконьера
     void set_target_ox(int num, int inp); //установить поле "target_ox" выбранного браконьера
     void set_target_oy(int num, int inp); //установить поле "target_oy" выбранного браконьера
-    void set_tired(int num, int inp); //установить поле "tired" выбранного браконьера
     void set_view_radius(int num, int inp); //установить поле "view_radius" выбранного браконьера
     void set_cutting_speed(int num, int inp); //установить поле "cutting_speed" выбранного браконьера
     void set_target_type(int num, int inp); //установить поле "target_type" выбранного браконьера
