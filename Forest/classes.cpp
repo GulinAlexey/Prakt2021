@@ -376,6 +376,11 @@ int Forest::get_cutting_degree_tree(int num) //получить поле "cuttin
     return tree[num].cutting_degree; //получить искомое значение поля
 }
 
+void Forest::set_cutting_degree_tree(int num, int inp) //установить значение поля "cutting_degree" дерева
+{
+    tree[num].cutting_degree=inp;
+}
+
 void Forest::set_score_grow_plant(int num, int type, int inp) //установить значение поля "score_grow" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
 {
     if(type==1) //трава

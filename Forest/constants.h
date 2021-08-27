@@ -47,6 +47,7 @@
 
 #define DIST_ACTION_HUMAN (RADIUS_PIC_HUMAN+6) //дальность действия человека (при приближении к цели на это расстояние действие совершается)
 #define DIST_ACTION_FORESTER (RADIUS_PIC_HUMAN+RADIUS_PIC_HUMAN)  //дальность, с которой лесник может поймать браконьера
+#define DIST_ACTION_POACHER (RADIUS_PIC_HUMAN+(RADIUS_START_TREE/2)) //дальность, с которой браконьер может рубить дерево
 
 #define TARGET_HOUSE 1 //номер цели человека - дом лесника
 #define TARGET_POACHER 2 //номер цели человека - браконьер

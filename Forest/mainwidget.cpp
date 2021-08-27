@@ -697,7 +697,7 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
     }
 
 
-    for(int i=0, kolvo=invaders.get_kolvo_poacher(); i<kolvo; i++) //перебрать браконьеров
+    for(int i=0; i<invaders.get_kolvo_poacher(); i++) //перебрать браконьеров
     {
         int old_target = invaders.get_target_type(i);
         int old_target_ox = invaders.get_target_ox(i);
@@ -794,6 +794,42 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
         invaders.set_ox(i, ox_human); //записать новые координаты человека (до которых он дошёл)
         invaders.set_oy(i, oy_human); //записать новые координаты человека (до которых он дошёл)
 
+        //совершить действие в зависимости от цели
+        if(target==TARGET_TREE) //цель - дерево
+        {
+            int ox1 = ox_human; // координата ox человека
+            int oy1 = oy_human; // координата oy человека
+            int ox2 = ox_target; // координата ox цели
+            int oy2 = oy_target; // координата oy цели
+            int dist = sqrt(((ox2-ox1)*(ox2-ox1))+((oy2-oy1)*(oy2-oy1))); //расстояние между двумя точками
+            if(dist<=DIST_ACTION_POACHER) //если браконьер находится достаточно близко к цели
+            {
+                for(int j=0, kolvo_tree=forest.get_kolvo_tree(); j<kolvo_tree; j++)
+                {
+                    if(ox_target == forest.get_x_plant(j, TYPE_TREE) && oy_target == forest.get_y_plant(j, TYPE_TREE)) //если это искомое дерево
+                    {
+                        invaders.set_ox(i, ox_target-RADIUS_PIC_HUMAN); //браконьер встаёт с левой стороны дерева для его рубки
+                        forest.set_cutting_degree_tree(j, forest.get_cutting_degree_tree(j)+1); //увеличить степень срубленности дерева на 1
+                        if(forest.get_cutting_degree_tree(j)==MAX_CUTTING) //если достигнута максимальная степень срубленности
+                        {
+                            forest.Delete_plant(j, TYPE_TREE); //удалить это дерево (оно срублено браконьером)
+                        }
+                        break; //остановить перебор
+                    }
+                }
+            }
+        }
+        if(target==TARGET_CORNER_ESCAPE) //цель - угол поля для побега
+        {
+            if(ox_human == ox_target && oy_human==oy_target) //если браконьер достиг угла поля
+            {
+                invaders.Delete_invader(i); //удалить браконьера (он ушёл из поля леса)
+                if(i==0) //если удалён первый браконьер, то следующим будет первый (i=-1 из-за i++ в конце цикла)
+                    i=-1;
+                if(i==1) //если удалён второй браконьер, то остановить перебор
+                    break;
+            }
+        }
     }
 
 

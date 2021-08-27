@@ -130,6 +130,7 @@ public:
     int get_feed_norm_plant(int num, int type); //получить поле "feed_norm" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
 
     int get_cutting_degree_tree(int num); //получить поле "cutting_degree" дерева
+    void set_cutting_degree_tree(int num, int inp); //установить значение поля "cutting_degree" дерева
 
     void set_score_grow_plant(int num, int type, int inp); //установить значение поля "score_grow" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     void set_height_plant(int num, int type, int inp); //получить поле "height" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
