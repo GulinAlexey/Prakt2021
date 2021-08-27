@@ -1201,9 +1201,9 @@ void MainWidget::Find_target(int num, int type) //найти цель для ч�
                     {
                         num_target=0; //то следующей точкой маршрута будет самая первая
                     }
-                    invaders.set_target_type(num, TARGET_ROUTE); // цель лесника - точка маршрута патрулирования
-                    invaders.set_target_ox(num, invaders.get_route_points(num_target, X_CORNER)); //установить координаты цели - точка маршрута патрулирования
-                    invaders.set_target_oy(num, invaders.get_route_points(num_target, Y_CORNER)); //установить координаты цели - точка маршрута патрулирования
+                    invaders.set_target_type(num, TARGET_ROUTE); // цель браконьера - точка маршрута исследования
+                    invaders.set_target_ox(num, invaders.get_route_points(num_target, X_CORNER)); //установить координаты цели - точка маршрута исследования
+                    invaders.set_target_oy(num, invaders.get_route_points(num_target, Y_CORNER)); //установить координаты цели - точка маршрута исследования
                 }
                 else //иначе выбрать целью ближайшую точку маршрута
                 {
@@ -1220,9 +1220,9 @@ void MainWidget::Find_target(int num, int type) //найти цель для ч�
                             num_target=i; //записать номер цели
                         }
                     }
-                    invaders.set_target_type(num, TARGET_ROUTE); // цель лесника - точка маршрута патрулирования
-                    invaders.set_target_ox(num, invaders.get_route_points(num_target, X_CORNER)); //установить координаты цели - точка маршрута патрулирования
-                    invaders.set_target_oy(num, invaders.get_route_points(num_target, Y_CORNER)); //установить координаты цели - точка маршрута патрулирования
+                    invaders.set_target_type(num, TARGET_ROUTE); // цель браконьера - точка маршрута исследования
+                    invaders.set_target_ox(num, invaders.get_route_points(num_target, X_CORNER)); //установить координаты цели - точка маршрута исследования
+                    invaders.set_target_oy(num, invaders.get_route_points(num_target, Y_CORNER)); //установить координаты цели - точка маршрута исследования
                 }
             }
         }
