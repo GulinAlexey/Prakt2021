@@ -945,9 +945,9 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
             ui->info_0->setText("OX верхн. лев. угла:");
             ui->info_1->setText("OY верхн. лев. угла:");
             ui->info_2->setText("Плодородность:");
-            ui->info_3->setText("Влажность:");
+            ui->info_3->setText("Плодородн. сейчас:");
+            ui->info_4->setText("Влажность:");
             /*Очистка лишних строк*/
-            ui->info_4->setText(" ");
             ui->info_5->setText(" ");
             ui->info_6->setText(" ");
             ui->info_7->setText(" ");
@@ -958,7 +958,7 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
             ui->info_12->setText(" ");
             ui->info_13->setText(" ");
             ui->info_14->setText(" ");
-            ui->i_4->setText(" ");
+            ui->info_15->setText(" ");
             ui->i_5->setText(" ");
             ui->i_6->setText(" ");
             ui->i_7->setText(" ");
@@ -969,13 +969,15 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
             ui->i_12->setText(" ");
             ui->i_13->setText(" ");
             ui->i_14->setText(" ");
+            ui->i_15->setText(" ");
         }
         /*Вывод инфо о почве*/
         ui->i_00->setText(QString::number(num));
         ui->i_0->setText(QString::number(forest.get_ox_min_dirt(num)));
         ui->i_1->setText(QString::number(forest.get_oy_min_dirt(num)));
         ui->i_2->setText(QString::number(forest.get_fertility_dirt(num)));
-        ui->i_3->setText(QString::number(forest.get_wet_dirt(num)));
+        ui->i_3->setText(QString::number(forest.get_fertility_now_dirt(num)));
+        ui->i_4->setText(QString::number(forest.get_wet_dirt(num)));
     }
     if(type>=1 && type<=3) //если инфо о растении
     {
@@ -998,6 +1000,7 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
             ui->info_12->setText("Макс. высота:");
             ui->info_13->setText("Макс. радиус:");
             ui->info_14->setText("Норма питания:");
+            ui->info_15->setText("Степень срубленности:");
         }
         QString type_text; //строка с текстовым названием типа растения
         switch(type)
@@ -1029,6 +1032,15 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         ui->i_12->setText(QString::number(forest.get_end_height_plant(num,type)));
         ui->i_13->setText(QString::number(forest.get_max_radius_plant(num,type)));
         ui->i_14->setText(QString::number(forest.get_feed_norm_plant(num,type)));
+
+        if(type==TYPE_TREE)
+        {
+            ui->i_15->setText(QString::number(forest.get_cutting_degree_tree(num)));
+        }
+        else
+        {
+            ui->i_15->setText(" ");
+        }
     }
     if(type<0) //очистить блок с инфо
     {
@@ -1049,6 +1061,7 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         ui->info_12->setText(" ");
         ui->info_13->setText(" ");
         ui->info_14->setText(" ");
+        ui->info_15->setText(" ");
 
         ui->i_00->setText(" ");
         ui->i_0->setText(" ");
@@ -1066,6 +1079,7 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         ui->i_12->setText(" ");
         ui->i_13->setText(" ");
         ui->i_14->setText(" ");
+        ui->i_15->setText(" ");
     }
 }
 
@@ -1106,7 +1120,7 @@ void MainWidget::Print_human_info(int f_output, int f_update) //слот выв�
         ui->infoh_5->setText("OY цели:");
         ui->infoh_6->setText("Рад. обзора:");
         ui->infoh_7->setText("Скор. рубки:");
-        ui->infoh_8->setText(" ");
+        ui->infoh_8->setText("Тип цели:");
         ui->infoh_9->setText(" ");
         ui->infoh_10->setText(" ");
         ui->infoh_11->setText(" ");
@@ -1120,7 +1134,7 @@ void MainWidget::Print_human_info(int f_output, int f_update) //слот выв�
         ui->f1_5->setText(QString::number(forester.get_target_oy()));
         ui->f1_6->setText(QString::number(forester.get_view_radius()));
         ui->f1_7->setText(" ");
-        ui->f1_8->setText(" ");
+        ui->f1_8->setText(QString::number(forester.get_target_type()));
         ui->f1_9->setText(" ");
         ui->f1_10->setText(" ");
         ui->f1_11->setText(" ");
@@ -1135,7 +1149,7 @@ void MainWidget::Print_human_info(int f_output, int f_update) //слот выв�
         ui->p1_5->setText(QString::number(invaders.get_target_oy(num)));
         ui->p1_6->setText(QString::number(invaders.get_view_radius(num)));
         ui->p1_7->setText(QString::number(invaders.get_cutting_speed(num)));
-        ui->p1_8->setText(" ");
+        ui->p1_8->setText(QString::number(invaders.get_target_type(num)));
         ui->p1_9->setText(" ");
         ui->p1_10->setText(" ");
         ui->p1_11->setText(" ");
@@ -1164,7 +1178,7 @@ void MainWidget::Print_human_info(int f_output, int f_update) //слот выв�
         ui->p2_5->setText(QString::number(invaders.get_target_oy(num)));
         ui->p2_6->setText(QString::number(invaders.get_view_radius(num)));
         ui->p2_7->setText(QString::number(invaders.get_cutting_speed(num)));
-        ui->p2_8->setText(" ");
+        ui->p2_8->setText(QString::number(invaders.get_target_type(num)));
         ui->p2_9->setText(" ");
         ui->p2_10->setText(" ");
         ui->p2_11->setText(" ");
