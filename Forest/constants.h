@@ -46,6 +46,7 @@
 #define TYPE_POACHER 5 //номер лесника при выводе картинки
 
 #define DIST_ACTION_HUMAN (RADIUS_PIC_HUMAN+6) //дальность действия человека (при приближении к цели на это расстояние действие совершается)
+#define DIST_ACTION_FORESTER (RADIUS_PIC_HUMAN+RADIUS_PIC_HUMAN)  //дальность, с которой лесник может поймать браконьера
 
 #define TARGET_HOUSE 1 //номер цели человека - дом лесника
 #define TARGET_POACHER 2 //номер цели человека - браконьер
@@ -57,6 +58,9 @@
 #define TARGET_FIND_POACHER 2 //тип, передаваемый функции Find_target() при поиске цели браконьеру
 
 #define KOLVO_ROUTE_POINTS 8 //кол-во точек маршрута (лесника и браконьеров)
+
+#define F_PLUS 0 //значение для флага при вычислении разницы между координатами
+#define F_MINUS 1 //значение для флага при вычислении разницы между координатами
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
 #define HEIGHT_START_GRASS 1
