@@ -62,7 +62,8 @@ class Dirt_cell //класс ячейки почвы
 {
 private:
     int ox_min, oy_min; //координаты верхнего левого угла ячейки
-    int fertility; // плодородность почвы
+    int fertility; // плодородность почвы для одного растения в начале цикла поглощения питания растениями
+    int fertility_now; // плодородность почвы для одного растения в данный момент
     int effectiv; // эффективность плодородности (изначально 1, при истощении/насыщении изменяется)
     int wet; //влажность
 public:
@@ -105,11 +106,13 @@ public:
     int get_ox_min_dirt(int num); //получить поле "ox_min" выбранной ячейки почвы
     int get_oy_min_dirt(int num); //получить поле "oy_min" выбранной ячейки почвы
     int get_fertility_dirt(int num); //получить поле "fertility" выбранной ячейки почвы
+    int get_fertility_now_dirt(int num); //получить поле "fertility_now" выбранной ячейки почвы
     int get_effectiv_dirt(int num); //получить поле "effectiv" выбранной ячейки почвы
     int get_wet_dirt(int num); //получить поле "wet" выбранной ячейки почвы
 
     void set_wet_dirt(int num, int inp); //установить значение поля "wet" выбранной ячейки почвы
     void set_fertility_dirt(int num, int inp); //установить значение поля "fertility" выбранной ячейки почвы
+    void set_fertility_now_dirt(int num, int inp); //установить значение поля "fertility_now" выбранной ячейки почвы
     /*методы получения и установления полей объекта класса Plant*/
     int get_x_plant(int num, int type); //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
     int get_y_plant(int num, int type); //получить поле "y" растения (тип: 1 - трава, 2 - куст, 3 - дерево)

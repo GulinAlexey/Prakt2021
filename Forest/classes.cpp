@@ -130,6 +130,11 @@ int Forest::get_fertility_dirt(int num) //получить поле "fertility" 
 {
     return dirt[num].fertility; //получить искомое значение поля
 }
+
+int Forest::get_fertility_now_dirt(int num) //получить поле "fertility_now" выбранной ячейки почвы
+{
+    return dirt[num].fertility_now; //получить искомое значение поля
+}
 int Forest::get_effectiv_dirt(int num) //получить поле "effectiv" выбранной ячейки почвы
 {
     return dirt[num].effectiv; //получить искомое значение поля
@@ -148,7 +153,10 @@ void Forest::set_fertility_dirt(int num, int inp) //установить зна�
 {
     dirt[num].fertility=inp;
 }
-
+void Forest::set_fertility_now_dirt(int num, int inp) //установить значение поля "fertility_now" выбранной ячейки почвы
+{
+    dirt[num].fertility_now=inp;
+}
 int Forest::get_x_plant(int num, int type) //получить поле "x" растения (тип: 1 - трава, 2 - куст, 3 - дерево)
 {
     if(type==1) //трава
@@ -522,6 +530,7 @@ void Forest::Dirt_Init() //инициализация ячеек почвы
     for(int i=0; i<KOLVO_DIRT; i++) //перебрать все ячейки
     {
         dirt[i].fertility=RAND(MIN_FERTILITY, MAX_FERTILITY); // плодородность ячейки почвы
+        dirt[i].fertility_now=dirt[i].fertility; //плодородность ячейки почвы для текущего растения в цикле поглощений
         dirt[i].effectiv=EFFECTIV_START_DIRT; // эффективность плодородности
         dirt[i].wet=RAND(MIN_WET_START_DIRT, MAX_WET_START_DIRT); //влажность
     }
