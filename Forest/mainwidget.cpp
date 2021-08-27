@@ -671,6 +671,8 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
             kolvo_steps = kolvo_steps-1;
         }
     }
+    forester.set_ox(ox_human); //записать новые координаты человека (до которых он дошёл)
+    forester.set_oy(oy_human); //записать новые координаты человека (до которых он дошёл)
 
     //совершить действие в зависимости от цели
     if(target ==TARGET_POACHER) //цель - браконьер
@@ -695,10 +697,6 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
     }
 
 
-    //затем шаги и действия лесника, потом цели бр. подобное леснику
-
-
-
     for(int i=0, kolvo=invaders.get_kolvo_poacher(); i<kolvo; i++) //перебрать браконьеров
     {
         int old_target = invaders.get_target_type(i);
@@ -713,6 +711,89 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
             invaders.set_target_ox(i, old_target_ox);
             invaders.set_target_oy(i, old_target_oy);
         }
+
+        kolvo_steps = invaders.get_speed(i); //получить кол-во шагов на один тик таймера
+        ox_human = invaders.get_ox(i);
+        oy_human = invaders.get_oy(i);
+        ox_target = invaders.get_target_ox(i);
+        oy_target = invaders.get_target_oy(i);
+        target = invaders.get_target_type(i);
+
+        if((ox_human-ox_target)<=0) //если разница между координатами отрицательная
+        {
+            f_ox=F_PLUS; //то шаги нужно будет прибавлять к координатам человека
+        }
+        else
+        {
+            f_ox=F_MINUS; //иначе нужно будет вычитать шаги из координат человека
+        }
+        if((oy_human-oy_target)<=0) //если разница между координатами отрицательная
+        {
+            f_oy=F_PLUS; //то шаги нужно будет прибавлять к координатам человека
+        }
+        else
+        {
+            f_oy=F_MINUS; //иначе нужно будет вычитать шаги из координат человека
+        }
+
+        if(abs(ox_human - ox_target) <= abs(oy_human - oy_human)) //если передвигаться по оси ox будет ближе, чем по oy, то сначала двигаться по ox
+        {
+            while(ox_human!=ox_target && kolvo_steps!=0) //человек идёт к цели по оси, пока эта координата не совпадёт или не закончатся шаги
+            {
+                if(f_ox==F_PLUS)
+                {
+                    ox_human = ox_human+1;
+                }
+                else
+                {
+                    ox_human = ox_human-1;
+                }
+                kolvo_steps = kolvo_steps-1;
+            }
+
+            while(oy_human!=oy_target && kolvo_steps!=0) //человек идёт к цели по оси, пока эта координата не совпадёт или не закончатся шаги
+            {
+                if(f_oy==F_PLUS)
+                {
+                    oy_human = oy_human+1;
+                }
+                else
+                {
+                    oy_human = oy_human-1;
+                }
+                kolvo_steps = kolvo_steps-1;
+            }
+        }
+        else //иначе двигаться наоборот (сначала по oy)
+        {
+            while(oy_human!=oy_target && kolvo_steps!=0) //человек идёт к цели по оси, пока эта координата не совпадёт или не закончатся шаги
+            {
+                if(f_oy==F_PLUS)
+                {
+                    oy_human = oy_human+1;
+                }
+                else
+                {
+                    oy_human = oy_human-1;
+                }
+                kolvo_steps = kolvo_steps-1;
+            }
+            while(ox_human!=ox_target && kolvo_steps!=0) //человек идёт к цели по оси, пока эта координата не совпадёт или не закончатся шаги
+            {
+                if(f_ox==F_PLUS)
+                {
+                    ox_human = ox_human+1;
+                }
+                else
+                {
+                    ox_human = ox_human-1;
+                }
+                kolvo_steps = kolvo_steps-1;
+            }
+        }
+        invaders.set_ox(i, ox_human); //записать новые координаты человека (до которых он дошёл)
+        invaders.set_oy(i, oy_human); //записать новые координаты человека (до которых он дошёл)
+
     }
 
 
