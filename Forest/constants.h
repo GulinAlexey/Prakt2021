@@ -35,8 +35,6 @@
 
 #define RADIUS_PIC_HUMAN 15 //радиус картинки человека (радиус круга или половина длины стороны квадрата)
 
-#define SUNSHINE_NORM_FORPLANT_RANGE 25 //диапазон +- от полученного растением солнечного света, который будет комфортен данному растению относительно его норм. значения
-
 #define HOUSE_OX 715 //координата ox центра дома лесника
 #define HOUSE_OY 515 //координата oy центра дома лесника
 #define RADIUS_PIC_HOUSE 60 //радиус картинки дома лесника (половина длины стороны квадрата)
@@ -151,8 +149,10 @@
 #define FEED_NORM_TREE 350
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Dirt_cell - ячейка почвы*/
-#define MIN_FERTILITY 5
-#define MAX_FERTILITY 30
+#define MIN_FERTILITY 200
+#define MAX_FERTILITY 400
+
+#define ADD_FERT_IF_DIED_PLANT 70 //кол-во очков питания, которые добавляются ячейке почвы, на которой зачахло растение (оно стало удобрением)
 
 #define MIN_WET_START_DIRT 0
 #define MAX_WET_START_DIRT 5

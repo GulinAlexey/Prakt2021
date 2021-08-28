@@ -557,11 +557,13 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
 
         if(f_died==1) //если растение умирает
         {
+            forest.set_fertility_dirt(num_dirt, forest.get_fertility_dirt(num_dirt)+ADD_FERT_IF_DIED_PLANT); //увеличить плодородность ячейки почвы, так как на ней зачахло растение (стало удобрением)
+            forest.set_fertility_now_dirt(num_dirt, forest.get_fertility_now_dirt(num_dirt)+ADD_FERT_IF_DIED_PLANT); //увеличить плодородность ячейки почвы, так как на ней зачахло растение (стало удобрением)
             Remove_plant_and_resort(i, &plants, &all_plants); //удалить это растение (в том числе из списка сортировки)
         }
         else //если растение не зачахло
         {
-            int feed = forest.get_fertility_dirt(num_dirt);
+            int feed = forest.get_fertility_now_dirt(num_dirt);
             int remain_feed = feed - forest.get_feed_norm_plant(num, type); //остаток от питания после растения
             if (remain_feed >= 0) //растение получило достаточно питания
             {
