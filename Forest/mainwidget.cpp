@@ -831,6 +831,9 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
             {
                 if(ox_target == invaders.get_ox(i) && oy_target == invaders.get_oy(i)) //если это искомый браконьер
                 {
+                    QLabel **img_delete=nullptr; //указатель на label со старой картинкой
+                    invaders.get_img(&img_delete, i); //получить адрес для объекта - label с изображением браконьера
+                    (*img_delete)->deleteLater(); //удалить qlabel  с изображением браконьера
                     invaders.Delete_invader(i); //этот браконьер пойман (удалён из леса)
                     break; //остановить перебор
                 }
@@ -1293,7 +1296,7 @@ void MainWidget::Print_human_info(int f_output, int f_update) //слот выв�
     }
     if(invaders.get_kolvo_poacher()>=1 && f_output==1) //если есть 1 браконьер и вкл. вывод, то вывести инфо о нём
     {
-        int num=1; //номер браконьера для вывода инфо
+        int num=0; //номер браконьера для вывода инфо
         ui->p1_1->setText(QString::number(invaders.get_ox(num)));
         ui->p1_2->setText(QString::number(invaders.get_oy(num)));
         ui->p1_3->setText(QString::number(invaders.get_speed(num)));
@@ -1322,7 +1325,7 @@ void MainWidget::Print_human_info(int f_output, int f_update) //слот выв�
     }
     if(invaders.get_kolvo_poacher()>=2 && f_output==1) //если есть 2-й браконьер и вкл. вывод, то вывести инфо о нём
     {
-        int num=2; //номер браконьера для вывода инфо
+        int num=1; //номер браконьера для вывода инфо
         ui->p2_1->setText(QString::number(invaders.get_ox(num)));
         ui->p2_2->setText(QString::number(invaders.get_oy(num)));
         ui->p2_3->setText(QString::number(invaders.get_speed(num)));
