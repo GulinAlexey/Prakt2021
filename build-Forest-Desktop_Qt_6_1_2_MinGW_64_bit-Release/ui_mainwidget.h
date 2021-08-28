@@ -168,7 +168,7 @@ public:
         statusbar->setGeometry(QRect(0, 0, 3, 18));
         vzaimode = new QGroupBox(MainWidget);
         vzaimode->setObjectName(QString::fromUtf8("vzaimode"));
-        vzaimode->setGeometry(QRect(830, 20, 181, 104));
+        vzaimode->setGeometry(QRect(910, 20, 181, 104));
         vzaimode->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 227, 187);"));
         plant_b = new QRadioButton(vzaimode);
         plant_b->setObjectName(QString::fromUtf8("plant_b"));
@@ -185,7 +185,7 @@ public:
         infodirt_b->setGeometry(QRect(10, 80, 101, 17));
         timemode = new QGroupBox(MainWidget);
         timemode->setObjectName(QString::fromUtf8("timemode"));
-        timemode->setGeometry(QRect(830, 220, 181, 91));
+        timemode->setGeometry(QRect(910, 220, 181, 91));
         timemode->setStyleSheet(QString::fromUtf8("background-color: rgb(205, 208, 255);"));
         normal_b = new QRadioButton(timemode);
         normal_b->setObjectName(QString::fromUtf8("normal_b"));
@@ -199,7 +199,7 @@ public:
         pause_b->setGeometry(QRect(10, 60, 82, 17));
         pogoda = new QLabel(MainWidget);
         pogoda->setObjectName(QString::fromUtf8("pogoda"));
-        pogoda->setGeometry(QRect(1278, 20, 70, 70));
+        pogoda->setGeometry(QRect(828, 20, 70, 70));
         pogoda->setScaledContents(true);
         place = new QFrame(MainWidget);
         place->setObjectName(QString::fromUtf8("place"));
@@ -210,7 +210,7 @@ public:
         place->setFrameShadow(QFrame::Raised);
         type_plant = new QGroupBox(MainWidget);
         type_plant->setObjectName(QString::fromUtf8("type_plant"));
-        type_plant->setGeometry(QRect(830, 128, 181, 86));
+        type_plant->setGeometry(QRect(910, 128, 181, 86));
         type_plant->setStyleSheet(QString::fromUtf8("background-color: rgb(204, 255, 188);"));
         grass_type = new QRadioButton(type_plant);
         grass_type->setObjectName(QString::fromUtf8("grass_type"));
@@ -543,12 +543,12 @@ public:
         info_name->setTextFormat(Qt::PlainText);
         info_weather = new QLabel(MainWidget);
         info_weather->setObjectName(QString::fromUtf8("info_weather"));
-        info_weather->setGeometry(QRect(1021, 20, 251, 20));
+        info_weather->setGeometry(QRect(1101, 20, 251, 20));
         info_weather->setStyleSheet(QString::fromUtf8("background-color: rgb(245, 205, 255);"));
         info_weather->setTextFormat(Qt::PlainText);
         info_wvalue = new QGroupBox(MainWidget);
         info_wvalue->setObjectName(QString::fromUtf8("info_wvalue"));
-        info_wvalue->setGeometry(QRect(1170, 40, 101, 121));
+        info_wvalue->setGeometry(QRect(1250, 40, 101, 121));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
         QBrush brush10(QColor(245, 205, 255, 255));
@@ -629,7 +629,7 @@ public:
         w_0->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         info_wtype = new QGroupBox(MainWidget);
         info_wtype->setObjectName(QString::fromUtf8("info_wtype"));
-        info_wtype->setGeometry(QRect(1020, 40, 150, 121));
+        info_wtype->setGeometry(QRect(1100, 40, 150, 121));
         QPalette palette3;
         palette3.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette3.setBrush(QPalette::Active, QPalette::Button, brush10);
@@ -708,7 +708,7 @@ public:
         winfo_0->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         info_ftype = new QGroupBox(MainWidget);
         info_ftype->setObjectName(QString::fromUtf8("info_ftype"));
-        info_ftype->setGeometry(QRect(1020, 190, 150, 121));
+        info_ftype->setGeometry(QRect(1100, 190, 150, 121));
         QPalette palette4;
         palette4.setBrush(QPalette::Active, QPalette::WindowText, brush);
         QBrush brush11(QColor(167, 255, 215, 255));
@@ -789,12 +789,12 @@ public:
         finfo_0->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         info_forest = new QLabel(MainWidget);
         info_forest->setObjectName(QString::fromUtf8("info_forest"));
-        info_forest->setGeometry(QRect(1021, 170, 251, 20));
+        info_forest->setGeometry(QRect(1101, 170, 251, 20));
         info_forest->setStyleSheet(QString::fromUtf8("background-color: rgb(167, 255, 215);"));
         info_forest->setTextFormat(Qt::PlainText);
         info_fvalue = new QGroupBox(MainWidget);
         info_fvalue->setObjectName(QString::fromUtf8("info_fvalue"));
-        info_fvalue->setGeometry(QRect(1170, 190, 101, 121));
+        info_fvalue->setGeometry(QRect(1250, 190, 101, 121));
         QPalette palette5;
         palette5.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette5.setBrush(QPalette::Active, QPalette::Button, brush11);
@@ -876,7 +876,7 @@ public:
         all_time_text->setGeometry(QRect(20, 1, 691, 16));
         human_timemode = new QGroupBox(MainWidget);
         human_timemode->setObjectName(QString::fromUtf8("human_timemode"));
-        human_timemode->setGeometry(QRect(1130, 320, 141, 91));
+        human_timemode->setGeometry(QRect(1171, 322, 141, 91));
         human_timemode->setStyleSheet(QString::fromUtf8("background-color: rgb(243, 208, 172);"));
         normal_human = new QRadioButton(human_timemode);
         normal_human->setObjectName(QString::fromUtf8("normal_human"));

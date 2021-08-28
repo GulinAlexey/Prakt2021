@@ -36,7 +36,7 @@
   <widget class="QGroupBox" name="vzaimode">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>910</x>
      <y>20</y>
      <width>181</width>
      <height>104</height>
@@ -107,7 +107,7 @@
   <widget class="QGroupBox" name="timemode">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>910</x>
      <y>220</y>
      <width>181</width>
      <height>91</height>
@@ -165,7 +165,7 @@
   <widget class="QLabel" name="pogoda">
    <property name="geometry">
     <rect>
-     <x>1278</x>
+     <x>828</x>
      <y>20</y>
      <width>70</width>
      <height>70</height>
@@ -203,7 +203,7 @@
   <widget class="QGroupBox" name="type_plant">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>910</x>
      <y>128</y>
      <width>181</width>
      <height>86</height>
@@ -1916,7 +1916,7 @@
   <widget class="QLabel" name="info_weather">
    <property name="geometry">
     <rect>
-     <x>1021</x>
+     <x>1101</x>
      <y>20</y>
      <width>251</width>
      <height>20</height>
@@ -1935,7 +1935,7 @@
   <widget class="QGroupBox" name="info_wvalue">
    <property name="geometry">
     <rect>
-     <x>1170</x>
+     <x>1250</x>
      <y>40</y>
      <width>101</width>
      <height>121</height>
@@ -2474,7 +2474,7 @@
   <widget class="QGroupBox" name="info_wtype">
    <property name="geometry">
     <rect>
-     <x>1020</x>
+     <x>1100</x>
      <y>40</y>
      <width>150</width>
      <height>121</height>
@@ -3013,7 +3013,7 @@
   <widget class="QGroupBox" name="info_ftype">
    <property name="geometry">
     <rect>
-     <x>1020</x>
+     <x>1100</x>
      <y>190</y>
      <width>150</width>
      <height>121</height>
@@ -3552,7 +3552,7 @@
   <widget class="QLabel" name="info_forest">
    <property name="geometry">
     <rect>
-     <x>1021</x>
+     <x>1101</x>
      <y>170</y>
      <width>251</width>
      <height>20</height>
@@ -3571,7 +3571,7 @@
   <widget class="QGroupBox" name="info_fvalue">
    <property name="geometry">
     <rect>
-     <x>1170</x>
+     <x>1250</x>
      <y>190</y>
      <width>101</width>
      <height>121</height>
@@ -4123,8 +4123,8 @@
   <widget class="QGroupBox" name="human_timemode">
    <property name="geometry">
     <rect>
-     <x>1130</x>
-     <y>320</y>
+     <x>1171</x>
+     <y>322</y>
      <width>141</width>
      <height>91</height>
     </rect>
