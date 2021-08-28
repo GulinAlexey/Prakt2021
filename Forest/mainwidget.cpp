@@ -386,7 +386,7 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
                     plant_sort vsp;
                     vsp=plants[i];
                     plants[i]=plants[i+1];
-                    plants[i+1]=plants[i];
+                    plants[i+1]=vsp;
                 }
             }
         }
@@ -528,7 +528,7 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
                     plant_sort vsp;
                     vsp=plants[i];
                     plants[i]=plants[i+1];
-                    plants[i+1]=plants[i];
+                    plants[i+1]=vsp;
                 }
             }
         }
