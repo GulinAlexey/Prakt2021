@@ -184,6 +184,8 @@
 #define RAINFALL_TICK_RAIN 60
 #define RAINFALL_TICK_RAIN_RANGE 15
 
+#define DRY_TICK_SUN 5 //кол-во испаряемой влаги с почвы за 1 тик
+
 #define MIN_RAINFALL_TICK 10
 #define MAX_RAINFALL_TICK 100
 

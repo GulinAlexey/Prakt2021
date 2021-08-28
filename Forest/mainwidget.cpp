@@ -350,6 +350,10 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
     for(int i=0, kolvo=forest.get_kolvo_dirt(), rainf=weather.get_rainfall_tick(); i<kolvo; i++) //перебрать ячейки почвы
     {
         forest.set_wet_dirt(i, (forest.get_wet_dirt(i)+rainf)); //почва получает влагу
+        if(weather.get_f_status()==F_SUN) //если сейчас солнечно
+        {
+            forest.set_wet_dirt(i, (forest.get_wet_dirt(i)-DRY_TICK_SUN)); //влага испаряется с почвы
+        }
     }
 
     struct plant_sort //структура для сортировки растений (их упорядочиванию по высоте или агрессивности)
@@ -403,6 +407,7 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
 
         if(remain_wet >= 0) //растение получило достаточно влаги
         {
+            forest.set_score_grow_plant(num, type, forest.get_score_grow_plant(num, type)+1);
         }
         else //растение получило недостаточно влаги
         {
