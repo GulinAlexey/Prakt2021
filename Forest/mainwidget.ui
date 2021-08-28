@@ -6968,6 +6968,19 @@
     </property>
    </widget>
   </widget>
+  <widget class="QLabel" name="all_plants_died_text">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>630</y>
+     <width>691</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Всего растений завяли: 0</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

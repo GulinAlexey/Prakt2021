@@ -153,6 +153,7 @@ public:
     QLabel *p2_7;
     QLabel *p2_2;
     QLabel *p2_1;
+    QLabel *all_plants_died_text;
 
     void setupUi(QWidget *MainWidget)
     {
@@ -1364,6 +1365,9 @@ public:
         p2_1->setGeometry(QRect(3, 20, 41, 16));
         p2_1->setFont(font);
         p2_1->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        all_plants_died_text = new QLabel(MainWidget);
+        all_plants_died_text->setObjectName(QString::fromUtf8("all_plants_died_text"));
+        all_plants_died_text->setGeometry(QRect(20, 630, 691, 16));
 
         retranslateUi(MainWidget);
 
@@ -1500,6 +1504,7 @@ public:
         p2_7->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
         p2_2->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
         p2_1->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
+        all_plants_died_text->setText(QCoreApplication::translate("MainWidget", "\320\222\321\201\320\265\320\263\320\276 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\320\271 \320\267\320\260\320\262\321\217\320\273\320\270: 0", nullptr));
     } // retranslateUi
 
 };
