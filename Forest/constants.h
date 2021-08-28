@@ -90,7 +90,8 @@
 #define MIN_RADIUS_GRASS 80
 #define MAX_RADIUS_GRASS 500
 
-#define FEED_NORM_GRASS 200
+#define FEED_NORM_GRASS_MIN 150
+#define FEED_NORM_GRASS_MAX 250
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Bush - куст*/
 #define HEIGHT_START_BUSH 1
@@ -118,7 +119,8 @@
 #define MIN_RADIUS_BUSH 50
 #define MAX_RADIUS_BUSH 300
 
-#define FEED_NORM_BUSH 250
+#define FEED_NORM_BUSH_MIN 200
+#define FEED_NORM_BUSH_MAX 300
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Tree - дерево*/
 #define HEIGHT_START_TREE 1
@@ -146,7 +148,8 @@
 #define MIN_RADIUS_TREE 30
 #define MAX_RADIUS_TREE 200
 
-#define FEED_NORM_TREE 350
+#define FEED_NORM_TREE_MIN 300
+#define FEED_NORM_TREE_MAX 400
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Dirt_cell - ячейка почвы*/
 #define MIN_FERTILITY 200

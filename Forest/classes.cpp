@@ -35,7 +35,7 @@ void Grass::Init_rand() //трава, инициализация случайн�
     viability=VIABILITY_START_GRASS; //начальная жизнеспособность
     end_height=RAND(MIN_END_HEIGHT_GRASS, MAX_END_HEIGHT_GRASS); //конечная (макс.) высота растения
     max_radius=RAND(MIN_RADIUS_GRASS, MAX_RADIUS_GRASS); //макс. радиус кроны
-    feed_norm=FEED_NORM_GRASS; //нормальное разовое питание
+    feed_norm=RAND(FEED_NORM_GRASS_MIN,FEED_NORM_GRASS_MAX); //нормальное разовое питание
 }
 
 void Bush::Init_rand() //куст, инициализация случайными значениями
@@ -50,7 +50,7 @@ void Bush::Init_rand() //куст, инициализация случайным
     viability=VIABILITY_START_BUSH; //начальная жизнеспособность
     end_height=RAND(MIN_END_HEIGHT_BUSH, MAX_END_HEIGHT_BUSH); //конечная (макс.) высота растения
     max_radius=RAND(MIN_RADIUS_BUSH, MAX_RADIUS_BUSH); //макс. радиус кроны
-    feed_norm=FEED_NORM_BUSH; //нормальное разовое питание
+    feed_norm=RAND(FEED_NORM_BUSH_MIN,FEED_NORM_BUSH_MAX); //нормальное разовое питание
 }
 
 void Tree::Init_rand() //дерево, инициализация случайными значениями
@@ -65,7 +65,7 @@ void Tree::Init_rand() //дерево, инициализация случайн
     viability=VIABILITY_START_TREE; //начальная жизнеспособность
     end_height=RAND(MIN_END_HEIGHT_TREE, MAX_END_HEIGHT_TREE); //конечная (макс.) высота растения
     max_radius=RAND(MIN_RADIUS_TREE, MAX_RADIUS_TREE); //макс. радиус кроны
-    feed_norm=FEED_NORM_TREE; //нормальное разовое питание
+    feed_norm=RAND(FEED_NORM_TREE_MIN, FEED_NORM_TREE_MAX); //нормальное разовое питание
 }
 
 void Plant::Change_OXY(int ox_new, int oy_new) //установка новых координат
