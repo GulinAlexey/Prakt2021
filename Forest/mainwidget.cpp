@@ -1324,7 +1324,26 @@ void MainWidget::Print_human_info(int f_output, int f_update) //слот выв�
         ui->f1_5->setText(QString::number(forester.get_target_oy()));
         ui->f1_6->setText(QString::number(forester.get_view_radius()));
         ui->f1_7->setText(" ");
-        ui->f1_8->setText(QString::number(forester.get_target_type()));
+        QString target_type_text; //строка с текстовым названием типа цели
+        switch(forester.get_target_type())
+        {
+        case TARGET_HOUSE:
+            target_type_text="House";
+            break;
+        case TARGET_POACHER:
+            target_type_text="Poacher";
+            break;
+        case TARGET_TREE:
+            target_type_text="Tree";
+            break;
+        case TARGET_CORNER_ESCAPE:
+            target_type_text="Escape";
+            break;
+        case TARGET_ROUTE:
+            target_type_text="Route";
+            break;
+        }
+        ui->f1_8->setText(target_type_text);
         ui->f1_9->setText(" ");
         ui->f1_10->setText(" ");
         ui->f1_11->setText(" ");
@@ -1339,7 +1358,26 @@ void MainWidget::Print_human_info(int f_output, int f_update) //слот выв�
         ui->p1_5->setText(QString::number(invaders.get_target_oy(num)));
         ui->p1_6->setText(QString::number(invaders.get_view_radius(num)));
         ui->p1_7->setText(QString::number(invaders.get_cutting_speed(num)));
-        ui->p1_8->setText(QString::number(invaders.get_target_type(num)));
+        QString target_type_text; //строка с текстовым названием типа цели
+        switch(invaders.get_target_type(num))
+        {
+        case TARGET_HOUSE:
+            target_type_text="House";
+            break;
+        case TARGET_POACHER:
+            target_type_text="Poacher";
+            break;
+        case TARGET_TREE:
+            target_type_text="Tree";
+            break;
+        case TARGET_CORNER_ESCAPE:
+            target_type_text="Escape";
+            break;
+        case TARGET_ROUTE:
+            target_type_text="Route";
+            break;
+        }
+        ui->p1_8->setText(target_type_text);
         ui->p1_9->setText(" ");
         ui->p1_10->setText(" ");
         ui->p1_11->setText(" ");
@@ -1368,7 +1406,26 @@ void MainWidget::Print_human_info(int f_output, int f_update) //слот выв�
         ui->p2_5->setText(QString::number(invaders.get_target_oy(num)));
         ui->p2_6->setText(QString::number(invaders.get_view_radius(num)));
         ui->p2_7->setText(QString::number(invaders.get_cutting_speed(num)));
-        ui->p2_8->setText(QString::number(invaders.get_target_type(num)));
+        QString target_type_text; //строка с текстовым названием типа цели
+        switch(invaders.get_target_type(num))
+        {
+        case TARGET_HOUSE:
+            target_type_text="House";
+            break;
+        case TARGET_POACHER:
+            target_type_text="Poacher";
+            break;
+        case TARGET_TREE:
+            target_type_text="Tree";
+            break;
+        case TARGET_CORNER_ESCAPE:
+            target_type_text="Escape";
+            break;
+        case TARGET_ROUTE:
+            target_type_text="Route";
+            break;
+        }
+        ui->p2_8->setText(target_type_text);
         ui->p2_9->setText(" ");
         ui->p2_10->setText(" ");
         ui->p2_11->setText(" ");
