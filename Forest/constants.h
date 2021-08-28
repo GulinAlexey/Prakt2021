@@ -63,13 +63,16 @@
 #define F_PLUS 0 //значение для флага при вычислении разницы между координатами
 #define F_MINUS 1 //значение для флага при вычислении разницы между координатами
 
+#define TYPE_LOVE_BRIGHT 1 //тип светолюбивости - яркое солнце
+#define TYPE_LOVE_SHADOW 2 //тип светолюбивости - полутень
+
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
 #define HEIGHT_START_GRASS 1
 
 #define RADIUS_START_GRASS 20
 
 #define MIN_LIGHTLOVE_GRASS 1
-#define MAX_LIGHTLOVE_GRASS 3
+#define MAX_LIGHTLOVE_GRASS 2
 
 #define MIN_AGGRESIV_GRASS 1
 #define MAX_AGGRESIV_GRASS 10
@@ -97,7 +100,7 @@
 #define RADIUS_START_BUSH 20
 
 #define MIN_LIGHTLOVE_BUSH 1
-#define MAX_LIGHTLOVE_BUSH 3
+#define MAX_LIGHTLOVE_BUSH 2
 
 #define MIN_AGGRESIV_BUSH 1
 #define MAX_AGGRESIV_BUSH 10
@@ -125,7 +128,7 @@
 #define RADIUS_START_TREE 20
 
 #define MIN_LIGHTLOVE_TREE 1
-#define MAX_LIGHTLOVE_TREE 3
+#define MAX_LIGHTLOVE_TREE 2
 
 #define MIN_AGGRESIV_TREE 1
 #define MAX_AGGRESIV_TREE 10
