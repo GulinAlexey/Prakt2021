@@ -11,10 +11,10 @@
 #define KOLVO_CELL_X 4 //кол-во ячеек почвы по горизонтали
 #define KOLVO_CELL_Y 3 //кол-во ячеек почвы по вертикали
 
-#define GROW_GRASS_HEIGHT 5
-#define GROW_GRASS_RADIUS 10
-#define GROW_BUSH_HEIGHT 8
-#define GROW_BUSH_RADIUS 8
+#define GROW_GRASS_HEIGHT 3
+#define GROW_GRASS_RADIUS 7
+#define GROW_BUSH_HEIGHT 5
+#define GROW_BUSH_RADIUS 5
 #define GROW_TREE_HEIGHT 12
 #define GROW_TREE_RADIUS 3
 
@@ -22,7 +22,7 @@
 
 /*ЗНАЧЕНИЯ ДЛЯ mainwidget*/
 #define TIME_TICK 1000 //время интервала таймера в миллисекундах
-#define SPEED_TICK 333 //время ускоренного интервала таймера в миллисекундах
+#define SPEED_TICK 100 //время ускоренного интервала таймера в миллисекундах
 
 #define TIME_HUMAN_TICK 500 //время интервала таймера для людей в миллисекундах
 
@@ -189,9 +189,6 @@
 #define RAINFALL_TICK_RAIN_RANGE 15
 
 #define DRY_TICK_SUN 5 //кол-во испаряемой влаги с почвы за 1 тик
-
-#define MIN_RAINFALL_TICK 10
-#define MAX_RAINFALL_TICK 100
 
 #define TIME_STATUS_START 0
 #define TIME_STATUS_END 10
