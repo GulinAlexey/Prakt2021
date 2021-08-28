@@ -608,7 +608,7 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
                 if(forest.get_score_grow_plant(num, type) >= forest.get_score_grow_max_plant(num, type)) //если растение набрало макс. кол-во очков для дальнейшего роста
                 {
                     forest.set_score_grow_plant(num, type, forest.get_score_grow_plant(num, type)-forest.get_score_grow_max_plant(num, type)); //списать с растения очки роста взамен на рост в высоту и ширину
-                    int grow_height, grow_radius; //переменные с величиной роста в высоту и в радиусе растения
+                    int grow_height=0, grow_radius=0; //переменные с величиной роста в высоту и в радиусе растения
                     switch (type) //отличаются в зависимости от типа растения
                     {
                     case 1: //трава
@@ -716,18 +716,26 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
     int old_target_ox = forester.get_target_ox();
     int old_target_oy = forester.get_target_oy();
 
+    int kolvo_steps = forester.get_speed(); //получить кол-во шагов на один тик таймера
+    int ox_human = forester.get_ox();
+    int oy_human = forester.get_oy();
+
     Find_target(1, TARGET_FIND_FORESTER); //найти цель для лесника
 
     if(forester.get_target_type()==TARGET_ROUTE && old_target==TARGET_ROUTE) //если человек до этого шёл по маршруту, и не увидел ничего нового, то продолжить идти по маршруту
     {
-        forester.set_target_type(old_target);
-        forester.set_target_ox(old_target_ox);
-        forester.set_target_oy(old_target_oy);
+        if(ox_human==old_target_ox && oy_human==old_target_oy) //если человек уже достиг точки маршрута, то пойти к сл. точке
+        {
+            ;
+        }
+        else //иначе продолжить путь к "старой" точке маршрута
+        {
+            forester.set_target_type(old_target);
+            forester.set_target_ox(old_target_ox);
+            forester.set_target_oy(old_target_oy);
+        }
     }
 
-    int kolvo_steps = forester.get_speed(); //получить кол-во шагов на один тик таймера
-    int ox_human = forester.get_ox();
-    int oy_human = forester.get_oy();
     int ox_target = forester.get_target_ox();
     int oy_target = forester.get_target_oy();
     int target = forester.get_target_type();
@@ -837,18 +845,27 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
         int old_target_ox = invaders.get_target_ox(i);
         int old_target_oy = invaders.get_target_oy(i);
 
+        kolvo_steps = invaders.get_speed(i); //получить кол-во шагов на один тик таймера
+        ox_human = invaders.get_ox(i);
+        oy_human = invaders.get_oy(i);
+
         Find_target(i, TARGET_FIND_POACHER); //найти цель для браконьера
 
         if(invaders.get_target_type(i)==TARGET_ROUTE && old_target==TARGET_ROUTE) //если человек до этого шёл по маршруту, и не увидел ничего нового, то продолжить идти по маршруту
         {
-            invaders.set_target_type(i, old_target);
-            invaders.set_target_ox(i, old_target_ox);
-            invaders.set_target_oy(i, old_target_oy);
+            if(ox_human==old_target_ox && oy_human==old_target_oy) //если человек уже достиг точки маршрута, то пойти к сл. точке
+            {
+                ;
+            }
+            else //иначе продолжить путь к "старой" точке маршрута
+            {
+                invaders.set_target_type(i, old_target);
+                invaders.set_target_ox(i, old_target_ox);
+                invaders.set_target_oy(i, old_target_oy);
+            }
         }
 
-        kolvo_steps = invaders.get_speed(i); //получить кол-во шагов на один тик таймера
-        ox_human = invaders.get_ox(i);
-        oy_human = invaders.get_oy(i);
+
         ox_target = invaders.get_target_ox(i);
         oy_target = invaders.get_target_oy(i);
         target = invaders.get_target_type(i);

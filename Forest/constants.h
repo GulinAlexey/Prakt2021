@@ -33,7 +33,7 @@
 #define PLACE_SIZE_X 800 //размер площадки леса по горизонтали
 #define PLACE_SIZE_Y 600 //размер площадки леса по вертикали
 
-#define RADIUS_PIC_HUMAN 15 //радиус картинки человека (радиус круга или половина длины стороны квадрата)
+#define RADIUS_PIC_HUMAN 20 //радиус картинки человека (радиус круга или половина длины стороны квадрата)
 
 #define HOUSE_OX 715 //координата ox центра дома лесника
 #define HOUSE_OY 515 //координата oy центра дома лесника
@@ -207,8 +207,8 @@
 #define MAX_SPEED_POACHER 50
 #define MIN_VIEW_RADIUS_POACHER 80
 #define MAX_VIEW_RADIUS_POACHER 130
-#define MIN_CUTTING_SPEED_POACHER 5
-#define MAX_CUTTING_SPEED_POACHER 15
+#define MIN_CUTTING_SPEED_POACHER 1
+#define MAX_CUTTING_SPEED_POACHER 2
 
 #define MAX_CUTTING 50
 
