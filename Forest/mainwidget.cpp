@@ -287,7 +287,7 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
 {
     if(f_house_img==0) //если картинка домика ещё не выведена
     {
-        Show_pic(1,6); //вывести её
+        Show_pic(1,6); //вывести картинку домика лесника
         f_house_img=1; //отметить флагом
     }
 
@@ -547,7 +547,7 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
         else //если растение не получило солн. света вовсе
         {
             double viability = forest.get_viability_plant(num, type); //жизнеспособность растения
-            forest.set_viability_plant(num, type, viability-0.15); //уменьшить жизнеспособность растения, так как без света оно не может
+            forest.set_viability_plant(num, type, viability-0.25); //уменьшить жизнеспособность растения, так как без света оно не может
             if(forest.get_viability_plant(num, type)<=0)
             {
                 f_died=1; //отметить флагом, если растение совсем зачахло (оно погибнет)
@@ -563,17 +563,53 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
         }
         else //если растение не зачахло
         {
-            int feed = forest.get_fertility_now_dirt(num_dirt);
+            int feed = forest.get_fertility_now_dirt(num_dirt); //получаемое питание из почвы
             int remain_feed = feed - forest.get_feed_norm_plant(num, type); //остаток от питания после растения
             if (remain_feed >= 0) //растение получило достаточно питания
             {
-                forest.set_fertility_dirt(num_dirt, feed+remain_feed);
-                forest.set_score_grow_plant(num, type, (forest.get_score_grow_plant(num, type)+1));
-                if(forest.get_score_grow_plant(num, type) == forest.get_score_grow_max_plant(num, type))
+                forest.set_score_grow_plant(num, type, forest.get_score_grow_plant(num, type)+1); //увеличить кол-во очков роста на 1
+                double viability = forest.get_viability_plant(num, type); //жизнеспособность растения
+                if(viability<1.0)
                 {
-                    forest.set_score_grow_plant(num, type, SCORE_GROW_START);
-                    int grow_height, grow_radius;
-                    switch (type)
+                    forest.set_viability_plant(num, type, viability+0.025); //увеличить жизнеспособность растения, если она была неполной
+                    if(forest.get_viability_plant(num, type)>1.0)
+                    {
+                        forest.set_viability_plant(num, type, 1.0); //если после увеличения жизнеспособности она стала больше, чем 1, то приравнять к 1 (это максимум)
+                    }
+                }
+
+            }
+            else //растение получило недостаточно питания
+            {
+                forest.set_fertility_now_dirt(num_dirt, feed-abs(remain_feed)); //если питания не хватило, то растение забирает больше питания из почвы (остальным меньше достанется)
+                if(forest.get_fertility_now_dirt(num_dirt)<0) //если в почве нет столько питания, сколько нужно растению
+                {
+                    forest.set_fertility_now_dirt(num_dirt, 0); //обнулить питание в почве (иначе отрицательно) (но только для данного цикла питания)
+                    double viability = forest.get_viability_plant(num, type); //жизнеспособность растения
+                    forest.set_viability_plant(num, type, viability-0.15); //уменьшить жизнеспособность растения
+                    if(forest.get_viability_plant(num, type)<=0)
+                    {
+                        f_died=1; //отметить флагом, если растение совсем зачахло (оно погибнет)
+                    }
+                }
+                else //если теперь растению хватило питания (оно забрало у остальных)
+                {
+                    forest.set_score_grow_plant(num, type, forest.get_score_grow_plant(num, type)+1); //увеличить кол-во очков роста на 1
+                }
+            }
+            if(f_died==1) //если растение умирает без питания
+            {
+                forest.set_fertility_dirt(num_dirt, forest.get_fertility_dirt(num_dirt)+ADD_FERT_IF_DIED_PLANT); //увеличить плодородность ячейки почвы, так как на ней зачахло растение (стало удобрением)
+                forest.set_fertility_now_dirt(num_dirt, forest.get_fertility_now_dirt(num_dirt)+ADD_FERT_IF_DIED_PLANT); //увеличить плодородность ячейки почвы, так как на ней зачахло растение (стало удобрением)
+                Remove_plant_and_resort(i, &plants, &all_plants); //удалить это растение (в том числе из списка сортировки)
+            }
+            else //если растение не зачахло
+            {
+                if(forest.get_score_grow_plant(num, type) >= forest.get_score_grow_max_plant(num, type)) //если растение набрало макс. кол-во очков для дальнейшего роста
+                {
+                    forest.set_score_grow_plant(num, type, forest.get_score_grow_plant(num, type)-forest.get_score_grow_max_plant(num, type)); //списать с растения очки роста взамен на рост в высоту и ширину
+                    int grow_height, grow_radius; //переменные с величиной роста в высоту и в радиусе растения
+                    switch (type) //отличаются в зависимости от типа растения
                     {
                     case 1: //трава
                         grow_height=GROW_GRASS_HEIGHT;
@@ -588,22 +624,23 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
                         grow_radius=GROW_TREE_RADIUS;
                         break;
                     }
-                    forest.set_height_plant(num, type, (forest.get_height_plant(num, type)+grow_height));
-                    forest.set_radius_plant(num, type, (forest.get_radius_plant(num, type)+grow_radius));
+                    forest.set_height_plant(num, type, (forest.get_height_plant(num, type)+grow_height)); //вырасти в высоту
+                    forest.set_radius_plant(num, type, (forest.get_radius_plant(num, type)+grow_radius)); //вырасти в радиусе
 
+                    if(forest.get_height_plant(num, type) > forest.get_end_height_plant(num, type)) //если растение достигло своей макс. высоты
+                    {
+                        forest.set_height_plant(num, type, forest.get_end_height_plant(num, type)); //то оставить значение высоты равным макс. значению
+                    }
+                    if(forest.get_radius_plant(num, type) > forest.get_max_radius_plant(num, type)) //если растение достигло своего макс. радиуса
+                    {
+                        forest.set_radius_plant(num, type, forest.get_max_radius_plant(num, type)); //то оставить значение радиуса равным макс. значению
+                    }
                 }
             }
-            else //растение получило недостаточно питания
-            {
 
-            }
+
         }
     } //конец цикла питания
-
-
-
-
-
 
 
     Print_forest_info(); //вывести инфо о лесе
