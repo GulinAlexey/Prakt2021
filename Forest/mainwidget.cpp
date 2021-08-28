@@ -979,8 +979,11 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
         }
         if(target==TARGET_CORNER_ESCAPE) //цель - угол поля для побега
         {
-            if(ox_human == ox_target && oy_human==oy_target) //если браконьер достиг угла поля
+            if(ox_human == ox_target || oy_human==oy_target) //если браконьер достиг края поля
             {
+                QLabel **img_delete=nullptr; //указатель на label со старой картинкой
+                invaders.get_img(&img_delete, i); //получить адрес для объекта - label с изображением браконьера
+                (*img_delete)->deleteLater(); //удалить qlabel  с изображением браконьера
                 invaders.Delete_invader(i); //удалить браконьера (он ушёл из поля леса)
                 if(i==0) //если удалён первый браконьер, то следующим будет первый (i=-1 из-за i++ в конце цикла)
                     i=-1;
