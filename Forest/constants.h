@@ -198,15 +198,15 @@
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Human - человек*/
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Forester - лесник*/
-#define SPEED_FORESTER 40
-#define VIEW_RADIUS_FORESTER 120
+#define SPEED_FORESTER 45
+#define VIEW_RADIUS_FORESTER 220
 
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Poacher - браконьер*/
 #define MIN_SPEED_POACHER 30
-#define MAX_SPEED_POACHER 50
-#define MIN_VIEW_RADIUS_POACHER 80
-#define MAX_VIEW_RADIUS_POACHER 130
+#define MAX_SPEED_POACHER 55
+#define MIN_VIEW_RADIUS_POACHER 150
+#define MAX_VIEW_RADIUS_POACHER 240
 #define MIN_CUTTING_SPEED_POACHER 7
 #define MAX_CUTTING_SPEED_POACHER 14
 
