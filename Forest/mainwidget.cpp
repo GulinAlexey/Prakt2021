@@ -21,6 +21,15 @@ int forester_is_on=0; //флаг "включения" лесника (иначе
 int f_pause_human=0; //если флаг отмечен, то ранее была включена пауза для модели людей
 int time_for_new_poacher=0; //отсчёт времени до появления нового браконьера (если их меньше, чем 2)
 
+struct plant_sort //структура для сортировки растений (их упорядочиванию по высоте или агрессивности)
+{
+    int num;
+    int type;
+    int radius;
+    int height;
+    int agressiv;
+};
+
 QPixmap *sun; //объект с картинкой солнца
 QPixmap *cloud; //объект с картинкой облака
 QPixmap *rain; //объект с картинкой дождя
@@ -357,14 +366,7 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
         forest.set_fertility_now_dirt(i, forest.get_fertility_dirt(i)); //установить питание на одно растение за цикл питания (может быть изменено, в отличии от основной плодородности)
     }
 
-    struct plant_sort //структура для сортировки растений (их упорядочиванию по высоте или агрессивности)
-    {
-        int num;
-        int type;
-        int radius;
-        int height;
-        int agressiv;
-    } *plants;
+    plant_sort *plants; //структура для сортировки растений (их упорядочиванию по высоте или агрессивности)
 
     int all_plants=forest.get_kolvo_grass()+forest.get_kolvo_bush()+forest.get_kolvo_tree(); //кол-во растений всех видов
     plants = new plant_sort[all_plants]; //структура для сортировки
@@ -555,44 +557,46 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
 
         if(f_died==1) //если растение умирает
         {
-
+            Remove_plant_and_resort(i, &plants, &all_plants); //удалить это растение (в том числе из списка сортировки)
         }
-
-        int feed = forest.get_fertility_dirt(num_dirt);
-        int remain_feed = feed - forest.get_feed_norm_plant(num, type); //остаток от питания после растения
-        if (remain_feed >= 0) //растение получило достаточно питания
+        else //если растение не зачахло
         {
-            forest.set_fertility_dirt(num_dirt, feed+remain_feed);
-            forest.set_score_grow_plant(num, type, (forest.get_score_grow_plant(num, type)+1));
-            if(forest.get_score_grow_plant(num, type) == forest.get_score_grow_max_plant(num, type))
+            int feed = forest.get_fertility_dirt(num_dirt);
+            int remain_feed = feed - forest.get_feed_norm_plant(num, type); //остаток от питания после растения
+            if (remain_feed >= 0) //растение получило достаточно питания
             {
-                forest.set_score_grow_plant(num, type, SCORE_GROW_START);
-                int grow_height, grow_radius;
-                switch (type)
+                forest.set_fertility_dirt(num_dirt, feed+remain_feed);
+                forest.set_score_grow_plant(num, type, (forest.get_score_grow_plant(num, type)+1));
+                if(forest.get_score_grow_plant(num, type) == forest.get_score_grow_max_plant(num, type))
                 {
-                case 1: //трава
-                    grow_height=GROW_GRASS_HEIGHT;
-                    grow_radius=GROW_GRASS_RADIUS;
-                    break;
-                case 2: //куст
-                    grow_height=GROW_BUSH_HEIGHT;
-                    grow_radius=GROW_BUSH_RADIUS;
-                    break;
-                case 3: //дерево
-                    grow_height=GROW_TREE_HEIGHT;
-                    grow_radius=GROW_TREE_RADIUS;
-                    break;
+                    forest.set_score_grow_plant(num, type, SCORE_GROW_START);
+                    int grow_height, grow_radius;
+                    switch (type)
+                    {
+                    case 1: //трава
+                        grow_height=GROW_GRASS_HEIGHT;
+                        grow_radius=GROW_GRASS_RADIUS;
+                        break;
+                    case 2: //куст
+                        grow_height=GROW_BUSH_HEIGHT;
+                        grow_radius=GROW_BUSH_RADIUS;
+                        break;
+                    case 3: //дерево
+                        grow_height=GROW_TREE_HEIGHT;
+                        grow_radius=GROW_TREE_RADIUS;
+                        break;
+                    }
+                    forest.set_height_plant(num, type, (forest.get_height_plant(num, type)+grow_height));
+                    forest.set_radius_plant(num, type, (forest.get_radius_plant(num, type)+grow_radius));
+
                 }
-                forest.set_height_plant(num, type, (forest.get_height_plant(num, type)+grow_height));
-                forest.set_radius_plant(num, type, (forest.get_radius_plant(num, type)+grow_radius));
+            }
+            else //растение получило недостаточно питания
+            {
 
             }
         }
-        else //растение получило недостаточно питания
-        {
-
-        }
-    }
+    } //конец цикла питания
 
 
 
@@ -1602,4 +1606,9 @@ void MainWidget::Find_target(int num, int type) //найти цель для ч�
         }
         break;
     }
+}
+
+void MainWidget::Remove_plant_and_resort(int num_sort, struct plant_sort **plants, int *kolvo_plants) //удалить растение (оно зачахло) и убрать запись о нём в структуре сортировки
+{
+
 }
