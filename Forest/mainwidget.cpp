@@ -1203,7 +1203,17 @@ void MainWidget::Print_info(int num, int type, int f_update) //слот выво
         ui->i_3->setText(QString::number(forest.get_num_dirt_plant(num,type)));
         ui->i_4->setText(QString::number(forest.get_height_plant(num,type)));
         ui->i_5->setText(QString::number(forest.get_radius_plant(num,type)));
-        ui->i_6->setText(QString::number(forest.get_lightlove_plant(num,type)));
+        QString lightlove_text; //строка с текстовым названием типа светолюбивости
+        switch(forest.get_lightlove_plant(num,type))
+        {
+        case TYPE_LOVE_BRIGHT:
+            lightlove_text="Bright";
+            break;
+        case TYPE_LOVE_SHADOW:
+            lightlove_text="Shadow";
+            break;
+        }
+        ui->i_6->setText(lightlove_text);
         ui->i_7->setText(QString::number(forest.get_aggresiv_plant(num,type)));
         ui->i_8->setText(QString::number(forest.get_wetlove_plant(num,type)));
         ui->i_9->setText(QString::number(forest.get_score_grow_plant(num,type)));
