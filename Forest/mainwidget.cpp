@@ -1382,7 +1382,20 @@ void MainWidget::Print_human_info(int f_output, int f_update) //слот выв�
 void MainWidget::Print_weather_info() //слот вывода инфо о погоде
 {
     ui->w_0->setText(QString::number(weather.get_sunshine()));
-    ui->w_1->setText(QString::number(weather.get_f_status()));
+    QString f_status_text; //строка с текстовым названием типа погоды
+    switch(weather.get_f_status())
+    {
+    case F_SUN:
+        f_status_text="Sunny";
+        break;
+    case F_CLOUD:
+        f_status_text="Cloudy";
+        break;
+    case F_RAIN:
+        f_status_text="Rainy";
+        break;
+    }
+    ui->w_1->setText(f_status_text);
     ui->w_2->setText(QString::number(weather.get_rainfall_tick()));
     ui->w_3->setText(QString::number(weather.get_time_status()));
 }
