@@ -82,7 +82,7 @@ MainWidget::MainWidget(QWidget *parent)
     Print_weather_info(); //вывести инфо о погоде
 
     timer = new QTimer(); // таймер для работы модели (рост растений и смена погоды)
-    timer->start(25); //запустить таймер с быстрым интервалом (затем будет изменён на нормальный)
+    timer->start(TIME_TICK); //запустить таймер с интервалом в одну секунду
     QObject::connect(timer, SIGNAL(timeout()), SLOT(Timer_tick())); //по истечении интервала работает слот
 
     human_tick = new QTimer(); // таймер для работы моделей - людей (их перемещение и взаимодействие)
@@ -288,16 +288,6 @@ void MainWidget::mousePressEvent(QMouseEvent*e) //событие нажатия 
 void MainWidget::Timer_tick() //слот интервала таймера для растений и погоды
 {
     all_time=all_time+1; //получить новое значение общего времени
-
-    if(all_time==10 && f_speed_start==0) //если закончилось время быстрого запуска
-    {
-        //(быстрый запуск исправляет проблему с вылетом, когда растение завяло)
-        all_time=0; //начальное время
-        weather.set_time_status(0); //начальное время погоды
-        weather.set_f_status(F_SUN); //начальный тип погоды
-        f_speed_start=1; //отметить флагом, что быстрый запуск больше не нужен
-        timer->start(TIME_TICK); //запустить таймер с нормальным интервалом (1 секунда)
-    }
 
     ui->all_time_text->setText("Всего времени прошло (в тиках): "+QString::number(all_time)); //вывести на экран
 
