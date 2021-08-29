@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWidget_t {
-    const uint offsetsAndSize[56];
-    char stringdata0[317];
+    const uint offsetsAndSize[54];
+    char stringdata0[308];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWidget_t, stringdata0) + ofs), len 
@@ -44,29 +44,28 @@ QT_MOC_LITERAL(121, 11), // "Add_invader"
 QT_MOC_LITERAL(133, 11), // "Find_target"
 QT_MOC_LITERAL(145, 3), // "num"
 QT_MOC_LITERAL(149, 4), // "type"
-QT_MOC_LITERAL(154, 23), // "Remove_plant_and_resort"
-QT_MOC_LITERAL(178, 8), // "num_sort"
-QT_MOC_LITERAL(187, 12), // "plant_sort**"
-QT_MOC_LITERAL(200, 6), // "plants"
-QT_MOC_LITERAL(207, 4), // "int*"
-QT_MOC_LITERAL(212, 12), // "kolvo_plants"
-QT_MOC_LITERAL(225, 10), // "Print_info"
-QT_MOC_LITERAL(236, 8), // "f_update"
-QT_MOC_LITERAL(245, 16), // "Print_human_info"
-QT_MOC_LITERAL(262, 8), // "f_output"
-QT_MOC_LITERAL(271, 18), // "Print_weather_info"
-QT_MOC_LITERAL(290, 17), // "Print_forest_info"
-QT_MOC_LITERAL(308, 8) // "Show_pic"
+QT_MOC_LITERAL(154, 15), // "Init_plant_sort"
+QT_MOC_LITERAL(170, 12), // "plant_sort**"
+QT_MOC_LITERAL(183, 10), // "plant_sort"
+QT_MOC_LITERAL(194, 4), // "int*"
+QT_MOC_LITERAL(199, 16), // "kolvo_all_plants"
+QT_MOC_LITERAL(216, 10), // "Print_info"
+QT_MOC_LITERAL(227, 8), // "f_update"
+QT_MOC_LITERAL(236, 16), // "Print_human_info"
+QT_MOC_LITERAL(253, 8), // "f_output"
+QT_MOC_LITERAL(262, 18), // "Print_weather_info"
+QT_MOC_LITERAL(281, 17), // "Print_forest_info"
+QT_MOC_LITERAL(299, 8) // "Show_pic"
 
     },
     "MainWidget\0Timer_tick\0\0Timer_human_tick\0"
     "Normalmode\0value\0Speedmode\0Pausemode\0"
     "Normalmode_human\0Pausemode_human\0"
     "Stop_human\0Add_invader\0Find_target\0"
-    "num\0type\0Remove_plant_and_resort\0"
-    "num_sort\0plant_sort**\0plants\0int*\0"
-    "kolvo_plants\0Print_info\0f_update\0"
-    "Print_human_info\0f_output\0Print_weather_info\0"
+    "num\0type\0Init_plant_sort\0plant_sort**\0"
+    "plant_sort\0int*\0kolvo_all_plants\0"
+    "Print_info\0f_update\0Print_human_info\0"
+    "f_output\0Print_weather_info\0"
     "Print_forest_info\0Show_pic"
 };
 #undef QT_MOC_LITERAL
@@ -95,12 +94,12 @@ static const uint qt_meta_data_MainWidget[] = {
       10,    1,  127,    2, 0x0a,   12 /* Public */,
       11,    0,  130,    2, 0x0a,   14 /* Public */,
       12,    2,  131,    2, 0x0a,   15 /* Public */,
-      15,    3,  136,    2, 0x0a,   18 /* Public */,
-      21,    3,  143,    2, 0x0a,   22 /* Public */,
-      23,    2,  150,    2, 0x0a,   26 /* Public */,
-      25,    0,  155,    2, 0x0a,   29 /* Public */,
-      26,    0,  156,    2, 0x0a,   30 /* Public */,
-      27,    2,  157,    2, 0x0a,   31 /* Public */,
+      15,    2,  136,    2, 0x0a,   18 /* Public */,
+      20,    3,  141,    2, 0x0a,   21 /* Public */,
+      22,    2,  148,    2, 0x0a,   25 /* Public */,
+      24,    0,  153,    2, 0x0a,   28 /* Public */,
+      25,    0,  154,    2, 0x0a,   29 /* Public */,
+      26,    2,  155,    2, 0x0a,   30 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -113,9 +112,9 @@ static const uint qt_meta_data_MainWidget[] = {
     QMetaType::Void, QMetaType::Bool,    5,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,   13,   14,
-    QMetaType::Void, QMetaType::Int, 0x80000000 | 17, 0x80000000 | 19,   16,   18,   20,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   13,   14,   22,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   24,   22,
+    QMetaType::Void, 0x80000000 | 16, 0x80000000 | 18,   17,   19,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   13,   14,   21,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   23,   21,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,   13,   14,
@@ -139,7 +138,7 @@ void MainWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 7: _t->Stop_human((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 8: _t->Add_invader(); break;
         case 9: _t->Find_target((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 10: _t->Remove_plant_and_resort((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< plant_sort**(*)>(_a[2])),(*reinterpret_cast< int*(*)>(_a[3]))); break;
+        case 10: _t->Init_plant_sort((*reinterpret_cast< plant_sort**(*)>(_a[1])),(*reinterpret_cast< int*(*)>(_a[2]))); break;
         case 11: _t->Print_info((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         case 12: _t->Print_human_info((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 13: _t->Print_weather_info(); break;
@@ -158,7 +157,7 @@ const QMetaObject MainWidget::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWidget_t
 
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<plant_sort * *, std::false_type>, QtPrivate::TypeAndForceComplete<int *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<plant_sort * *, std::false_type>, QtPrivate::TypeAndForceComplete<int *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
 
 
 >,
