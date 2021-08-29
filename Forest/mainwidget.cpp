@@ -968,7 +968,7 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
                     {
                         invaders.set_ox(i, ox_target-RADIUS_PIC_HUMAN); //браконьер встаёт с левой стороны дерева для его рубки
                         forest.set_cutting_degree_tree(j, forest.get_cutting_degree_tree(j)+1); //увеличить степень срубленности дерева на 1
-                        if(forest.get_cutting_degree_tree(j)==MAX_CUTTING) //если достигнута максимальная степень срубленности
+                        if(forest.get_cutting_degree_tree(j)>=MAX_CUTTING) //если достигнута максимальная степень срубленности
                         {
                             QLabel **img_delete=nullptr; //указатель на label с картинкой для удаления
                             forest.get_img(&img_delete, j, TYPE_TREE); //получить адрес для объекта - label с картинкой для удаления
