@@ -7007,6 +7007,19 @@
     <string>Всего браконьеров поймано: 0</string>
    </property>
   </widget>
+  <widget class="QLabel" name="creator_info">
+   <property name="geometry">
+    <rect>
+     <x>1111</x>
+     <y>1</y>
+     <width>241</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Сделал Гулин Алексей, ПИ-92. АлтГТУ 2021 г.</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
