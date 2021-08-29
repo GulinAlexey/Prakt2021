@@ -26,7 +26,7 @@
 
 #define TIME_HUMAN_TICK 500 //время интервала таймера для людей в миллисекундах
 
-#define TIME_FOR_NEW_POACHER_MAX 14 //время появления нового браконьера в тиках таймера людей
+#define TIME_FOR_NEW_POACHER_MAX 20 //время появления нового браконьера в тиках таймера людей
 
 #define PLACE_X_MIN 20 //координата оx верхнего левого угла площадки леса
 #define PLACE_Y_MIN 20 //координата оy верхнего левого угла площадки леса
@@ -190,25 +190,25 @@
 
 #define DRY_TICK_SUN 5 //кол-во испаряемой влаги с почвы за 1 тик
 
-#define TIME_STATUS_START 0
-#define TIME_STATUS_END 10
+#define TIME_STATUS_START 0 //начальное время текущего типа погоды
+#define TIME_STATUS_END 10 //конечное время текущего типа погоды
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Human - человек*/
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Forester - лесник*/
-#define SPEED_FORESTER 45
-#define VIEW_RADIUS_FORESTER 220
+#define SPEED_FORESTER 55
+#define VIEW_RADIUS_FORESTER 400
 
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Poacher - браконьер*/
-#define MIN_SPEED_POACHER 25
-#define MAX_SPEED_POACHER 55
+#define MIN_SPEED_POACHER 15
+#define MAX_SPEED_POACHER 44
 #define MIN_VIEW_RADIUS_POACHER 150
-#define MAX_VIEW_RADIUS_POACHER 240
+#define MAX_VIEW_RADIUS_POACHER 300
 #define MIN_CUTTING_SPEED_POACHER 1
 #define MAX_CUTTING_SPEED_POACHER 2
 
-#define MAX_CUTTING 14 //макс. степень срубленности дерева (после неё растение срублено)
+#define MAX_CUTTING 45 //макс. степень срубленности дерева (после неё растение срублено)
 #define MAX_KOLVO_POACHER 2 //макс. кол-во браконьеров
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Invaders - чужаки*/
