@@ -653,6 +653,7 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
                 all_plants_died=all_plants_died+1;
                 ui->all_plants_died_text->setText("Всего растений завяли: "+QString::number(all_plants_died)); //вывести на экран
 
+                delete[] plants; //удалить старую структуру
                 Init_plant_sort(&plants, &all_plants); //заново заполнить структуру сортировки и получить кол-во всех растений
                 break; //остановить цикл for
             }
@@ -1795,8 +1796,6 @@ void MainWidget::Find_target(int num, int type) //найти цель для ч�
 void MainWidget::Init_plant_sort(struct plant_sort **plant_sort, int *kolvo_all_plants) //получить значения растений и заполнить структуру сортировки
 {
     (*kolvo_all_plants)=forest.get_kolvo_grass()+forest.get_kolvo_bush()+forest.get_kolvo_tree(); //получить общее кол-во растений
-
-    delete[] (*plant_sort); //удалить старую структуру
 
     (*plant_sort) = new struct plant_sort[(*kolvo_all_plants)]; //структура для сортировки
 
