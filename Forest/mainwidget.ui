@@ -6981,6 +6981,32 @@
     <string>Всего растений завяли: 0</string>
    </property>
   </widget>
+  <widget class="QLabel" name="all_plants_cutted_text">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>650</y>
+     <width>691</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Всего деревьев срубили: 0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="all_p_catched_text">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>670</y>
+     <width>691</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Всего браконьеров поймано: 0</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

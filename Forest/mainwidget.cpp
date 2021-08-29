@@ -17,6 +17,8 @@ int num_info=-1; //номер растения/ячейки почвы для и
 int type_of_info=-1; //тип вывода инфо (-1 - никакое, 0 - ячейка почвы, 1 - трава, 2 - куст, 3 - дерево)
 int all_time=0; //общее время работы программы (кол-во тиков)
 int all_plants_died=0; //кол-во растений, которые завяли и погибли
+int all_plants_cutted=0; //кол-во растений, которые были срублены браконьерами
+int all_p_catched=0; //кол-во пойманных браконьеров
 int f_house_img=0; //флаг вывода картинки дома лесника
 int forester_is_on=0; //флаг "включения" лесника (иначе он не выводится на экран)
 int f_pause_human=0; //если флаг отмечен, то ранее была включена пауза для модели людей
@@ -857,6 +859,9 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
                     invaders.get_img(&img_delete, i); //получить адрес для объекта - label с изображением браконьера
                     (*img_delete)->deleteLater(); //удалить qlabel  с изображением браконьера
                     invaders.Delete_invader(i); //этот браконьер пойман (удалён из леса)
+
+                    all_p_catched=all_p_catched+1;
+                    ui->all_p_catched_text->setText("Всего браконьеров поймано: "+QString::number(all_p_catched)); //вывести на экран
                     break; //остановить перебор
                 }
             }
@@ -1008,6 +1013,9 @@ void MainWidget::Timer_human_tick() //слот интервала таймера
                             }
 
                             forest.Delete_plant(j, TYPE_TREE); //удалить это дерево (оно срублено браконьером)
+
+                            all_plants_cutted=all_plants_cutted+1;
+                            ui->all_plants_cutted_text->setText("Всего деревьев срубили: "+QString::number(all_plants_cutted)); //вывести на экран
 
                             if(f_print_changed==1) //если удаление повлияло на вывод инфо о выбранном растении, то вывести обновлённое инфо
                                 Print_info(num_info, type_of_info, 0); //вывести инфо о растении, которое теперь по счёту является тем же, что и ранее удалённое

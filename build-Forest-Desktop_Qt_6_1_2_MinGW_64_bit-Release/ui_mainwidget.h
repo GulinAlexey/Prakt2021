@@ -154,6 +154,8 @@ public:
     QLabel *p2_2;
     QLabel *p2_1;
     QLabel *all_plants_died_text;
+    QLabel *all_plants_cutted_text;
+    QLabel *all_p_catched_text;
 
     void setupUi(QWidget *MainWidget)
     {
@@ -1368,6 +1370,12 @@ public:
         all_plants_died_text = new QLabel(MainWidget);
         all_plants_died_text->setObjectName(QString::fromUtf8("all_plants_died_text"));
         all_plants_died_text->setGeometry(QRect(20, 630, 691, 16));
+        all_plants_cutted_text = new QLabel(MainWidget);
+        all_plants_cutted_text->setObjectName(QString::fromUtf8("all_plants_cutted_text"));
+        all_plants_cutted_text->setGeometry(QRect(20, 650, 691, 16));
+        all_p_catched_text = new QLabel(MainWidget);
+        all_p_catched_text->setObjectName(QString::fromUtf8("all_p_catched_text"));
+        all_p_catched_text->setGeometry(QRect(20, 670, 691, 16));
 
         retranslateUi(MainWidget);
 
@@ -1505,6 +1513,8 @@ public:
         p2_2->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
         p2_1->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
         all_plants_died_text->setText(QCoreApplication::translate("MainWidget", "\320\222\321\201\320\265\320\263\320\276 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\320\271 \320\267\320\260\320\262\321\217\320\273\320\270: 0", nullptr));
+        all_plants_cutted_text->setText(QCoreApplication::translate("MainWidget", "\320\222\321\201\320\265\320\263\320\276 \320\264\320\265\321\200\320\265\320\262\321\214\320\265\320\262 \321\201\321\200\321\203\320\261\320\270\320\273\320\270: 0", nullptr));
+        all_p_catched_text->setText(QCoreApplication::translate("MainWidget", "\320\222\321\201\320\265\320\263\320\276 \320\261\321\200\320\260\320\272\320\276\320\275\321\214\320\265\321\200\320\276\320\262 \320\277\320\276\320\271\320\274\320\260\320\275\320\276: 0", nullptr));
     } // retranslateUi
 
 };
