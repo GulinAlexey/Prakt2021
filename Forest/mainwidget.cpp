@@ -657,7 +657,7 @@ void MainWidget::Timer_tick() //слот интервала таймера дл�
                 forest.Delete_plant(plants[i].num, plants[i].type); //удалить объект растения
 
                 all_plants_died=all_plants_died+1;
-                ui->all_plants_died_text->setText("Всего растений завяли: "+QString::number(all_plants_died)); //вывести на экран
+                ui->all_plants_died_text->setText("Всего растений завяло: "+QString::number(all_plants_died)); //вывести на экран
 
                 delete[] plants; //удалить старую структуру
                 Init_plant_sort(&plants, &all_plants); //заново заполнить структуру сортировки и получить кол-во всех растений

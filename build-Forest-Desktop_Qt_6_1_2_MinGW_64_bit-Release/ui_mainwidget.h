@@ -1516,7 +1516,7 @@ public:
         p2_7->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
         p2_2->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
         p2_1->setText(QCoreApplication::translate("MainWidget", "0", nullptr));
-        all_plants_died_text->setText(QCoreApplication::translate("MainWidget", "\320\222\321\201\320\265\320\263\320\276 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\320\271 \320\267\320\260\320\262\321\217\320\273\320\270: 0", nullptr));
+        all_plants_died_text->setText(QCoreApplication::translate("MainWidget", "\320\222\321\201\320\265\320\263\320\276 \321\200\320\260\321\201\321\202\320\265\320\275\320\270\320\271 \320\267\320\260\320\262\321\217\320\273\320\276: 0", nullptr));
         all_plants_cutted_text->setText(QCoreApplication::translate("MainWidget", "\320\222\321\201\320\265\320\263\320\276 \320\264\320\265\321\200\320\265\320\262\321\214\320\265\320\262 \321\201\321\200\321\203\320\261\320\270\320\273\320\270: 0", nullptr));
         all_p_catched_text->setText(QCoreApplication::translate("MainWidget", "\320\222\321\201\320\265\320\263\320\276 \320\261\321\200\320\260\320\272\320\276\320\275\321\214\320\265\321\200\320\276\320\262 \320\277\320\276\320\271\320\274\320\260\320\275\320\276: 0", nullptr));
         creator_info->setText(QCoreApplication::translate("MainWidget", "\320\241\320\264\320\265\320\273\320\260\320\273 \320\223\321\203\320\273\320\270\320\275 \320\220\320\273\320\265\320\272\321\201\320\265\320\271, \320\237\320\230-92. \320\220\320\273\321\202\320\223\320\242\320\243 2021 \320\263.", nullptr));

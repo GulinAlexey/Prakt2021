@@ -6978,7 +6978,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Всего растений завяли: 0</string>
+    <string>Всего растений завяло: 0</string>
    </property>
   </widget>
   <widget class="QLabel" name="all_plants_cutted_text">
