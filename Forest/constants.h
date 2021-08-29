@@ -201,15 +201,14 @@
 
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Poacher - браконьер*/
-#define MIN_SPEED_POACHER 30
+#define MIN_SPEED_POACHER 25
 #define MAX_SPEED_POACHER 55
 #define MIN_VIEW_RADIUS_POACHER 150
 #define MAX_VIEW_RADIUS_POACHER 240
 #define MIN_CUTTING_SPEED_POACHER 1
 #define MAX_CUTTING_SPEED_POACHER 2
 
-#define MAX_CUTTING 8
-
+#define MAX_CUTTING 14 //макс. степень срубленности дерева (после неё растение срублено)
 #define MAX_KOLVO_POACHER 2 //макс. кол-во браконьеров
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Invaders - чужаки*/
