@@ -11,14 +11,16 @@
 #define KOLVO_CELL_X 4 //кол-во ячеек почвы по горизонтали
 #define KOLVO_CELL_Y 3 //кол-во ячеек почвы по вертикали
 
-#define GROW_GRASS_HEIGHT 3
-#define GROW_GRASS_RADIUS 7
-#define GROW_BUSH_HEIGHT 5
-#define GROW_BUSH_RADIUS 5
-#define GROW_TREE_HEIGHT 12
-#define GROW_TREE_RADIUS 3
+#define GROW_GRASS_HEIGHT 1 //кол-во единиц, на которые вырастает трава за раз по высоте
+#define GROW_GRASS_RADIUS 5 //кол-во единиц, на которые вырастает трава за раз в радиусе
 
-#define SCORE_GROW_START 0
+#define GROW_BUSH_HEIGHT 4 //кол-во единиц, на которые вырастает куст за раз по высоте
+#define GROW_BUSH_RADIUS 3 //кол-во единиц, на которые вырастает куст за раз в радиусе
+
+#define GROW_TREE_HEIGHT 14 //кол-во единиц, на которые вырастает дерево за раз по высоте
+#define GROW_TREE_RADIUS 3 //кол-во единиц, на которые вырастает дерево за раз в радиусе
+
+#define SCORE_GROW_START 0 //начальное кол-во очков роста
 
 /*ЗНАЧЕНИЯ ДЛЯ mainwidget*/
 #define TIME_TICK 1000 //время интервала таймера в миллисекундах
@@ -43,7 +45,6 @@
 #define TYPE_FORESTER 4 //номер лесника при выводе картинки
 #define TYPE_POACHER 5 //номер лесника при выводе картинки
 
-#define DIST_ACTION_HUMAN (RADIUS_PIC_HUMAN+6) //дальность действия человека (при приближении к цели на это расстояние действие совершается)
 #define DIST_ACTION_FORESTER (RADIUS_PIC_HUMAN+RADIUS_PIC_HUMAN)  //дальность, с которой лесник может поймать браконьера
 #define DIST_ACTION_POACHER (RADIUS_PIC_HUMAN+(RADIUS_START_TREE/2)) //дальность, с которой браконьер может рубить дерево
 
@@ -67,138 +68,130 @@
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Grass - трава*/
 #define HEIGHT_START_GRASS 1
 
-#define RADIUS_START_GRASS 20
+#define MIN_END_HEIGHT_GRASS 10
+#define MAX_END_HEIGHT_GRASS 15
+
+#define RADIUS_START_GRASS 22
+
+#define MIN_RADIUS_GRASS 100
+#define MAX_RADIUS_GRASS 180
 
 #define MIN_LIGHTLOVE_GRASS 1
 #define MAX_LIGHTLOVE_GRASS 2
 
-#define MIN_AGGRESIV_GRASS 1
-#define MAX_AGGRESIV_GRASS 10
+#define MIN_AGGRESIV_GRASS 10
+#define MAX_AGGRESIV_GRASS 40
 
-#define MIN_WETLOVE_GRASS 10
-#define MAX_WETLOVE_GRASS 90
+#define MIN_WETLOVE_GRASS 30
+#define MAX_WETLOVE_GRASS 50
 
-#define MIN_END_HEIGHT_GRASS 10
-#define MAX_END_HEIGHT_GRASS 40
+#define FEED_NORM_GRASS_MIN 40
+#define FEED_NORM_GRASS_MAX 100
 
 #define SCORE_GROW_START_GRASS 0
-
-#define SCORE_GROW_END_GRASS 10
+#define SCORE_GROW_END_GRASS 12
 
 #define VIABILITY_START_GRASS 1
 
-#define MIN_RADIUS_GRASS 80
-#define MAX_RADIUS_GRASS 500
-
-#define FEED_NORM_GRASS_MIN 150
-#define FEED_NORM_GRASS_MAX 250
-
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Bush - куст*/
-#define HEIGHT_START_BUSH 1
+#define HEIGHT_START_BUSH 16
+
+#define MIN_END_HEIGHT_BUSH 100
+#define MAX_END_HEIGHT_BUSH 150
 
 #define RADIUS_START_BUSH 20
+
+#define MIN_RADIUS_BUSH 40
+#define MAX_RADIUS_BUSH 55
 
 #define MIN_LIGHTLOVE_BUSH 1
 #define MAX_LIGHTLOVE_BUSH 2
 
-#define MIN_AGGRESIV_BUSH 1
-#define MAX_AGGRESIV_BUSH 10
+#define MIN_AGGRESIV_BUSH 20
+#define MAX_AGGRESIV_BUSH 50
 
-#define MIN_WETLOVE_BUSH 10
-#define MAX_WETLOVE_BUSH 90
+#define MIN_WETLOVE_BUSH 50
+#define MAX_WETLOVE_BUSH 100
 
-#define MIN_END_HEIGHT_BUSH 50
-#define MAX_END_HEIGHT_BUSH 200
+#define FEED_NORM_BUSH_MIN 80
+#define FEED_NORM_BUSH_MAX 250
 
 #define SCORE_GROW_START_BUSH 0
-
-#define SCORE_GROW_END_BUSH 10
+#define SCORE_GROW_END_BUSH 12
 
 #define VIABILITY_START_BUSH 1
 
-#define MIN_RADIUS_BUSH 50
-#define MAX_RADIUS_BUSH 300
-
-#define FEED_NORM_BUSH_MIN 200
-#define FEED_NORM_BUSH_MAX 300
-
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Tree - дерево*/
-#define HEIGHT_START_TREE 1
+#define HEIGHT_START_TREE 17
+
+#define MIN_END_HEIGHT_TREE 400
+#define MAX_END_HEIGHT_TREE 600
 
 #define RADIUS_START_TREE 20
+
+#define MIN_RADIUS_TREE 50
+#define MAX_RADIUS_TREE 75
 
 #define MIN_LIGHTLOVE_TREE 1
 #define MAX_LIGHTLOVE_TREE 2
 
-#define MIN_AGGRESIV_TREE 1
-#define MAX_AGGRESIV_TREE 10
+#define MIN_AGGRESIV_TREE 40
+#define MAX_AGGRESIV_TREE 90
 
-#define MIN_WETLOVE_TREE 10
-#define MAX_WETLOVE_TREE 90
+#define MIN_WETLOVE_TREE 75
+#define MAX_WETLOVE_TREE 350
 
-#define MIN_END_HEIGHT_TREE 200
-#define MAX_END_HEIGHT_TREE 4000
+#define FEED_NORM_TREE_MIN 300
+#define FEED_NORM_TREE_MAX 470
 
 #define SCORE_GROW_START_TREE 0
-
-#define SCORE_GROW_END_TREE 10
+#define SCORE_GROW_END_TREE 15
 
 #define VIABILITY_START_TREE 1
 
-#define MIN_RADIUS_TREE 30
-#define MAX_RADIUS_TREE 200
-
-#define FEED_NORM_TREE_MIN 300
-#define FEED_NORM_TREE_MAX 400
-
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Dirt_cell - ячейка почвы*/
-#define MIN_FERTILITY 200
+#define MIN_FERTILITY 300
 #define MAX_FERTILITY 400
 
-#define ADD_FERT_IF_DIED_PLANT 70 //кол-во очков питания, которые добавляются ячейке почвы, на которой зачахло растение (оно стало удобрением)
+#define ADD_FERT_IF_DIED_PLANT 10 //кол-во очков питания, которые добавляются ячейке почвы, на которой зачахло растение (оно стало удобрением)
 
-#define MIN_WET_START_DIRT 0
-#define MAX_WET_START_DIRT 5
+#define MIN_WET_START_DIRT 30 //мин. начальная влажность почвы
+#define MAX_WET_START_DIRT 50 //макс. начальная влажность почвы
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Weather - погода*/
-#define MIN_SUNSHINE_START 30
-#define MAX_SUNSHINE_START 50
+#define SUNSHINE_SUN 70 //кол-во света за 1 тик в солнечную погоду
+#define SUNSHINE_SUN_RANGE 25 //диапазон возможных значений (верхнее число в define является серединой)
 
-#define MIN_SUNSHINE 20
-#define MAX_SUNSHINE 70
+#define SUNSHINE_CLOUD 30 //кол-во света за 1 тик в облачную погоду
+#define SUNSHINE_CLOUD_RANGE 15 //диапазон возможных значений (верхнее число в define является серединой)
 
-#define SUNSHINE_SUN 70
-#define SUNSHINE_SUN_RANGE 25
+#define SUNSHINE_RAIN 10 //кол-во света за 1 тик в дождь
+#define SUNSHINE_RAIN_RANGE 5 //диапазон возможных значений (верхнее число в define является серединой)
 
-#define SUNSHINE_CLOUD 30
-#define SUNSHINE_CLOUD_RANGE 15
+#define F_STATUS_START 0 //начальное значение флага погоды
 
-#define SUNSHINE_RAIN 10
-#define SUNSHINE_RAIN_RANGE 5
+#define F_SUN 0 //флаг типа погоды - солнечная
+#define F_CLOUD 1 //флаг типа погоды - облачная
+#define F_RAIN 2 //флаг типа погоды - дождливая
 
-#define F_STATUS_START 0
+#define RAINFALL_TICK_SUN 0 //кол-во осадков за 1 тик в солнечную погоду
 
-#define F_SUN 0
-#define F_CLOUD 1
-#define F_RAIN 2
+#define RAINFALL_TICK_CLOUD 6 //кол-во осадков за 1 тик в облачную погоду
+#define RAINFALL_TICK_CLOUD_RANGE 3 //диапазон возможных значений (верхнее число в define является серединой)
 
-#define RAINFALL_TICK_SUN 0
-#define RAINFALL_TICK_CLOUD 6
-#define RAINFALL_TICK_CLOUD_RANGE 3
-#define RAINFALL_TICK_RAIN 60
-#define RAINFALL_TICK_RAIN_RANGE 15
+#define RAINFALL_TICK_RAIN 60 //кол-во осадков за 1 тик в дождь
+#define RAINFALL_TICK_RAIN_RANGE 15 //диапазон возможных значений (верхнее число в define является серединой)
 
-#define DRY_TICK_SUN 5 //кол-во испаряемой влаги с почвы за 1 тик
+#define DRY_TICK_SUN_MIN 20 //кол-во испаряемой влаги с почвы за 1 тик
+#define DRY_TICK_SUN_MAX 150 //кол-во испаряемой влаги с почвы за 1 тик
 
 #define TIME_STATUS_START 0 //начальное время текущего типа погоды
 #define TIME_STATUS_END 10 //конечное время текущего типа погоды
 
-/*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Human - человек*/
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Forester - лесник*/
 #define SPEED_FORESTER 55
 #define VIEW_RADIUS_FORESTER 400
-
 
 /*ДИАПАЗОНЫ ЗНАЧЕНИЙ ДЛЯ Poacher - браконьер*/
 #define MIN_SPEED_POACHER 15
